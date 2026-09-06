@@ -14,11 +14,10 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @centrist: The Center <span style="color: #9B0000;">Marxism</span> of Karl Kautsky remains the best way to resolve our internal contradictions.
-- @labor: We should work with the trade unions to improve the lives of workers.
-- @reform: Following Eduard Bernstein, we should work for ethical <span style="color: #c00000;">socialism</span>, strengthen democracy, and expand the party's electorate.
-- @socpat: Pursue the fusion of <span style='color: #c00000;'>socialism</span> and patriotism.
+- @class_struggle: Following the Christian Left, we should seek labour reforms, defence of the republic, and cooperation with the Weimar parties.
+- @centrist: Remaining true to our convictions, we should seek to prevent a new Kulturkampf, and maintain stability.  <span style="color: #9B0000;">Marxism</span>.
+- @labor: We shall leave the tower and expand our electorate to protestants and christian workers, and an interconfessional bloc with the DNVP.
+- @reform: Following Franz von Papen, we should seek to centralize the regime, to rid germany of degeneracy, and to unite the right.<span style="color: #c00000;">socialism</span>, .
 - @easy_discard
 
 @class_struggle
