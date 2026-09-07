@@ -5,7 +5,7 @@ view-if: year = 1928 and month >= 2
 tags: event
 max-visits: 1
 
-= The <span style="color: #000000;">Marx</span> Goverment Dissolved
+= The Fourth <span style="color: #000000;">Marx</span> Government Dissolved
 
 The Right-wing coalition comprising the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #C0A054;">**DVP**</span>, and <span style="color: #3E88B3;">**DNVP**</span>, led by Chancellor and Party Leader Wilhelm Marx, has been dissolved due to conflicts over school law regulations. While most coalition members supported the law, the <span style="color: #C0A054;">**DVP**</span> expressed concerns, advocating for the primacy of interdenominational schools and seeking to limit the church's influence. 
 
@@ -16,5 +16,5 @@ With talks having collapsed, new elections are scheduled for May, and we will co
 @bad
 on-arrival: next_election_month = 5; next_election_time = 5
 
-Our task is to limit the damage for the next elections.
+Our task is to prepare for the next elections, where the <span style="color: #c00000;">**Le**</span><span style="color: #700000;">**ft**</span> stands to gain.
 
