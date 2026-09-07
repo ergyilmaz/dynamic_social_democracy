@@ -452,9 +452,9 @@ go-to: advisor_menu
 
 Carl Severing is now an advisor.
 
-@add_braun
-title: Otto Braun
-subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known <span style="color: #c00000;">Social Democratic</span> leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+@add_stegerwald
+title: Adam Stegerwald
+subtitle: Adam Stegerwald is a leader of the Christian trade unions, and is our preffered candidate for the Minister-President of Prussia.. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition, Organizing Workers ?]
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
