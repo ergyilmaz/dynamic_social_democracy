@@ -454,15 +454,15 @@ Carl Severing is now an advisor.
 
 @add_stegerwald
 title: Adam Stegerwald
-subtitle: Adam Stegerwald is a leader of the Christian trade unions, and is our preffered candidate for the Minister-President of Prussia.. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition, Organizing Workers ?]
+subtitle: Adam Stegerwald is a leader of the Christian trade unions, and is our preffered candidate for the Minister-President of Prussia. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition, Organizing Workers ?]
 is-card: true
-card-image: img/portraits/BraunOtto.jpg
+card-image: img/portraits/stegerwald.jpg
 tags: reformist_advisor
 view-if: braun_advisor = 0 and n_advisors < 3
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 
-Otto Braun is now an advisor.
+Stegerwald is now an advisor.
 
 @add_juchacz
 title: Marie Juchacz
