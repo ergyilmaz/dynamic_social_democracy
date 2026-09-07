@@ -57,5 +57,5 @@ We have called for new elections, set for [+ next_election_month : month +] [+ n
 title: Organizing Workers
 subtitle: Stegerwald, with his labor connections, can help improve our standing amongst the working class.
 choose-if: advisor_action_timer <= 0
-on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1; worker_spd += 6*(1-dissent);
+on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1; workers_spd += 6*(1-dissent);
 
