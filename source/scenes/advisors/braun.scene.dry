@@ -13,7 +13,7 @@ Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was
 - @coalition_president
 - @prussian_bulwark
 - @snap_election
-- @organizing_workers
+- @organize_workers
 - @root: Return to main
 
 @coalition
