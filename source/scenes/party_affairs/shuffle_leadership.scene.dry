@@ -161,6 +161,15 @@ Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 # labor
 
+@remove_stegerwald
+title: Remove Stegerwald
+view-if: braun_advisor = 1
+tags: remove_advisor
+on-arrival: braun_advisor = 0; reformist_dissent += 10; n_advisors -= 1
+go-to: rm_main_menu
+
+Stegerwald has been removed as an advisor. The Labor faction disapproves.
+
 @remove_leipart
 title: Remove Leipart
 view-if: leipart_advisor = 1
