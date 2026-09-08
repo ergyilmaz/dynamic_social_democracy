@@ -452,18 +452,6 @@ go-to: advisor_menu
 
 Carl Severing is now an advisor.
 
-@add_stegerwald
-title: Adam Stegerwald
-subtitle: Adam Stegerwald is a leader of the Christian trade unions, and is our preffered candidate for the Minister-President of Prussia. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition, Organizing Workers ?]
-is-card: true
-card-image: img/portraits/stegerwald.jpg
-tags: reformist_advisor
-view-if: braun_advisor = 0 and n_advisors < 3
-on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
-go-to: advisor_menu
-
-Stegerwald is now an advisor.
-
 @add_juchacz
 title: Marie Juchacz
 subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
@@ -491,6 +479,19 @@ Antonie Pfülf is now an advisor.
 
 
 # left
+
+
+@add_wirth
+title: Joseph Wirth
+subtitle: Joseph Wirth is a former member of the <span style="color: #000000;">Center</span>'s left wing and a former chancellor, known for his ardent <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> convictions.
+is-card: true
+card-image: img/portraits/wirth.jpg
+view-if: wirth_advisor = 0 and wirth_spd and n_advisors < 3
+on-arrival: wirth_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 8
+go-to: advisor_menu
+tags: left_advisor
+
+Joseph Wirth is now an advisor.
 
 @add_levi
 title: Paul Levi
@@ -556,6 +557,18 @@ Anna Siemsen is now an advisor.
 
 # labor
 
+
+@add_stegerwald
+title: Adam Stegerwald
+subtitle: Adam Stegerwald is a leader of the Christian trade unions, and is our preffered candidate for the Minister-President of Prussia. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition, Organizing Workers ?]
+is-card: true
+card-image: img/portraits/stegerwald.jpg
+tags: reformist_advisor
+view-if: braun_advisor = 0 and n_advisors < 3
+on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
+go-to: advisor_menu
+
+Stegerwald is now an advisor.
 @add_leipart
 title: Theodor Leipart
 subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis[? if red_general_unlock and rubicon:, Negotiating with the Red General?]?]
@@ -643,20 +656,6 @@ go-to: advisor_menu
 tags: neorev_advisor
 
 Julius Leber is now an advisor.
-
-# Nonfactional advisors
-
-@add_wirth
-title: Joseph Wirth
-subtitle: Joseph Wirth is a former member of the <span style="color: #000000;">Center</span>'s left wing and a former chancellor, known for his ardent <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> convictions.
-is-card: true
-card-image: img/portraits/wirth.jpg
-view-if: wirth_advisor = 0 and wirth_spd and n_advisors < 3
-on-arrival: wirth_advisor = 1; n_advisors += 1; neorevisionist_strength += 5; neorevisionist_dissent -= 8
-go-to: advisor_menu
-tags: neorev_advisor
-
-Joseph Wirth is now an advisor.
 
 # Nonfactional advisors
 
