@@ -131,15 +131,6 @@ go-to: rm_main_menu
 
 Severing has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_stegerwald
-title: Remove Stegerwald
-view-if: braun_advisor = 1
-tags: remove_advisor
-on-arrival: braun_advisor = 0; reformist_dissent += 10; n_advisors -= 1
-go-to: rm_main_menu
-
-Stegerwald has been removed as an advisor. The Reformist faction disapproves.
-
 @remove_juchacz
 title: Remove Juchacz
 view-if: juchacz_advisor = 1
