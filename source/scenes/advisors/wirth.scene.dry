@@ -34,10 +34,10 @@ on-arrival: advisor_action_timer = 6; left_strength += 15
 Wirth rallies the <span style="color: #FF7F00;">Christian Left</span> and uses his positions in the party to increase its influence. This has caused concern in the right of the party.
 
 @build_interconfessional_party
-title: Supporting Interconfessionalism
+title: Building an Interconfessional Party
 subtitle: Can we expand our party's scope beyond the Catholic faith?
 view-if: interconfessionalism == 0
-choose-if: interconfessionalism_support <= 3 and advisor_action_timer = 0
+choose-if: interconfessionalism_support >= 3; advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: peoples_party
