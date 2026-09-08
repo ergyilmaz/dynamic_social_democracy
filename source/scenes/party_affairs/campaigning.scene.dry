@@ -33,7 +33,7 @@ We have increased our campaigning among the workers. [? if unemployed >= 15: The
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_z += 6*(1-dissent) resources -= 1;
+on-arrival: new_middle_z += 6*(1-dissent); resources -= 1;
 
 We have increased our campaigning among the new middle class.
 @old_middle
