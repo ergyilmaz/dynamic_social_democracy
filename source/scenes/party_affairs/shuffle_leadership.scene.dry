@@ -200,6 +200,15 @@ Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
 # left
 
+@remove_wirth
+title: Remove Wirth
+view-if: wirth_advisor = 1
+tags: remove_advisor
+on-arrival: wirth_advisor = 0; left_dissent += 7; n_advisors -= 1
+go-to: rm_main_menu
+
+Wirth has been removed as an advisor. The Leftist faction disapproves.
+
 @remove_levi
 title: Remove Levi
 view-if: levi_advisor = 1
@@ -276,15 +285,6 @@ on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 7; n_advisors -= 1
 go-to: rm_main_menu
 
 Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
-
-@remove_wirth
-title: Remove Wirth
-view-if: wirth_advisor = 1
-tags: remove_advisor
-on-arrival: wirth_advisor = 0; neorevisionist_dissent += 7; n_advisors -= 1
-go-to: rm_main_menu
-
-Wirth has been removed as an advisor. The Neorevisionist faction disapproves.
 
 
 ## nonfactional
