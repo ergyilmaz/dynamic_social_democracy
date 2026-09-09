@@ -16,7 +16,7 @@ The <span style="color: #000000;">Center</span> cannot govern by itself yet. Bec
 - @liberals_lvp: Strengthen our bonds with the <span style="color: #FFCC00;">Liberal People's Party</span>.
 - @spd: Strengthen our bonds with the Socialist <span style="color: #c00000;">**SPD**</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
-- @dnvp: Open dialogue with [? if dnvp_leader != "Lambach": Treviranus and the <span style="color: #0087DC;">People's Conservatives</span>?][? if dnvp_leader == "Lambach": Lambach and the <span style="color: #6D5298;">Christian Socials</span>?] of the <span style="color: #3E88B3;">**DNVP**</span>.
+- @dnvp: Foster our relations with the <span style="color: #003755;">**DNVP**</span>, the other Christian party.
 - @nsdap: Establish contact with Strasser and the <span style="color: #7A3C00;">Nazi Party</span>'s left wing.
 - @spd_alone: The <span style="color: #c00000;">Center</span> can stand alone for now.
 - @easy_discard
@@ -154,6 +154,7 @@ With the death of Gustav Stresemann, the right wing of the <span style="color: #
 However, given the influence of the <span style="color: #FFCC00;">**LVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties [? if president == "Hindenburg" or president_ideology == "Moderate": and with President [+ president +] ?], it can still be helpful to influence them. 
 
 @dnvp
+subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: [? if resources < 1: Not enough resources. ?]
 on-arrival: resources -= 1; dnvp_relation += 10*(1-dissent); spd_relation -= 3; pro_republic += 3; left_dissent += 10; reformist_dissent -= 10
