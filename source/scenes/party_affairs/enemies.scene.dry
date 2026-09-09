@@ -23,12 +23,12 @@ In our media and campaign materials, who should we consider as our main opponent
 @anti_dem
 on-arrival: enemies = "anti-democratic parties"; left_strength += 5; labor_strength += 5; left_dissent -= 5; workers_kpd -= 1.5; workers_nsdap -= 2; workers_dnvp -= 1 if dnvp_ideology == "Radical"; workers_dnf -= 1; unemployed_kpd -= 2; unemployed_nsdap -= 2; kpd_relation -= 10; spd_relation += 5; dnvp_relation -= 5
 
-Attacking the <span style="color: #7A3C00;">far</span>-[? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">right</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">right</span>?] and <span style="color: #700000;">left</span> is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the <span style="color: #700000;">**KPD**</span> in the future.
+Attacking the <span style="color: #7A3C00;">far</span>-[? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">right</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">right</span>?] and <span style="color: #700000;">left</span> is good for our relations with the SPD and popular among all but the right wing of our party, who would prefer to be fighting the <span style="color: #700000;">**KPD**</span>. This might also hamper our ability to enter government with the <span style="color: #700000;">**KPD**</span> in the future.
 
 @far_right
 on-arrival: enemies = "far right"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_dnvp -= 2 if dnvp_ideology == "Radical"; workers_dnf -= 2; spd_relation += 5; dnvp_relation -=5
 
-Attacking the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> is popular among the <span style="color: #FF7F00;">Christian Left</span>, while the <span style="color: #000000;">Center</span> to be just as dangerous, and the right all but completely opposes this move. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism, However,the <span style="color: #c00000;">**SPD**</span> is very supportive.
+Attacking the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> is popular among the <span style="color: #FF7F00;">Christian Left</span>, while the <span style="color: #000000;">Center</span> considers the <span style="color: #700000;">**KPD**</span> to be just as dangerous, and the right all but completely opposes this move. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism, However,the <span style="color: #c00000;">**SPD**</span> is very supportive.
 
 
 @nsdap
@@ -44,6 +44,6 @@ Attacking the <span style="color: #700000;">**KPD**</span> is supported by all b
 @left
 on-arrival: enemies = "bourgeois parties"; reformist_strength += 8; reformist_dissent -= 5; dvp_relation += 5; lvp_relation += 5; dnvp_relation += 10; kpd_relation -= 10; workers_spd -= 4; spd_relation -= 10; workers_kpd += 5; coalition_dissent += 1 
 
-Attacking the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span> pleases our right wing and wins us some favor among the bourgeois parties and the DNVP. The <span style="color: #c00000;">**SPD**</span> and <span style="color: #FF7F00;">Christian Left</span> are displeased.
+Attacking the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span> pleases our right wing and wins us some favor among the bourgeois parties and the <span style="color: #003755;">right</span>. The <span style="color: #c00000;">**SPD**</span> and <span style="color: #FF7F00;">Christian Left</span> are displeased.
 
  
