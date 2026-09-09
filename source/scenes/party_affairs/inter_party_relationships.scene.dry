@@ -154,13 +154,11 @@ With the death of Gustav Stresemann, the right wing of the <span style="color: #
 However, given the influence of the <span style="color: #FFCC00;">**LVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties [? if president == "Hindenburg" or president_ideology == "Moderate": and with President [+ president +] ?], it can still be helpful to influence them. 
 
 @dnvp
-view-if: wacky_weimar
-choose-if: resources >= 1 and ((dnvp_leader == "Treviranus" and true_christian_democracy) or (dnvp_leader == "Lambach" and lambach_stays))
-unavailable-subtitle: [? if resources < 1: Not enough resources. ?] [? if dnvp_leader != "Treviranus" and dnvp_leader != "Lambach": Treviranus or Lambach must lead the <span style="color: #3E88B3;">DNVP</span>. ?][? if not true_christian_democracy and dnvp_leader == "Treviranus": Treviranus's wholesomeness is restrained by his own party. ?][? if not lambach_stays and dnvp_leader == "Lambach": Lambach's wholesomeness is restrained by his own party, he must consolidate his position first. ?]
-on-arrival: resources -= 1; dnvp_relation += 10*(1-dissent); pro_republic += 3; left_dissent += 10; center_dissent += 10
+choose-if: resources >= 1
+unavailable-subtitle: [? if resources < 1: Not enough resources. ?]
+on-arrival: resources -= 1; dnvp_relation += 10*(1-dissent); spd_relation -= 3; pro_republic += 3; left_dissent += 10; reformist_dissent -= 10
 
-We have reached out to [+ dnvp_leader +], who responds warmly to our requests. However, it would take much more convincing to get the evil and unwholesome side of the <span style="color: #3E88B3;">**DNVP**</span> behind closer cooperation. Our Left and Center factions voice their disapproval.
-
+the <span style="color: #003755;">**DNVP**</span> was included in the last Marx cabinet, and they take our efforts to rebuild relations warmly. However, obstructionist and anti-<span style="color: #D3C24D;">parlimentary</span> forces are opposed.
 - @dnvp_wholesome
 
 @dnvp_wholesome
