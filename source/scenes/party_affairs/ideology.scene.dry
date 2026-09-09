@@ -30,7 +30,7 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; ddp_relation += 3; ddp_cohesion += 0.5; nationalization_support += 1; kpd_relation += 3; ddp_left += 0.5; dvp_left += 1; lvp_left += 0.5
 
-The <span style="color: #FF7F00;">Christian Left</span> supports cooperation with the <span style="color: #c00000;">**SPD**</span>, labor reform, and interconfessionalism
+The <span style="color: #FF7F00;">Christian Left</span> supports cooperation with the <span style="color: #c00000;">**SPD**</span>, labor rights, and interconfessionalism.
 
 @centrist
 on-arrival: {!
@@ -52,7 +52,7 @@ if (Q.ideology && Q.ideology != "labor") {
 go-to: changed if changed = 1
 on-departure: ideology = "labor"; labor_strength += 8; center_dissent += 5; wtb_support += 1; labor_dissent -= 5; kpd_relation -= 3
 
-The Christian Labor wing supports broadaning our electoral base to Protestants and workers. They are also supportive of an interconfessional bloc with the <span style="color: #003755;">**DNVP**</span>.
+The Christian Labor wing supports broadening our electoral base to Protestants and workers. They are also supportive of an interconfessional bloc with the <span style="color: #003755;">**DNVP**</span>.
 
 @reform
 on-arrival: {!
