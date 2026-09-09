@@ -15,6 +15,6 @@ This presents us with an opportunity: we could campaign against the ship’s con
 - @panzerkreuzer_answer: The Panzerkreuzer is to be presented to the reichstag in a few months.
 
 @panzerkreuzer_answer
-on-arrival: spd_workers += 4; spd_unemployed += 4; spd_relation -= 4
+on-arrival: spd_worker += 4; spd_unemployed += 4; spd_relation -= 4
 
-The <span style="color: #c00000;">**SPD**</span> is agitating the peeople againt the panzerkreuzer. Some in our party are turning against the panzerkreuzer. Maybe we ought to reconsider our support?
+The <span style="color: #c00000;">**SPD**</span> is agitating the people againt the panzerkreuzer. Even some in our party are turning against the panzerkreuzer. Maybe we ought to reconsider our support?
