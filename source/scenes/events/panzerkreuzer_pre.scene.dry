@@ -12,4 +12,10 @@ The Reichswehr Ministry is lobbying for a naval modernization program centered o
 
 This presents us with an opportunity: we could campaign against the ship’s construction and demand its cancellation in favor of greater social spending. The workers have rallied behind the <span style="color: #c00000;">**SPD**</span>'s slogan, "Children's Meals Instead of Armored Cruisers", and this presents a threat to our already meager support base.
 
-- @panzerkreuzer_answer: The Panzerkreuzer is to be presesnted to the reichstag in a few months.
+- @panzerkreuzer_answer: The Panzerkreuzer is to be presented to the reichstag in a few months.
+
+@panzerkreuzer_answer
+on-arrival: spd_workers += 4; spd_unemployed += 4
+The <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. Some in our party are turning against the panzerkreuzer. Maybe we ought to reconsider our support?
+
+
