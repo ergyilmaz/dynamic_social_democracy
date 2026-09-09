@@ -17,7 +17,7 @@ The <span style="color: #000000;">Center</span> is torn between many different i
 - @class_struggle: Following the <span style="color: #FF7F00;">Christian Left</span>, we should seek labour reforms, defence of the republic, and cooperation with the Weimar parties.
 - @centrist: Remaining true to our convictions, we should seek to prevent a new <span style="color: #808080;">Kulturkampf</span>, and maintain stability.  
 - @labor: We shall leave the tower and expand our electorate to protestants and <span style="color: #000000;">Christian</span>
- workers, and an interconfessional bloc with the <span style="color: #003755;">DNVP</span> .
+ workers, and seek an interconfessional bloc with the <span style="color: #003755;">DNVP</span> .
 - @reform: Following <span style="color: #808080;">Franz von Papen</span>, we should seek to centralize the regime, to rid germany of degeneracy and <span style=#c00000;"color: #9B0000;">Marxism</span>.
 - @easy_discard
 
@@ -28,9 +28,9 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; z_relation -= 3; dvp_relation -= 5; ddp_relation -= 3; lvp_relation -= 3; ddp_cohesion -= 0.5; nationalization_support += 1; kpd_relation += 3; ddp_right += 1; dvp_right += 1.5; lvp_right += 1
+on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; ddp_relation += 3; ddp_cohesion += 0.5; nationalization_support += 1; kpd_relation += 3; ddp_left += 0.5; dvp_left += 1; lvp_left += 0.5
 
-The radical left of the party supports a course of class struggle, and potentially a reconciliation with the <span style="color: #700000;">**Communists**</span>.
+The <span style="color: #FF7F00;">Christian Left</span> supports cooperation with the <span style="color: #c00000;">**SPD**</span>, labor reform, and interconfessionalism
 
 @centrist
 on-arrival: {!
@@ -41,7 +41,7 @@ if (Q.ideology && Q.ideology != "centrist") {
 go-to: changed if changed = 1
 on-departure: ideology = "centrist"; center_strength += 8; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
 
-The Center Marxists, represented by Kautsky and Hilferding, support a middle course of preparing for revolution while building up the consciousness of the working class.
+The <span style="color: #000000;">Catholic Center</span> are pragmatic republicans who are most focused on mainatining stability and defending Catholic rights.
 
 @labor
 on-arrival: {!
@@ -52,7 +52,7 @@ if (Q.ideology && Q.ideology != "labor") {
 go-to: changed if changed = 1
 on-departure: ideology = "labor"; labor_strength += 8; center_dissent += 5; wtb_support += 1; labor_dissent -= 5; kpd_relation -= 3
 
-The labor wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The Christian Labor wing supports broadaning our electoral base to Protestants and workers. They are also supportive of an interconfessional bloc with the <span style="color: #003755;">DNVP</span>.
 
 @reform
 on-arrival: {!
@@ -63,7 +63,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 go-to: changed if changed = 1
 on-departure: ideology = "reformist"; reformist_strength += 8; democratization += 1; reformist_dissent -= 5; left_dissent += 5; z_relation += 5; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The Right wing of our party seeks an alliance with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> to fight the influence of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>
 
 @socpat
 view-if: social_patriot
