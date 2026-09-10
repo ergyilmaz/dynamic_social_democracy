@@ -14,7 +14,7 @@ With talks having collapsed, new elections are scheduled for May, and we will co
 - @bad: Will Germany ever find stability?
 
 @bad
-on-arrival: next_election_month = 5; next_election_time = 5
+on-arrival: next_election_month = 5; next_election_time = 5; spd_worker += 2; spd_unemployed += 4
 
 Our task is to prepare for the next elections, where the <span style="color: #c00000;">**Le**</span><span style="color: #700000;">**ft**</span> stands to gain.
 
