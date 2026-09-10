@@ -101,9 +101,6 @@ on-arrival: pacifism += 1; nationalism -= 3*(1 - dissent); workers_z += 2*(1 - d
 
 Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War. This move is rampantly critizied by our right-wing, and the <span style="color: #003755;">**DNVP**</span>.
 
-[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
-[? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the people are enthusiastic about our message. ?]
-
 @wtb
 view-if: wtb_adopted = 1
 choose-if: return_to_normalcy = 0 and (wtb_implemented >= wtb_rally or (not spd_in_government and not spd_toleration))
