@@ -111,7 +111,7 @@ The WTB plan has become a popular rallying cry for our party. The workers are ea
 
 
 @local
-on-arrival: workers_z += 2*(1-dissent); old_middle_z += 2*(1-dissent); new_middle_z += 2*(1-dissent) unemployed_z += 1*(1-dissent); rural_z += 1*(1-dissent)
+on-arrival: workers_z += 2*(1-dissent); old_middle_z += 2*(1-dissent); new_middle_z += 2*(1-dissent); unemployed_z += 1*(1-dissent); rural_z += 1*(1-dissent)
 
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the people in this moment.
