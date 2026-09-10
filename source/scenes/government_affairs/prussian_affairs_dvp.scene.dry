@@ -1,7 +1,7 @@
 title: The Prussian Bulwark
 new-page: true
 is-card: true
-view-if: prussia_leader = "Stegerwald" and [ in_grand_coalition_prussia ]
+view-if: prussia_leader = "Stegerwald" and (in_grand_coalition_prussia)
 on-arrival: prussian_affairs_timer += 6; prussian_affairs_timer += 6 if prussia_leader != "Braun"; month_actions += 1
 tags: govt_affairs
 card-image: img/center_prussia.jpg
