@@ -93,7 +93,7 @@ on-arrival: democratization += 1; pro_republic += 3*(1 - dissent); workers_spd +
 
 Our speakers defend the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system and rail against the <span style="color: #808080;">monarchists</span> and <span style="color: #7A3C00;">authoritarians</span> who threaten it.
 
-[? if democratization < 3 : Talk of democracy does not excite the people as much as more practical issues. Figures on the right wing]
+[? if democratization < 3 : Talk of democracy does not excite the people as much as more practical issues. ?]
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @pacifism
