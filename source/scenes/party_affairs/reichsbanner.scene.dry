@@ -77,4 +77,5 @@ subtitle: Why does a party of catholics need to participate in a socialist param
 choose-if: rb_miilitancy >= 0.15
 unavailable-subtitle: We don't have a good reason to leave the Reichsbanner.
 on-arrival: resources += 2; spd_relation = -= 10; worker_z -= 2; unemployed_z += 2; dnvp_relation += 5; dvp_relation += 5
+
 We have left the Reichsbanner, and called on our supporters to leave the organization. This almost irrepairably damages our relations with the <span style="color: #c00000;">**SPD**</span>, who is still convinced that a militant reichsbanner is necessary to save the republic. time will tell if we made the right decision.
