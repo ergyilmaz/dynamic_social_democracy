@@ -9,18 +9,18 @@ new-page: true
 
 Wirth is a former chancellor and figure of the <span style="color: #FF7F00;">Christian Left</span> who has been devotedly <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span>. He is a strong supporter of maintaining democracy and building a broad popular base for the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
-- @democratic_rally
+- @spd_relation
 - @building_left
 - @build_interconfessional_party
 - @support_interconfessionalism
 - @root: Return to main
 
-@democratic_rally
-title: Rally for democracy
-subtitle: Rally our party and the German people to defend democracy and freedom.
+@spd_relation
+title: Build ties with the <span style="color: #c00000;">**SPD**</span>
+subtitle: Wirth is viewed favourably within the <span style="color: #c00000;">**SPD**</span>, and can help foster relations.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; pro_republic += 8; democratization += 1; left_strength += 5; labor_strength += 5; workers_z += 3*(1-dissent) if democratization >= 4; new_middle_spd += 2*(1-dissent) if democratization >= 4; catholics_spd += 4*(1-dissent) if democratization >= 3
+on-arrival: spd_relation += 10
 
 Wirth helps us to rally the people in defense of the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system.
 
