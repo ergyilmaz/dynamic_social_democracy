@@ -49,7 +49,7 @@ subtitle: -2 resources
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
 view-if: radio = 0
-on-arrival: radio += 1; resources -= 2; new_middle_z += 4*(1-dissent); old_middle_z += 3*(1-dissent); workers_z += 2*(1-dissent); 1; pro_republic += 2*(1-dissent)
+on-arrival: radio += 1; resources -= 2; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent);  nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent) if pacifism > 1; pro_republic += 2*(1-dissent)
 
 Our new radio station allows us to connect to people in a more intimate setting than before, helping us spread our message along with music and other popular content. Since most proletarians cannot afford family radios right now, we are predominantly reaching the middle class.
 @radio_2
