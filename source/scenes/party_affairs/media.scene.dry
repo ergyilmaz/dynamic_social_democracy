@@ -25,7 +25,7 @@ The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</spa
 @distribute
 title: Distribute newspapers in poor neighborhoods.
 subtitle: This would strengthen our standing in the working class
-on-arrival: resources += 1; commercialized_media += 1; workers_z += 4*(1 - dissent); unemployed_z += 4*(1 - dissent); labor_strength += 5;
+on-arrival: resources += 1; commercialized_media += 1; workers_z += 4*(1-dissent); unemployed_z += 4*(1 - dissent); labor_strength += 5;
 
 Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
