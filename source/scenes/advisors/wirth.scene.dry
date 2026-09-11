@@ -22,7 +22,7 @@ choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: spd_relation += 10
 
-The SPD appreciates our olive branch.
+The <span style="color: #c00000;">**SPD**</span> appreciates our olive branch.
 
 @building_left
 title: Building the <span style="color: #FF7F00;">Christian Left</span>
