@@ -11,8 +11,7 @@ Wirth is a former chancellor and figure of the <span style="color: #FF7F00;">Chr
 
 - @spd_relation
 - @building_left
-- @build_interconfessional_party
-- @support_interconfessionalism
+- @snap_election
 - @root: Return to main
 
 @spd_relation
@@ -22,7 +21,7 @@ choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: spd_relation += 10
 
-Wirth helps us to rally the people in defense of the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system.
+The SPD appreciates our olive branch.
 
 @building_left
 title: Building the <span style="color: #FF7F00;">Christian Left</span>
@@ -33,14 +32,12 @@ on-arrival: advisor_action_timer = 6; left_strength += 15
 
 Wirth rallies the <span style="color: #FF7F00;">Christian Left</span> and uses his positions in the party to increase its influence. This has caused concern in the right of the party.
 
-@build_interconfessional_party
-title: Building an Interconfessional Party
-subtitle: Can we expand our party's scope beyond the Catholic faith?
-view-if: interconfessionalism == 0
-choose-if: interconfessionalism_support >= 3 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: peoples_party
+@snap_election
+title: Snap Election
+subtitle: Call a snap election.
+unavailable-subtitle: [? if chancellor != "Müller" : Müller must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and chancellor == "Müller"
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
 @support_interconfessionalism
 title: Supporting Interconfessionalism
