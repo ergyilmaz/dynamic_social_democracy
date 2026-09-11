@@ -1,37 +1,28 @@
-title: Otto Wels
+title: Heinrich Brüning
 is-pinned-card: true
 tags: advisor, centrist
-card-image: img/portraits/WelsOtto.jpg
-view-if: wels_advisor = 1
+card-image: img/portraits/BrüningHeinrich.jpg
+view-if: bruning_advisor = 1
 new-page: true
 
-= Otto Wels
+= Heinrich Brüning
 
-Wels is the long-time chairman of the <span style="color: #c00000;">**SPD**</span>. He is a gifted organizer and a member of the centrist faction.
+Heinrich Brüning is a former soldier from the Great War and a member of the Reichstag. He is viewed favourably by President <span style="color: #808080;">Hindeburg</span>, and he supports austerity.
 
-- @clear_agenda
+- @implementing_austerity
 - @party_discipline
 - @emergency_fundraising
-- @money_printer
-- @stimulation
 - @snap_election
 - @root: Return to main
 
-@clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
-choose-if: advisor_action_timer = 0
+@implementing_austerity
+title: Implementing Austerity
+subtitle: Can deflation save Germany from the crisis?
+choose-if: advisor_action_timer = 0 and Chancellor == "Brüning"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: {!
-Q.advisor_action_timer = 6;
-if (Q.difficulty >= 0) {
-    window.dendryUI.dendryEngine.state.currentHands['main'] = [];
-} else {
-    window.dendryUI.dendryEngine.state.currentHands['main.main_easy'] = [];
-}
-!}
+on-arrival: welfare -= 1; lower_tax -= 1; workers_kpd += 3; workers_nsdap += 3; new_middle_nsdap += 1; old_middle_nsdap += 3; unemployed_nsdap += 4; unemployed_kpd += 3
 
-All items from our agenda have been cleared.
+We cut welfare and increase taxes. This causes even more suffering among the people, and the public is increasingly turning to the <span style="color: #700000;">**KPD**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. We argue that it is a necessary measure to stabilize the economy.
 
 @party_discipline
 title: Party Discipline
@@ -50,38 +41,15 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; emergency_used += 1; resources += 2; workers_spd -= 2 if emergency_used > 1; labor_dissent += 5 if emergency_used > 1; unemployed_spd -= 2 if emergency_used > 1; workers_spd -= 2 if emergency_used > 2; unemployed_spd -= 2 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2
 
-[? if emergency_used <= 1: Wels has leveraged his position as party chairman to pull in donations and arrange quick loans. ?][? if emergency_used > 1 and emergency_used < 3: Discontent is brewing among the <span style="color: #c00000;">**SPD**</span>'s rank and file due to our persistent attempts at begging for money. ?][? if emergency_used > 2: We’re really scraping the barrel now—committed members are pressured into selling their valuables, while many others leave in frustration. ?]
+[? if emergency_used <= 1: Brüning helps pull in donations and arrange quick loans. ?][? if emergency_used > 1 and emergency_used < 3: Discontent is brewing among the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]'s rank and file due to our persistent attempts at begging for money. ?][? if emergency_used > 2: We’re really scraping the barrel now—committed members are pressured into selling their valuables, while many others leave in frustration. ?]
 
 We have gained +2 resources.
-
-@money_printer
-title: Print a SPDillion dollars.
-view-if: achievement_moly and ((difficulty == -1 and not dynamic_mode) or difficulty == 0)
-subtitle: This may have inflationary effects.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 and not rubicon : [+ advisor_action_timer +] months before next advisor action. ?][? if advisor_action_timer > 0 and rubicon : [+ advisor_action_timer +] weeks before next emergency fundraising. ?]
-on-arrival: advisor_action_timer = 6; resources += 10; inflation += 1; data_miner_detected = 1; ip_grabber = 1
-
-We have gained +10 resources.
-
-@stimulation
-title: Toggle Stimulation.
-view-if: achievement_moly
-on-arrival: {!
-if (Q.stimulation) {
-    Q.stimulation = 0; 
-} else {
-    Q.stimulation = 1;
-}
-!}
-
-Ok.
 
 @snap_election
 title: Snap Election
 subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Wels" and president != "Wels" : Wels must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and (chancellor == "Wels" or president == "Wels")
+unavailable-subtitle: [? if chancellor != "Brüning" and president != "Brüning" : Brüning must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and (chancellor == "Brüning" or president == "Brüning")
 on-arrival: advisor_action_timer = 6; time_to_election = 3
 call: set_next_election_time
 
