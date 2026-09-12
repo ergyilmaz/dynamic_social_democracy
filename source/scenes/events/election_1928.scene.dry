@@ -2077,8 +2077,7 @@ unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="co
 view-if: popular_front_coalition >= 50 and not cvp_formed and not rubicon
 choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 40 and z_leader == "Kaiser") or (z_relation >= 65 and z_ideology == "Right" and kpd_leader != "Conciliators") or (z_relation >= 55 and z_ideology == "Right" and kpd_leader == "Conciliators")) and ((liberal_parliament = 1 or bourgeois_parliament_ddp or lvp_formed) or ((ddp_relation >= 50 and ddp_ideology != "Left") or (ddp_relation >= 40 and ddp_ideology == "Left"))) and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 35 and kpd_relation >= 35) or (z_leader == "Kaiser" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30) and president_ideology != "Right"
 
-Could we really form a coalition that included both the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and the <span style="color: #700000;">**Communists**</span>? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
-
+Could we really enter government with the <span style="color: #700000;">Communists</span>? it might seem impossible, and it just might be. Both us and the <span style="color: #700000;">**KPD**</span> would have to make massive concessions, if we hope to make this coalition a reality.
 The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> might attempt a coup, if such a coalition were formed.
 
 - @popular_front_2: Form the Popular Front!
@@ -2087,9 +2086,10 @@ The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right
 @popular_front_2
 view-if: z_ideology != "Left" or kpd_leader != "Conciliators"
 
-Somehow, both the <span style="color: #700000;">**Communists**</span> and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are at the very least willing to entertain negotiations. Of course, <span style="color: #700000;">**KPD**</span> radicals and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] conservatives derail the negotiations almost immediately. The <span style="color: #700000;">**KPD**</span> demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if spd_r > kpd_r : despite our higher vote share, ?]while the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is offended by the prospect of helping <span style="color: #700000;">**Bolsheviks**</span> enter government. *Something* must be done to restore balance.
+Somehow,, the <span style="color: #700000;">Communists</span> are willing to enter negotiations with us, due to their <span style="color: #700000;">United</span><span style="color: #000000;">Center</span><span style="color: #c00000;">Front</span> strategy. Of course, our right wing members and the <span style="color: #700000;">**KPD**</span>'s obstructionist members immediately derail negotiations. The <span style="color: #700000;">Communists</span> Demand the Chancellorship, despite their lower vote share compared to us and the <span style="color: #c00000;">**SPD**</span>. Obviously, this is completely unaccceptable, and would plunge the country into civil war if we tried.
 
 - @popular_front_resources
+- @popular_front_spd
 - @popular_front_democracy
 - @popular_front_braun
 - @coalition_menu: This is impossible. Try another governing arrangement.
@@ -2101,6 +2101,14 @@ subtitle: -3 resources
 choose-if: resources >= 3
 on-arrival: resources -= 3
 go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or popular_front_coalition_prussia < 50; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_coalition_prussia >= 50
+
+@popular_front_spd
+
+title: ask the <span style="color: #c00000;">**SPD**</span> for a compromise
+subtitle: We will hope that the <span style="color: #c00000;">**SPD**</span> can use their relations with the <span style="color: #700000;">**KPD**</span>.
+go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or popular_front_coalition_prussia < 50; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_coalition_prussia >= 50
+
+The <span style="color: #c00000;">**SPD**</span> pulls through! After a long debate, the <span style="color: #700000;">**KPD**</span> has accepted democracy, and will be governing with us, for now.
 
 @popular_front_democracy
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
@@ -2378,11 +2386,8 @@ Somehow, surprisingly, the left coalition is successfully formed, without appoin
 on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; dvp_right += 10; ddp_right += 5; ddp_cohesion -= 3; lvp_right += 8; liberal_cooperation += 5; bourgeois_cooperation += 10; liberal_cooperation += 3 if in_left_front_prussia or in_popular_front_prussia; bourgeois_cooperation += 5 if in_left_front_prussia or in_popular_front_prussia; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 30; left_strength += 20; hindenburg_angry += 10 if in_popular_front_prussia or in_left_front_prussia; catastrophepolitik = 1 if n_elections >= 5 and not catastrophepolitik_cancel;
 go-to: catastrophepolitik_left if catastrophepolitik = 1
 
-In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong. [? if in_left_front_prussia: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> in Prussia too. ?]
-
-The <span style="color: #700000;">**KPD**</span> has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
-
-Whatever their reasoning is, the <span style="color: #c00000;">**SPD**</span> has control over the ministries of government.
+The <span style="color: #700000;">**KPD**</span> and <span style="color: #c00000;">**SPD**</span>, somehow, form a goverment without the need or us or the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. This is disasterous for us, and civil war seems imminent.
+Congratulations.
 
 @catastrophepolitik_left
 achievement: catastrophepolitik
@@ -2399,7 +2404,7 @@ on-arrival: march_on_berlin_left = 1
 go-to: march_on_berlin
 
 @right_coalition
-title: Refuse to form a government, so that a right-wing coalition may be formed.
+title: Refuse to cooperate with the <span style="color: #c00000;">**SPD**</span>, and form a <span style="color: #808080;">Right</span> <span style="color: #003755;">Coalition</span>
 subtitle: <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>[? if not lvp_formed and dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:&nbsp;+<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?] ([+ right_coalition +]%)
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 view-if: right_coalition >= 50 and not rubicon
@@ -2416,14 +2421,13 @@ There are enough votes for a right-wing coalition of the [? if z_party_name != "
 
 
 @right_coalition_sure
-subtitle: This will be extremely unpopular within our party.
-on-arrival: pro_republic -= 5 if year = 1928; pro_republic -= 2 if year >= 1929; center_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15
+subtitle: This will be quite unpopular within our party, especially within the left.
+on-arrival: pro_republic -= 5 if year = 1928; pro_republic -= 2 if year >= 1929; center_dissent += 15; left_dissent += 30;
 go-to: right_coalition_2
 
 
 @right_coalition_2
-unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-view-if: right_coalition >= 50  and not cvp_formed
+unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with us.
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
 on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1; dvp_right += 2; lvp_right += 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5
 
@@ -2432,16 +2436,16 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0;
 [? if liberal_parliament == 1: The liberal parliamentary group has been broken apart due to the <span style="color: #C0A054;">**DVP**</span> acting on its own accord. ?]
 
 @center_right_coalition
-title: Refuse to form a government, so that a center-right coalition may be formed.
-unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+title: Form a <span style="color: #000000;">Center</span>-<span style="color: #3E88B3;">right</span> coalition.
+unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with us.
 subtitle: <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?] + **Others** +[? if not cvp_formed:&nbsp;<span style="color: #3E88B3;">**DNVP**</span>?] ([+ center_right_coalition +]%)
 view-if: dnvp_ideology == "Moderate" and not lvp_formed and center_right_coalition >= 50 and dnf_formed and right_coalition < 50 and not rubicon
 choose-if: not (year = 1929 and month >= 7)
 go-to: center_right_coalition_2 if grand_coalition < 50 or largest_party != "SPD"
 
-There are enough votes for a broad center-right coalition of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] (+ <span style="color: #A2D8E0;">**BVP**</span>), [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, [? if dvp_exist: <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not cvp_formed:, <span style="color: #3E88B3;">**DNVP**</span>,?] and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+There are enough votes for a broad center-right coalition of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] (+ <span style="color: #A2D8E0;">**BVP**</span>), [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, [? if dvp_exist: <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not cvp_formed:, <span style="color: #3E88B3;">**DNVP**</span>,?] and minor conservative parties. [? if largest_party == "SPD": However, not including the <span style="color: #c00000;">**SPD**</span> in goverment will be unpopular, as they are the largest party. ?]
 
-- @center_right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a center-right coalition take power.
+- @center_right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and enter a center-right coalition.
 - @grand_coalition: Actually, we wish to form a grand coalition after all.
 - @weimar_coalition: Actually, we wish to form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition after all.
 - @weimar_coalition_liberal_parliament: Actually, we wish to form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition after all.
@@ -2449,8 +2453,8 @@ There are enough votes for a broad center-right coalition of the [? if z_party_n
 
 
 @center_right_coalition_sure
-subtitle: This will be extremely unpopular within our party.
-on-arrival: pro_republic -= 3 if year < 1930; pro_republic -= 1 if year >= 1930; center_dissent += 15; left_dissent += 15; labor_dissent += 10; reformist_dissent += 5; neorevisionist_dissent += 10
+subtitle: This will be extremely unpopular within the left wing.
+on-arrival: pro_republic -= 3 if year < 1930; pro_republic -= 1 if year >= 1930; left_dissent += 30;
 go-to: center_right_coalition_2
 
 
@@ -2463,12 +2467,12 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0;
 [? if not cvp_formed: Even though the opposing ends of the coalition parties are reluctant to participate in a coalition with each other, they still accede to President [+ president +]'s wishes. ?][? if cvp_formed: This is the <span style="color: #000000;">**CVP**</span>'s preferred coalition, as they are keen to avoid governing with <span style="color: #c00000;">socialists</span>. ?] Thus, a majority center-right coalition is formed, with Brüning as chancellor.
 
 @bourgeois_coalition
-Title: Refuse to form a government, so that a bourgeois coalition may be formed.
+Title: We can form a... Bourgeois Coalition???
 subtitle: Congrats.
 view-if: bourgeois_coalition >= 50 and not cvp_formed
 on-arrival: spd_in_government = 0; spd_toleration = 0; spd_toleration_right = 0; in_bourgeois_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = ddp_name; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = ddp_name; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; secret_mode = 1; bourgeois_cooperation += 10
 
-The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have to contend with opposition politics for the time being. Secret Mode has been enabled.
+The Bourgeois Coalition is formed, with Brüning as its chancellor. We finally get to rule without support from the <span style="color: #003755;">right</span> or <span style="color: #c00000;">left</span>. Secret Mode has been enabled.
 
 @no_majority_moderate
 title: There is no clear governing majority.
@@ -2497,8 +2501,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
 - @join_bruning: Join the Brüning coalition[? if (right_coalition >= 50 and dnvp_ideology == "Moderate") or (center_right_coalition >= 50 and dnvp_ideology == "Moderate"): , to prevent a right coalition from forming?].
-- @toleration_bruning: We will tolerate Brüning.
-- @toleration_bruning_right: We will tolerate Brüning's right coalition.
+- @bruning_center_right: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_moderate_2
@@ -2515,8 +2519,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @toleration_bruning: We will tolerate Brüning.
-- @toleration_bruning_right: We will tolerate Brüning's right coalition.
+- @bruning_center_right: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_right
@@ -2524,8 +2528,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @toleration_bruning: We will tolerate Brüning.
-- @toleration_bruning_right: We will tolerate Brüning's right coalition.
+- @bruning_center_right: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_right_2
@@ -2544,8 +2548,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @toleration_bruning: We will tolerate Brüning.
-- @toleration_bruning_right: We will tolerate Brüning's right coalition.
+- @bruning_center_right: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 
@@ -2570,8 +2574,8 @@ There is no path to a majority government. One option would be to have a continu
 
 The third option is to have new elections.
 
-- @toleration_bruning: We will tolerate Brüning.
-- @toleration_bruning_right: We will tolerate Brüning's right coalition.
+- @toleration_bruning: We will ask for toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning_right: We will ask for toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 - @unity_government
 
