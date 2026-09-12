@@ -2501,8 +2501,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
 - @join_bruning: Join the Brüning coalition[? if (right_coalition >= 50 and dnvp_ideology == "Moderate") or (center_right_coalition >= 50 and dnvp_ideology == "Moderate"): , to prevent a right coalition from forming?].
-- @tolerate_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
-- @tolerate_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_moderate_2
@@ -2519,8 +2519,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @tolerate_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
-- @tolerate_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_right
@@ -2528,8 +2528,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @tolerate_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
-- @tolerate_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 @no_majority_bruning_right_2
@@ -2548,8 +2548,8 @@ on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
 There is no path to an obviously workable majority. Since President [+ president +] is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
-- @tolerate_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
-- @tolerate_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning: We will form a center-right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
+- @toleration_bruning_right: We will form a right coalition, with toleration from the <span style="color: #c00000;">**SPD**</span>.
 - @new_elections: We will have new elections.
 
 
