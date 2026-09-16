@@ -321,14 +321,14 @@ go-to: rm_main_menu
 
 Stampfer has been removed as an advisor. 
 
-@remove_radbruch
-title: Remove Radbruch
+@remove_guerard
+title: Remove Guérard
 view-if: radbruch_advisor = 1
 tags: remove_advisor
 on-arrival: radbruch_advisor = 0; n_advisors -= 1
 go-to: rm_main_menu
 
-Radbruch has been removed as an advisor. 
+Guérard has been removed as an advisor. 
 
 
 
@@ -686,17 +686,17 @@ tags: nonfactional_advisor
 Magnus Hirschfeld is now an advisor.
 
 
-@add_radbruch
-title: Gustav Radbruch
-subtitle: Gustav Radbruch is a renowned legal scholar and long-time <span style="color: #c00000;">**SPD**</span> justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+@add_guerard
+title: Theodor von Guérard
+subtitle: Theodor von Guérard is a renowned legal scholar and <span style="color: #000000;">Center</span> justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/portraits/guerard.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
 on-arrival: radbruch_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Gustav Radbruch is now an advisor.
+Theodor von Guérard is now an advisor.
 
 
 @add_stampfer
