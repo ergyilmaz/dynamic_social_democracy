@@ -3445,10 +3445,10 @@ We have somehow convinced the <span style="color: #000000;">**[+ z_party_name +]
 
 Who should be the chancellor?
 
-- @bruning
-- @wirth
-- @stegerwald
-- @spd_chancellor
+- @wels
+- @muller
+- @braun
+- @z_chancellor_cvp
 
 @weimar_coalition_liberal_parliament
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
