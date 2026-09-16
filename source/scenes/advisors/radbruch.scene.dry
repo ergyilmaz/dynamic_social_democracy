@@ -1,13 +1,13 @@
-title: Gustav Radbruch
+title: Theodor von Guérard
 is-pinned-card: true
 tags: advisor
-card-image: img/portraits/RadbruchGustav.jpg
+card-image: img/portraits/guerard.jpg
 view-if: radbruch_advisor = 1
 new-page: true 
 
-= Gustav Radbruch
+= Theodor von Guérard
 
-Gustav Radbruch is a renowned legal scholar and long-time <span style="color: #c00000;">**SPD**</span> justice minister. [? if judicial_reform >= 2: He currently has considerable support among party factions due to the <span style="color: #c00000;">SPD</span>'s success in judicial reforms. ?]
+Theodor von Guérard is a renowned legal scholar and <span style="color: #000000;">Center</span> Justice minister. [? if judicial_reform >= 2: He currently has considerable support among party factions due to the <span style="color: #000000;">Center</span>'s success in judicial reforms. ?]
 
 
 - @judiciary_major
