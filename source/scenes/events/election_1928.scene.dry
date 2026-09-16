@@ -2103,8 +2103,7 @@ on-arrival: resources -= 3
 go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or popular_front_coalition_prussia < 50; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_coalition_prussia >= 50
 
 @popular_front_spd
-
-title: ask the <span style="color: #c00000;">**SPD**</span> for a compromise
+title: Ask the <span style="color: #c00000;">**SPD**</span> for a compromise.
 subtitle: We will hope that the <span style="color: #c00000;">**SPD**</span> can use their relations with the <span style="color: #700000;">**KPD**</span>.
 go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or popular_front_coalition_prussia < 50; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_coalition_prussia >= 50
 
