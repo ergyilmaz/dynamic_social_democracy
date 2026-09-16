@@ -1929,7 +1929,7 @@ go-to: achievement_check_e
 
 [? if kpd_relation >= 40 and left_coalition >= 45: United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition +]% ?]
 
-[? if kpd_relation > 35 and z_relation > 35 and not cvp_formed: Popular Front Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>[? if (liberal_parliament == 0 and bourgeois_parliament_ddp == 0) and not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ popular_front_coalition +]% ?]
+[? if kpd_relation > 25 and spd_relation > 35 and not cvp_formed: Popular Front Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>[? if (liberal_parliament == 0 and bourgeois_parliament_ddp == 0) and not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ popular_front_coalition +]% ?]
 
 [? if not cvp_formed: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed:<span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?][? if sapd_formed and kpd_relation >= 30 and sapd_weimar:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ weimar_coalition +]% ?]
 
@@ -1943,9 +1943,9 @@ go-to: achievement_check_e
 
 [? if bourgeois_coalition >= 25 and kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition +]% ?]
 
-[? if dnvp_ideology == "Moderate" and not lvp_formed and not cvp_formed: Center-Right Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ center_right_coalition +]% ?]
+[? if dnvp_relation >= 40 dnvp_ideology == "Moderate" and not lvp_formed and not cvp_formed: Center-Right Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ center_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" or lvp_formed and not cvp_formed: Right-wing Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ right_coalition +]% ?]
+[? if dnvp_ideology >= 40 "Radical" or lvp_formed and not cvp_formed: Right-wing Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ right_coalition +]% ?]
 
 [? if (cvp_formed and far_right_coalition >= 25) or (hitler_right_coalition >= 50 and rubicon): Black-Brown Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
 
@@ -1971,7 +1971,7 @@ go-to: achievement_check_e
 
 [? if spd_votes >= 35 and left_strength >= reformist_strength + labor_strength: Our strong performance has, unfortunately, driven our former bourgeois coalition partners to distance themselves from us. They blame their electoral defeats on their association with us and refuse to spend their dwindling influence supporting a government with the leverage to transform Germany into <span style="color: #c00000;">socialism</span>. ?]
 
-[? if left_coalition >= 50: The fact that the <span style="color: #9B0000;">Marxist</span> parties now hold a majority in the Reichstag by themselves has energized the grassroots of both our parties to push for closer cooperation. ?]
+[? if left_coalition >= 50: The fact that the <span style="color: #9B0000;">Marxist</span> parties now hold a majority in the Reichstag by themselves has energized the grassroots of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span> ?]
 
 [? if election_boycott: We have boycotted this election, delegitimizing the results in the eyes of workers and <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> alike. The impact is measured by how many stayed home instead of voting for the <span style="color: #BFC8CC;">**DNEF**</span>. [? if boycott_effect < 1.05: In the end, we achieved only limited success—our boycott has proven relatively unimpactful. So much for nothing. ?][? if boycott_effect >= 1.05 and boycott_effect < 1.1: In the end, we achieved notable success. ?][? if boycott_effect >= 1.1: In the end, we achieved smashing success. ?] ?]
 
@@ -1987,6 +1987,7 @@ go-to: coalition_menu
 
 @coalition_menu
 
+- @center_majority
 - @spd_majority
 - @spd_minority
 - @weimar_coalition
@@ -2401,6 +2402,11 @@ In response to the <span style="color: #700000;">**KPD**</span>'s entrance into 
 @march_on_berlin_2
 on-arrival: march_on_berlin_left = 1
 go-to: march_on_berlin
+
+@center_majority
+title: the <span style="color: #000000;">Center</span> forms a majority.
+subtitle:We have enough votes for a majority goverment, without the need for any other party.
+view-if: z_r >= 50 and not rubicon
 
 @right_coalition
 title: Refuse to cooperate with the <span style="color: #c00000;">**SPD**</span>, and form a <span style="color: #808080;">Right</span> <span style="color: #003755;">Coalition</span>
@@ -3439,16 +3445,16 @@ We have somehow convinced the <span style="color: #000000;">**[+ z_party_name +]
 
 Who should be the chancellor?
 
-- @muller
-- @braun
-- @wels
-- @z_chancellor_cvp
+- @bruning
+- @wirth
+- @stegerwald
+- @spd_chancellor
 
 @weimar_coalition_liberal_parliament
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?][? if sapd_formed and kpd_relation >= 30 and sapd_weimar :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration ?] ([+ weimar_coalition +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">[+ z_party_name +]</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?][? if sapd_formed and kpd_relation >= 30 and sapd_weimar :&nbsp;+ <span style="color: #9B0000;">SAPD</span> toleration?] ([+ weimar_coalition +]%) [? if not ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")): - We do not have the adequate relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?]. ?] [? if not ((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?] [? if not ((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed: - We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span> ?] [? if rubicon: - President Hindenburg will not allow a return to <span style="color: #c00000;">socialist</span> governance. ?][? if president_ideology == "Right": - President [+ president +] is fiercely opposed to <span style="color: #c00000;">socialist</span> governance. ?]
-choose-if: ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")) and ((((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
+choose-if: (spd_relation >= 30 and ((((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
 on-arrival: weimar_coalition_failed = 1
 view-if: (weimar_coalition >= 50 or (weimar_coalition >= 49.5 and other_r >= 8 and (year < 1930 or year > 1932))) and (liberal_parliament == 1 or bourgeois_parliament_ddp == 1) and not lvp_formed and not cvp_formed
 
@@ -3472,7 +3478,7 @@ title: We can form a <span style="color: #000000;">We</span><span style="color: 
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?][? if sapd_formed and kpd_relation >= 30 and sapd_weimar :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration ?] ([+ weimar_coalition +]%)
 view-if: (weimar_coalition >= 50 or (weimar_coalition >= 49.5 and other_r >= 8 and (year < 1930 or year > 1932))) and liberal_parliament == 0 and bourgeois_parliament_ddp == 0 and not cvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">[+ z_party_name +]</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?][? if sapd_formed and kpd_relation >= 30 and sapd_weimar :&nbsp;+ <span style="color: #9B0000;">SAPD</span> toleration?] ([+ weimar_coalition +]%) [? if not ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")): - We do not have the adequate relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">CVP</span>?]. ?] [? if not ((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?] [? if not ((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed: - We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span> ?] [? if rubicon: - President Hindenburg will not allow a return to <span style="color: #c00000;">socialist</span> governance. ?][? if president_ideology == "Right": - President [+ president +] is fiercely opposed to <span style="color: #c00000;">socialist</span> governance. ?]
-choose-if: ((z_relation >= 30 and z_ideology == "Right" and year < 1930) or (z_relation >= 40 and z_ideology == "Right" and year >= 1930) or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")) and ((((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
+choose-if: (spd_relation >= 30 and ((((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left")) and not lvp_formed) or (((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) and lvp_formed)) and not rubicon and president_ideology != "Right"
 on-arrival: leverage += 5 if not lvp_formed; leverage += 5 if z_ideology == "Left"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; sapd_toleration = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes"; dvp_right += 2; ddp_left += 2; ddp_cohesion += 2; bourgeois_cooperation += 2; lvp_left += 2; hindenburg_angry = 40; liberal_cooperation -= 2 if not liberal_parliament_seen; grosse_weimarer_koalition = 1 if z_leader == "Kaiser" and lvp_leader == "Heuss" and lvp_formed
 achievement: weimar_coalition
 go-to: achievement_check_weimar if (dynamic_mode or historical_mode or difficulty == 1); weimar_coalition_2 if not (dynamic_mode or historical_mode or difficulty == 1)
