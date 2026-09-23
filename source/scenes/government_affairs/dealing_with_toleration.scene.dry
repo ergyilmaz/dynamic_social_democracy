@@ -29,7 +29,6 @@ Are we sure about this? President <span style="color: #808080;">Hindenburg</span
 
 @include
 on-arrival: spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; spd_relation += 10; left_strength += 8; pro_republic += 5; worker_spd += 4; workers_kpd -= 4; reformist_dissent += 5; left_dissent -= 5; dvp_relation -= 4; dvp_right += 2; hindenburg_anger += 15
-go-to: shuffle_cabinet.scene.dry
 
 the <span style="color: #c00000;">**SPD**</span> has entered goverment! this improves their relations with us, and helps restore their reputation among workers. President <span style="color: #808080;">Hindenburg</span> is greatly displeased, however.
 
