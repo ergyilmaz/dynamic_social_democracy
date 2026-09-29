@@ -42,12 +42,10 @@ on-arrival: z_leader = "Stegerwald"; z_ideology = "Right"; stegerwald_path = 1; 
 
 [? if prussia_leader == "Stegerwald" ?: Thanks to the support of the Prussian branch of the party,][? if labor_strength => reformist_strength + center_strength + left_strength? Thanks to the rise of the trade unions in the party, who predominantly support Stegerwald,] Adam Stegerwald has been elected chiarman! He represents a rightward turn from Marx, despite his trade union background, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. He views the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a prototype for a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. [?if prussia_leader == "Stegerwald": The center wing is in uproar over the vote, and demand that Stegerwald make some concessions or resign. ?]
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]'s middle class wing are in uproar over the vote, despite Stegerwald conceding his leadership of the Reichstag delegation and the Minister-Presidency to his protege Heinrich Brüning. [? if dnvp_ideology == "Radical": His election also attracts some Protestant <span style="color: #3E88B3;">**DNVP**</span> dissidents and industrialists, who may result in a shift of the party towards the right. ?]
-
 - @bruning_prussia: Brüning is appointed Minister-President of Prussia!
 
 @bruning_prussia
 view-if: prussia_leader == "Stegerwald" and z_leader == "Stegerwald" 
 on-arrival: prussia_leader == "Brüning"; center_dissent -= 25
 
-Brüning has been appointed Minister-President of Prussia, with Stegerwald resigning from the role. This calms much of the center's dissent.
+Brüning has been appointed Minister-President of Prussia, with Stegerwald resigning from the role. This calms much of the center's dissent, however, the party's middle class votes are all but unrecoverable.
