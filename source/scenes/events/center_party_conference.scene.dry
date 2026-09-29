@@ -13,14 +13,15 @@ Wilhelm Marx, former [? if z_party_name != "CVP": <span style="color: #000000;">
 
 The consensus candidate on the right is Ludwig Kaas, a Catholic priest who represents the party's traditionalists. On the other hand, there is Joseph Joos, a leader of the Catholic trade unions, who has been more supportive of cooperation with the <span style="color: #c00000;">**SPD**</span> than most of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. [? if not prussia_leader == "Stegerwald": Christian labor union chairman Adam Stegerwald has fallen to a distant third, making it highly unlikely that he will win the leadership.?][? if prussia_leader == "Stegerwald": Christian labor union chairman and Minister-President Adam Stegerwald has lost some ground, but he retains strong support from the Prussian branch of the party, effectively securing him the nomination. ?]
 
-- @kaas: Kaas is elected party chair.
+- @kaas: Kaas is elected as a compromise candidate.
 - @joos: Joos is elected party chair.
 - @stegerwald: Adam Stegerwald secures the Chairmanship!
 
 @kaas
+subtitle: Kaas is mostly a compromise candidate who will not change much in the party. He has contacts in the papacy, which may prove useful in concordat negotiations.
 on-arrival: z_leader = "Kaas"; spd_relation -= 5; prussian_concordat_progress += 1; z_ideology = "Right"
-choose-if: center_strength + right_strength > left_strength + labor_strength
-unavailable-subtitle: The right faction is not strong enough.
+choose-if: center_strength + right_strength > left_strength + labor_strength or prussia_leader == "Stegerwald"
+unavailable-subtitle: [?center_strength + right_strength > left_strength + labor_strength: The right faction is not strong enough?][?prussia_leader == "Stegerwald": Stegerwald is leading the race.?]
 face-image: img/portraits/Ludwig_Kaas.jpg
 
 Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. He is surely a right wing turn over Marx, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. 
@@ -28,6 +29,7 @@ Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP"
 Despite this, Kaas is committed to the current constitutional order and the republic. He maintains a close friendship with Eugenio Pacelli, the Papal Nuncio to Germany, which may prove useful during concordat negotiations.
 
 @joos
+subtitle: Joos is the candidate of the Left, and will push the party towards the <span style="color: #c00000;">**SPD**</span>.
 unavailable-subtitle: The left faction is not strong enough.
 choose-if: center_strength + right_strength < left_strength + labor_strength
 on-arrival: z_leader = "Joos"; z_ideology = "Left"; catholics_z -= 4; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 4; spd_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1; lvp_left += 1
@@ -36,9 +38,11 @@ face-image: img/portraits/Joseph_Joos.jpg
 Surprisingly, The blunder of the Reich School Law by Marx, the rise of the <span style="color: #c00000;">**SPD**</span> and general rising leftist sentiment across the party has led to Joseph Joos being elected as the party chairman. He will oversee a turn to the left, the opening of the party to workers, and increased cooperation with the <span style="color: #c00000;">**SPD**</span>.
 
 @stegerwald
+subtitle: Stegerwald seeks to expand the party to protestants and workers. He is also the most hawkish towards the <span style="color: #c00000;">**SPD**</span>.
 choose-if: prussia_leader == "Stegerwald" or labor_strength > reformist_strength + center_strength + left_strength
 unavailable-subtitle: Stegerwald lacks the influence necessary to have a real chance.
 on-arrival: z_leader = "Stegerwald"; z_ideology = "Right"; stegerwald_path = 1; spd_relation -= 8; zentrum_disintegration += 2; new_middle_z -= 6; old_middle_z -= 5; rural_z -= 2; catholics_z -= 7; workers_z += 5; unemployed_z += 4; catholics_spd += 10; catholics_other += 4; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; catholics_dvp += 4; catholics_ddp += 2; catholics_lvp += 4; dvp_right += 1; ddp_left += 1; ddp_cohesion += 1; liberal_cooperation += 1; bourgeois_cooperation += 1; new_middle_dnvp -= 2 if dnvp_ideology == "Radical"; old_middle_dnvp -= 3 if dnvp_ideology == "Radical"; rural_dnvp -= 3 if dnvp_ideology == "Radical"; new_middle_z += 2 if dnvp_ideology == "Radical"; old_middle_z += 3 if dnvp_ideology == "Radical"; rural_z += 3 if dnvp_ideology == "Radical"; center_dissent += 30
+face-image: img/portraits/stegerwald.jpg
 
 [? if prussia_leader == "Stegerwald" : Thanks to the support of the Prussian branch of the party, ?][? if labor_strength > reformist_strength + center_strength + left_strength: Thanks to the rise of the trade unions in the party, who predominantly support Stegerwald, ?] Adam Stegerwald has been elected Chairman! He represents a rightward turn from Marx, despite his trade union background, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. He views the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] as a prototype for a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. [? if prussia_leader == "Stegerwald": The center wing is in uproar over the vote, and demand that Stegerwald make some concessions or resign. ?]
 
