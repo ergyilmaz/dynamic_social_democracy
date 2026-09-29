@@ -15,11 +15,11 @@ The consensus candidate on the right is Ludwig Kaas, a Catholic priest who repre
 
 - @kaas: Kaas is elected party chair.
 - @joos: Joos is elected party chair.
-- @stegerwald: The Stegerwald secures the Charimanship!
+- @stegerwald: Adam Stegerwald secures the Chairmanship!
 
 @kaas
 on-arrival: z_leader = "Kaas"; spd_relation -= 5; prussian_concordat_progress += 1; z_ideology = "Right"
-choose-if: center_strength + right_strength => left_strength + labor_strength
+choose-if: center_strength + right_strength > left_strength + labor_strength
 unavailable-subtitle: The right faction is not strong enough.
 face-image: img/portraits/Ludwig_Kaas.jpg
 
@@ -36,7 +36,7 @@ face-image: img/portraits/Joseph_Joos.jpg
 Surprisingly, The blunder of the Reich School Law by Marx, the rise of the <span style="color: #c00000;">**SPD**</span> and general rising leftist sentiment across the party has led to Joseph Joos being elected as the party chairman. He will oversee a turn to the left, the opening of the party to workers, and increased cooperation with the <span style="color: #c00000;">**SPD**</span>.
 
 @stegerwald
-choose-if: prussia_leader == "Stegerwald" or labor_strength => reformist_strength + center_strength + left_strength
+choose-if: prussia_leader == "Stegerwald" or labor_strength > reformist_strength + center_strength + left_strength
 unavailable-subtitle: Stegerwald lacks the influence necessary to have a real chance.
 on-arrival: z_leader = "Stegerwald"; z_ideology = "Right"; stegerwald_path = 1; spd_relation -= 8; zentrum_disintegration += 2; new_middle_z -= 6; old_middle_z -= 5; rural_z -= 2; catholics_z -= 7; workers_z += 5; unemployed_z += 4; catholics_spd += 10; catholics_other += 4; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; catholics_dvp += 4; catholics_ddp += 2; catholics_lvp += 4; dvp_right += 1; ddp_left += 1; ddp_cohesion += 1; liberal_cooperation += 1; bourgeois_cooperation += 1; new_middle_dnvp -= 2 if dnvp_ideology == "Radical"; old_middle_dnvp -= 3 if dnvp_ideology == "Radical"; rural_dnvp -= 3 if dnvp_ideology == "Radical"; new_middle_z += 2 if dnvp_ideology == "Radical"; old_middle_z += 3 if dnvp_ideology == "Radical"; rural_z += 3 if dnvp_ideology == "Radical"; center_dissent += 30
 
