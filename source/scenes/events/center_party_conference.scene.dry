@@ -46,6 +46,6 @@ on-arrival: z_leader = "Stegerwald"; z_ideology = "Right"; stegerwald_path = 1; 
 
 @bruning_prussia
 view-if: prussia_leader == "Stegerwald" and z_leader == "Stegerwald" 
-on-arrival: prussia_leader == "Brüning"; center_dissent -= 25
+on-arrival: prussia_leader = "Brüning"; center_dissent -= 25
 
 Brüning has been appointed Minister-President of Prussia, with Stegerwald resigning from the role. This calms much of the center's dissent, however, the party's middle class votes are all but unrecoverable.
