@@ -1709,7 +1709,7 @@ go-to: achievement_check_e
 
 [? if lvp_formed and lvp_dnef: {!<tr><td><div class="box2" style='background-color:#CC9900'> </div> !} LVP: {!</td><td>!} [+ lvp_votes +]% {!</td><td>!} [+ str_votes_change_lvp +] {!</td><td>!} [+ lvp_r +]% {!</td><td>!} [+ str_change_lvp +] {!</td></tr>!} ?]
 
-[? if z_dnef: {!<tr><td><div class="box2" style='background-color:#1A0000'> </div> !} [+ z_party_name +]: {!</td><td>!} [+ z_minus_bvp_votes +]% {!</td><td>!} [+ str_votes_change_z +] {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!} ?]
+[? if z_dnef: {!<tr><td><div class="box2" style='background-color:#000000'> </div> !} [+ z_party_name +]: {!</td><td>!} [+ z_minus_bvp_votes +]% {!</td><td>!} [+ str_votes_change_z +] {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!} ?]
 
 [? if z_dnef: {!<tr><td><div class="box2" style='background-color:#7aa7af'> </div> !} BVP: {!</td><td>!} [+ bvp_votes +]% {!</td><td>!} [+ str_votes_change_bvp +] {!</td><td>!} [+ bvp_r +]% {!</td><td>!} [+ str_change_bvp +] {!</td></tr>!} ?]
 
