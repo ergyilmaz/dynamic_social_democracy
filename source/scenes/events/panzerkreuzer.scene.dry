@@ -16,7 +16,7 @@ The Reichswehr Ministry is demanding the construction of a new battlecruiser, as
 - @abstain: Abstain from the vote.
 
 @vote_yes
-on-arrival panzerkreuzer_funded = 1; kpd_coalition_dissent += 1; kpd_relation -= 6; workers_kpd += 4; workers_z -= 2; unemployed_z -= 2; workers_spd -= 4; unemployed_spd -= 2; dvp_left += 1; ddp_right += 1; ddp_cohesion -= 1; lvp_left += 1; goal_spd_cancel += 1; hindenburg_angry -= 5
+on-arrival: panzerkreuzer_funded = 1; kpd_coalition_dissent += 1; kpd_relation -= 6; workers_kpd += 4; workers_z -= 2; unemployed_z -= 2; workers_spd -= 4; unemployed_spd -= 2; dvp_left += 1; ddp_right += 1; ddp_cohesion -= 1; lvp_left += 1; goal_spd_cancel += 1; hindenburg_angry -= 5
 
 As expected, we voted for the battlecruiser, bringing the <span style="color: #c00000;">**SPD**</span> with us. This sparks outrage in the supportive parties' working class supporters, but pleases our coalition members, along with our center and right wing.
 
