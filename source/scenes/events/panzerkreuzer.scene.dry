@@ -40,7 +40,7 @@ go-to: built_bruning if (spd_r + kpd_r + sapd_r + z_r < 50); not_built_bruning i
 Our party members and coalition partners are shocked by our intransigence! Chancellor [+ chancellor +] brings the matter to a Reichstag vote, which passes with all parties in favor except the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span> and the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. The ship will be built.
 
 @abstain
-on-arrival: dvp_relation -= 5; lvp_relation -= 3; spd_relation += 7; workers_spd -= 4; workerz_z += 3*(1-dissent) center_dissent += 7; reformist_dissent += 7; neorevisionist_dissent += 5; panzerkreuzer_funded = 1; kpd_relation -= 3; ddp_right += 1; ddp_cohesion -= 1
+on-arrival: dvp_relation -= 5; lvp_relation -= 3; spd_relation += 7; workers_spd -= 4; workers_z += 3*(1-dissent) center_dissent += 7; reformist_dissent += 7; neorevisionist_dissent += 5; panzerkreuzer_funded = 1; kpd_relation -= 3; ddp_right += 1; ddp_cohesion -= 1
 
 Our party members and coalition partners are shocked by our intransigence! Our decision to abstain legitimises our party among the working class, as they feel we are the only bourgeois party willing to go against the military. The <span style="color: #c00000;">**SPD**</span> is also motivated the to vote against the battlecruiser thanks to our decision, limiting defections to the <span style="color: #700000;">**KPD**</span>.
 
