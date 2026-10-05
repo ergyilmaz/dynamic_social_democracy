@@ -7,7 +7,7 @@ new-page: true
 
 = Heinrich Brüning
 
-Heinrich Brüning is a former soldier from the Great War and a member of the Reichstag. He is viewed favourably by President <span style="color: #808080;">Hindeburg</span>, and he supports austerity.
+Heinrich Brüning is a former soldier from the Great War and a member of the Reichstag. He is viewed favourably by President <span style="color: #808080;">Hindenburg</span>, being a diehard orthodox economist.
 
 - @implementing_austerity
 - @party_discipline
@@ -19,8 +19,8 @@ Heinrich Brüning is a former soldier from the Great War and a member of the Rei
 title: Implementing Austerity
 subtitle: Can deflation save Germany from the crisis?
 choose-if: advisor_action_timer = 0 and Chancellor == "Brüning"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: welfare -= 1; lower_tax -= 1; workers_kpd += 3; workers_nsdap += 3; new_middle_nsdap += 1; old_middle_nsdap += 3; unemployed_nsdap += 4; unemployed_kpd += 3
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] Bruning is not Chancellor.
+on-arrival: welfare -= 1; lower_tax -= 1; workers_kpd += 3; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 3; unemployed_nsdap += 4; unemployed_kpd += 3; workers_z -= 5; unemployed_z -= 5
 
 We cut welfare and increase taxes. This causes even more suffering among the people, and the public is increasingly turning to the <span style="color: #700000;">**KPD**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. We argue that it is a necessary measure to stabilize the economy.
 
