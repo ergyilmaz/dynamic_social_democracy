@@ -2,7 +2,7 @@ title: Heinrich Brüning
 is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/BrüningHeinrich.jpg
-view-if: bruning_advisor = 1
+view-if: wels_advisor = 1
 new-page: true
 
 = Heinrich Brüning
