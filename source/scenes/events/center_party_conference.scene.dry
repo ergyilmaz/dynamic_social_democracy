@@ -21,7 +21,7 @@ The consensus candidate on the right is Ludwig Kaas, a Catholic priest who repre
 subtitle: Kaas is mostly a compromise candidate who will not change much in the party. He has contacts in the papacy, which may prove useful in concordat negotiations.
 on-arrival: z_leader = "Kaas"; spd_relation -= 5; prussian_concordat_progress += 1; z_ideology = "Right"
 choose-if: center_strength + reformist_strength > left_strength + labor_strength and not prussia_leader == "Stegerwald"
-unavailable-subtitle: [? if center_strength + reformist_strength > left_strength + labor_strength: The right faction is not strong enough.?][? if prussia_leader == "Stegerwald": Stegerwald is leading the race.?]
+unavailable-subtitle: [? if center_strength + reformist_strength > left_strength + labor_strength: The right faction is not strong enough. ?][? if prussia_leader == "Stegerwald": Stegerwald is leading the race.?]
 face-image: img/portraits/Ludwig_Kaas.jpg
 
 Ludwig Kaas has been selected as the chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. He is surely a right wing turn over Marx, and will preside over a [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] less inclined to compromise with the left. 
@@ -30,7 +30,7 @@ Despite this, Kaas is committed to the current constitutional order and the repu
 
 @joos
 subtitle: Joos is the candidate of the Left, and will push the party towards the <span style="color: #c00000;">**SPD**</span>.
-unavailable-subtitle: [?if center_strength + reformist_strength > left_strength + labor_strength: The left faction is not strong enough.?][?if prussia_leader == "Stegerwald": Stegerwald is leading the race.?]
+unavailable-subtitle: [?if center_strength + reformist_strength > left_strength + labor_strength: The left faction is not strong enough. ?][?if prussia_leader == "Stegerwald": Stegerwald is leading the race.?]
 choose-if: center_strength + reformist_strength < left_strength + labor_strength and not prussia_leader == "Stegerwald"
 on-arrival: z_leader = "Joos"; z_ideology = "Left"; catholics_z -= 4; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 4; spd_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1; lvp_left += 1
 face-image: img/portraits/Joseph_Joos.jpg
