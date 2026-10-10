@@ -31,7 +31,7 @@ Despite this, Kaas is committed to the current constitutional order and the repu
 @joos
 subtitle: Joos is the candidate of the Left, and will push the party towards the <span style="color: #c00000;">**SPD**</span>.
 unavailable-subtitle: The left faction is not strong enough.
-choose-if: center_strength + right_strength < left_strength + labor_strength
+choose-if: center_strength + reformist_strength < left_strength + labor_strength
 on-arrival: z_leader = "Joos"; z_ideology = "Left"; catholics_z -= 4; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 4; spd_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1; lvp_left += 1
 face-image: img/portraits/Joseph_Joos.jpg
 
