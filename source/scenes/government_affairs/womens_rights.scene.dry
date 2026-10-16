@@ -2,13 +2,14 @@ title: Women's Rights
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-view-if: spd_in_government = 1 and womens_rights_timer = 0 and chancellor_party == "SPD" and not cvp_women_accepted
+view-if: spd_in_government = 2 and womens_rights_timer = 0 and chancellor_party == "SPD" and not cvp_women_accepted
 on-arrival: womens_rights_timer += 10; month_actions += 1
 card-image: img/portraits/PfülfAntonie.jpg
 frequency: 50
 max-visits: 6
-
 = Women's Rights
+
+# turned off for now until i decide what to do with this card
 
 According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Germany.
 
