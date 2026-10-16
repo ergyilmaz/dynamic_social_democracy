@@ -22,7 +22,7 @@ Our cabient faces a dilemma: The <span style="color: #c00000;">**SPD**</span> is
 - @nationalize_2
 - @cancel_advisor_action
 
-@lautenbach
+@lautenbach_continuation
 title: We will continue the implementation of the [+ public_works_name +] plan.
 choose-if: unemployed >= 10
 unavailable-subtitle: [? if unemployed < 10: Unemployment is low enough that job creation is not necessary. ?] [? if inflation >= 5: The threat of inflation forces the Reichsbank to pause implementation of the plan. ?] 
