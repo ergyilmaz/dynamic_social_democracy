@@ -25,7 +25,7 @@ Our cabinet faces a dilemma: The <span style="color: #c00000;">**SPD**</span> is
 @lautenbach
 title: Implement the Lautenbach Plan.
 subtitle: -[+ lautenbach_budget +] budget.
-unavailable-subtitle: [? if budget < [+ lautenbach_budget +]: Not enough budget.?]
+unavailable-subtitle: [? if budget < lautenbach_budget: Not enough budget.?]
 choose_if: budget >= 3
 on-arrival: lautenbach_implemented = 1; works_program += 1; workers_z += 5*(1-dissent); unemployed_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); old_middle_z += 5*(1-dissent); unemployed -= 3.5; economic_growth += 2.5; inflation += 0.5; ddp_relation += 5; dvp_relation -= 5; dvp_left += 2; ddp_left += 2; hindenburg_anger -= 10
 
