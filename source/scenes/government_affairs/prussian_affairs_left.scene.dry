@@ -4,7 +4,7 @@ is-card: true
 view-if: prussia_leader = "Stegerwald"
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
-card-image: img/stegerwald.jpg
+card-image: img/center_prussia.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
 = Prussian Affairs
