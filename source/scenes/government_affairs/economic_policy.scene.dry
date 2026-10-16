@@ -22,21 +22,6 @@ Our cabient faces a dilemma: The <span style="color: #c00000;">**SPD**</span> is
 - @nationalize_2
 - @cancel_advisor_action
 
-@lautenbach
-title: Implement the Lautenbach Plan.
-subtitle: -[+ lautenbach_budget +] budget.
-unavailable-subtitle: [? if budget < [+ lautenbach_budget +]: Not enough budget.?]
-choose_if: budget >= 3
-on-arrival: lautenbach_implemented = 1; works_program += 1; workers_z += 5*(1-dissent); unemployed_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); old_middle_z += 5*(1-dissent); unemployed -= 3.5; economic_growth += 2.5; inflation += 0.5; ddp_relation += 5; dvp_relation -= 5; dvp_left += 2; ddp_left += 2; hindenburg_anger -= 10
-
-We have started to enact the Lautenbach Plan. Money is beginning to flow through the economy via investments in large-scale public works. The bourgeois parties express concerns about inflation and spending, preferring tax cuts to address the economic crisis. However, they begrudgingly accept our plan, reassured by the surplus we’ve built up.
-
-Our spending on public works has reduced the need for unemployment insurance and welfare, while also increasing tax receipts through the multiplier effect as the new money circulates in the economy, helping to recover some of our spending. We continue to reinvest most of this new revenue into the program.
-
-[? if in_popular_front or in_left_front: The <span style="color: #700000;">**KPD**</span> opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
-
-[? if sapd_toleration: The <span style="color: #9B0000;">**SAPD**</span> opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
-
 @lautenbach_wtb
 title: Infuse the WTB Plan with the [+ public_works_name +] plan, with a considerable expansion of public works and wages.
 subtitle: -2 budget.
@@ -103,6 +88,12 @@ choose_if: budget >= 3
 on-arrival: lautenbach_implemented = 1; works_program += 1; workers_z += 5*(1-dissent); unemployed_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); old_middle_z += 5*(1-dissent); unemployed -= 3.5; economic_growth += 2.5; inflation += 0.5; ddp_relation += 5; dvp_relation -= 5; dvp_left += 2; ddp_left += 2; hindenburg_anger -= 10
 
 We have started to enact the Lautenbach Plan. Money is beginning to flow through the economy via investments in large-scale public works. The bourgeois parties express concerns about inflation and spending, preferring tax cuts to address the economic crisis. However, they begrudgingly accept our plan, reassured by the surplus we’ve built up.
+
+Our spending on public works has reduced the need for unemployment insurance and welfare, while also increasing tax receipts through the multiplier effect as the new money circulates in the economy, helping to recover some of our spending. We continue to reinvest most of this new revenue into the program.
+
+[? if in_popular_front or in_left_front: The <span style="color: #700000;">**KPD**</span> opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
+
+[? if sapd_toleration: The <span style="color: #9B0000;">**SAPD**</span> opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
 
 @lautenbach_continuation
 title: Look back on our results, and continue our implementation...
