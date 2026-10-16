@@ -14,12 +14,11 @@ We have already formulated an economic plan. Now we have to implement it. [? if 
 
 @economic_plan_dilemma
 
-The [+ public_works_name +] Plan was already implemented by the Brüning cabinet before us. Should we continue with the plan and potentially expand its scope, or should we pursue our own chosen economic strategy?
+Our cabinet faces a dilemma: The <span style="color: #c00000;">**SPD**</span> is in support of the <span style="color: #000000;">W</span><span style="color: #DD0000;">T</span><span style="color: #FFCC00;">B</span>-Plan, calling for massive public works programs via deficit spending. ON the other hand, We are in support of the Lautenbach plan, calling for public works programs funded via cutting wages.
 
+- @lautenbach
 - @lautenbach_continuation
 - @lautenbach_wtb
-- @nationalize_1
-- @nationalize_2
 - @cancel_advisor_action
 
 @lautenbach_continuation
