@@ -31,7 +31,7 @@ Kaiser pushes for action to be taken to solve the economic crisis.
 @implement_plan
 title: Implementing the Economic Plan
 subtitle: Continue implementing the Plan, and look back on our results...
-choose-if: advisor_action_timer <= 0 and public_works < 1
+choose-if: advisor_action_timer <= 0 and public_works > 0
 unavailable-subtitle: We haven't adopted an economic plan [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 
 WIP
