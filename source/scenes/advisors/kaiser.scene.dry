@@ -3,7 +3,7 @@ is-pinned-card: true
 tags: advisor, leftist
 card-image: img/portraits/kaiser.jpg
 view-if: kaiser_advisor = 1
-
+new-page: true
 = Jakob Kaiser
 
 Kaiser is a leading figure in the Christian trade unions and the Christian Left.
