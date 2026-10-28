@@ -13,6 +13,7 @@ Kaiser is a leading figure in the Christian trade unions and the Christian Left.
 - @public_works
 - @implement_plan
 - @snap_election
+- @root: Return to main
 
 @organize_workers
 title: Organizing Workers
@@ -36,3 +37,9 @@ choose-if: advisor_action_timer <= 0 and public_works > 0
 unavailable-subtitle: We haven't adopted an economic plan [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 
 WIP
+
+@snap_election
+title: Snap Election
+subtitle: Call a Snap Election.
+choose-if: advisor_action_timer <= 0 and President == "Kaiser"
+unavailable-subtitle [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [if not President == "Kaiser"] Kaiser must be President.
