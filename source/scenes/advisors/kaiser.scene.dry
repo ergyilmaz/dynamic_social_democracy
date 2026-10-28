@@ -42,4 +42,4 @@ WIP
 title: Snap Election
 subtitle: Call a Snap Election.
 choose-if: advisor_action_timer <= 0 and President == "Kaiser"
-unavailable-subtitle [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [if not President == "Kaiser"] Kaiser must be President.
+unavailable-subtitle [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
