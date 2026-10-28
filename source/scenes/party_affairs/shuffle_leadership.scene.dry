@@ -213,7 +213,7 @@ Wirth has been removed as an advisor. The Leftist faction disapproves.
 title: Remove Kaiser
 view-if: kaiser_advisor = 1
 tags: remove_advisor
-on-arrival: kaiser_advisor = 0, left_dissent += 7; n_advisor -= 1
+on-arrival: kaiser_advisor = 0; left_dissent += 7; n_advisor -= 1
 
 Kaiser has been removed as an advisor. The Leftist facction disapproves.
 
