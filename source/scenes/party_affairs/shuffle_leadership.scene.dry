@@ -209,6 +209,14 @@ go-to: rm_main_menu
 
 Wirth has been removed as an advisor. The Leftist faction disapproves.
 
+@remove_kaiser
+title: Remove Kaiser
+view-if: kaiser_advisor = 1
+tags: remove_advisor
+on-arrival: kaiser_advisor = 0, left_dissent += 7; n_advisor -= 1
+
+Kaiser has been removed as an advisor. The Leftist facction disapproves.
+
 @remove_levi
 title: Remove Levi
 view-if: levi_advisor = 1
@@ -487,11 +495,20 @@ subtitle: Joseph Wirth is a former member of the <span style="color: #000000;">C
 is-card: true
 card-image: img/portraits/wirth.jpg
 view-if: wirth_advisor = 0 and n_advisors < 3
-on-arrival: wirth_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 8
+on-arrival: wirth_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 go-to: advisor_menu
 tags: left_advisor
 
 Joseph Wirth is now an advisor.
+
+@add_kaiser
+title: Jakob Kaiser
+subtitle: Jakob Kaiser is a leading figure of the Christian trade unions. Known for his staunch leftist tendencies, he's supportive of public works programs and defense against the far-right.
+card-image: img/portraits/kaiser.jpg
+view-if: kaiser_advisor = 0 and n_advisors < 3
+on-arrival: wirth_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
+
+Jakon Kaiser is now an advisor.
 
 @add_levi
 title: Paul Levi
