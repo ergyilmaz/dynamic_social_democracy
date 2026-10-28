@@ -214,6 +214,7 @@ title: Remove Kaiser
 view-if: kaiser_advisor = 1
 tags: remove_advisor
 on-arrival: kaiser_advisor = 0; left_dissent += 7; n_advisor -= 1
+go-to: rm_main_menu
 
 Kaiser has been removed as an advisor. The Leftist facction disapproves.
 
@@ -507,6 +508,7 @@ subtitle: Jakob Kaiser is a leading figure of the Christian trade unions. Known 
 card-image: img/portraits/kaiser.jpg
 view-if: kaiser_advisor = 0 and n_advisors < 3
 on-arrival: kaiser_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
+tags: left_advisor
 
 Jakon Kaiser is now an advisor.
 
