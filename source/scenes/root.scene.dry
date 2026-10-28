@@ -1048,7 +1048,7 @@ Q.breitscheid_advisor = -1; // Rudolf Breitscheid
 
 // Reformist advisors
 Q.severing_advisor = -1; // Carl Severing
-Q.braun_advisor = -1; // Otto Braun
+Q.braun_advisor = 1; // Otto Braun
 Q.juchacz_advisor = -1; // Marie Juchacz
 Q.baade_advisor = -1; // Fritz Baade
 
@@ -1066,7 +1066,7 @@ Q.schumacher_advisor = -1; // Kurt Schumacher (post-1930)
 
 // Nonfactional advisors
 Q.hirschfeld_advisor = -1; // Magnus Hirschfeld
-Q.radbruch_advisor = 1; // Gustav Radbruch
+Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = -1; // Friedrich Stampfer
 
 if (Q.achievement_holy_moly) {
