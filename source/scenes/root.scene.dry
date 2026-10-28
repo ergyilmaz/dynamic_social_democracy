@@ -1027,47 +1027,47 @@ for (let i = 0; i <= 100; i++) {
 
 // all the initial advisors are centrists.
 Q.bruning_advisor = 1; // Heinrich Bruning
-Q.muller_advisor = 1; // Hermann Müller
+Q.muller_advisor = -1; // Hermann Müller
 Q.muller_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.hilferding_advisor = -1; // Rudolf Hilferding
 
 // left advisors
-Q.wirth_advisor = 0; // Joseph Wirth
+Q.wirth_advisor = 1; // Joseph Wirth
 Q.kaiser_advisor = 0; // Jakob Kaiser
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
+Q.sender_advisor = -1; // Toni Sender
+Q.levi_advisor = -1; // Paul Levi
 Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
+Q.rosenfeld_advisor = -1; // Kurt Rosenfeld
+Q.seydewitz_advisor = -1; // Max Seydewitz
 
 // centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+Q.pfulf_advisor = -1; // Antonie Pfülf
+Q.breitscheid_advisor = -1; // Rudolf Breitscheid
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+Q.severing_advisor = -1; // Carl Severing
+Q.braun_advisor = -1; // Otto Braun
+Q.juchacz_advisor = -1; // Marie Juchacz
+Q.baade_advisor = -1; // Fritz Baade
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+Q.leipart_advisor = -1; // Theodor Leipart
+Q.aufhauser_advisor = -1; // Siegfried Aufhäuser
+Q.woytinsky_advisor = -1; // Wladimir Woytinsky (post-1930)
+Q.wissell_advisor = -1; // Rudolf Wissell
 
 // Revisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
+Q.mierendorff_advisor = -1; // Carlo Mierendorf (post-1930)
 
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
+Q.leber_advisor = -1; // Julius Leber (post-1930)
+Q.schumacher_advisor = -1; // Kurt Schumacher (post-1930)
 
 // Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+Q.hirschfeld_advisor = -1; // Magnus Hirschfeld
+Q.radbruch_advisor = 1; // Gustav Radbruch
+Q.stampfer_advisor = -1; // Friedrich Stampfer
 
 if (Q.achievement_holy_moly) {
     const content = document.getElementById('content');
