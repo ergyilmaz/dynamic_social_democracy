@@ -9,10 +9,10 @@ new-page: true
 
 Kaiser is a leading figure in the Christian trade unions and the Christian Left.
 
- -@organize_workers
- -@public_works
- -@implement_plan
- -@snap_election
+ - @organize_workers
+ - @public_works
+ - @implement_plan
+ - @snap_election
 
 @organize_workers
 title: Organizing Workers
