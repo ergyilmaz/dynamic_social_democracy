@@ -15,7 +15,7 @@ Kaiser is a leading figure in the Christian trade unions and the Christian Left.
 
 @organize_workers
 title: Organizing Workers
-subtitle: Kaiser can help attract workers to our party.
+subtitle: Kaiser can help rally workers behind our cause.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; workers_z += 4*(1-dissent)
 
@@ -27,3 +27,11 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 5; lautenbach_points += 15
 
 Kaiser pushes for action to be taken to solve the economic crisis.
+
+@implement_plan
+title: Implementing the Economic Plan
+subtitle: Continue implementing the Plan, and look back on our results...
+choose-if: advisor_action_timer <= 0 and 
+unavailable-subtitle: We haven't adopted an economic plan [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+
+WIP
