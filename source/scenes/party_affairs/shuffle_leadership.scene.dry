@@ -506,7 +506,7 @@ title: Jakob Kaiser
 subtitle: Jakob Kaiser is a leading figure of the Christian trade unions. Known for his staunch leftist tendencies, he's supportive of public works programs and defense against the far-right.
 card-image: img/portraits/kaiser.jpg
 view-if: kaiser_advisor = 0 and n_advisors < 3
-on-arrival: wirth_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
+on-arrival: kaiser_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 
 Jakon Kaiser is now an advisor.
 
