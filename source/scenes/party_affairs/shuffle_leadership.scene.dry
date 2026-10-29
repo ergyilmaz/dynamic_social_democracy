@@ -516,7 +516,7 @@ Jakon Kaiser is now an advisor.
 title: Joseph Joos
 subtitle: Joos is a union leader and well-respected figure within the party. [Actions - Party Discipline]
 is-card: true
-card-image: img/portraits/joos.jpg
+card-image: img/portraits/Joseph_Joos.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
 on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 go-to: advisor_menu
