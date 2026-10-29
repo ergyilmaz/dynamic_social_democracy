@@ -218,14 +218,14 @@ go-to: rm_main_menu
 
 Kaiser has been removed as an advisor. The Leftist facction disapproves.
 
-@remove_levi
-title: Remove Levi
-view-if: levi_advisor = 1
+@remove_joos
+title: Remove Joos
+view-if: joos_advisor = 1
 tags: remove_advisor
-on-arrival: levi_advisor = 0; left_dissent += 10; n_advisors -= 1
+on-arrival: joos_advisor = 0; left_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Joos has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_sender
 title: Remove Sender
@@ -512,11 +512,11 @@ tags: left_advisor
 
 Jakon Kaiser is now an advisor.
 
-@add_levi
-title: Paul Levi
-subtitle: Paul Levi is a former <span style="color: #700000;">**KPD**</span> leader who was purged for criticizing <span style="color: #700000;">**Communist**</span> policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span> ?]
+@add_joos
+title: Joseph Joos
+subtitle: Joos is a union leader and well-respected figure within the party. [Actions - Party Discipline]
 is-card: true
-card-image: img/portraits/LeviPaul.jpg
+card-image: img/portraits/joos.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
 on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 go-to: advisor_menu
