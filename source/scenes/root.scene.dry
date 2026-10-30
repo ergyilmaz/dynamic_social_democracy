@@ -1053,7 +1053,7 @@ Q.juchacz_advisor = -1; // Marie Juchacz
 Q.baade_advisor = -1; // Fritz Baade
 
 // Labor advisors
-Q.leipart_advisor = -1; // Theodor Leipart
+Q.adenauer_advisor = 0; // Konrad Adenauer
 Q.aufhauser_advisor = -1; // Siegfried Aufhäuser
 Q.woytinsky_advisor = -1; // Wladimir Woytinsky (post-1930)
 Q.wissell_advisor = -1; // Rudolf Wissell
