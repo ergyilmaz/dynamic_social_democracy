@@ -1,0 +1,48 @@
+title: Building an Interconfessional_party
+new-page: true
+is-card: true
+card-image: img/zentrum_christlicher.jpg
+view-if: interconfessionalism_support >= 3 and interconfessionalism = 0 and interconfessionalism_timer == 0
+on-arrival: peoples_party_timer = 6
+tags: party_affairs
+max-visits: 4
+#subtitle: Can the SPD move beyond the working class?
+
+= Building a People's Party
+
+Although our party was founded to defend Catholicism from Protestant oppression, times have changed, and the threat of another <span style="color: #808080;">Kulturkampf</span> has all but subsided. Support has been drumming up across the party to "leave the tower" - open the party to Protestants, and all other Christians, to position ourselves as the party of all Christians, not just Catholics.
+
+- @support_interconfessionalism: Yes, we must embrace Interconfessionalism!
+- @build_support: We must build additional support before becoming an Interconfessional party.
+- @support_interconfessionalism_hard: Despite strong opposition from the Center faction, we will embrace Interconfessionalism.
+- @no_new_ideas: No, we will always be the party of Catholics.
+- @root: Perhaps we can discuss this at a later time.
+- @easy_discard
+- @cancel_advisor_action
+
+@build_support
+view-if: (neorevisionist_strength + reformist_strength < left_strength + center_strength) or peoples_party_support < 5
+on-arrival: interconfessionalism_support += 1; labor_strength += 5; center_dissent += 5
+
+Within our party, we are pushing forward proposals for a people's party against the Center faction.
+
+
+@support_interconfessionalism
+choose-if: (neorevisionist_strength + reformist_strength >= left_strength + center_strength) and peoples_party_support >= 4
+unavailable-subtitle: The opposition is too strong.
+on-arrival: z_party_name = "CVP"; neorevisionist_strength += 15; labor_strength += 15; neorevisionist_dissent -= 10; labor_dissent -= 10; interconfessionalism = 1; catholics_z -= 12; rural_z += 10; rural_dnvp -= 5; rural_others -= 3; new_middle_z += 10; old_middle_z += 8; old_middle_dnvp -= 5; old_middle_others -= 3; catholics -= 5; catholics_spd += 8; left_dissent -= 10; labor_dissent -= 10; center_dissent += 20; dnvp_relation += 10;
+
+In an emergency conference, we have decided to become an Interconfessional party that encompasses all Christians of Germany, not just the Catholics. The Center claims that our new party platform is a betrayal of our founding principles, a turn away from God, a selling out of Catholicism. Whatever the case, we are now a party representing all of the people, not just the Catholics.
+
+@support_interconfessionalism_hard
+subtitle: This will increase dissent.
+view-if: peoples_party_support < 4
+on-arrival: z_party_name = "CVP"; neorevisionist_strength += 10; labor_strength += 8; interconfessionalism = 1; catholics_z -= 15; rural_z += 10; rural_dnvp -= 5; rural_others -= 3 new_middle_z += 10; old_middle_z += 8; old_middle_dnvp -= 5; old_middle_others -= 3; catholics -= 5; catholics_spd += 10; center_dissent += 40; dnvp_relation += 8; 
+
+It is an arduous and contentious process, but we have decided to become an Interconfessional party that encompasses all Christians of Germany, not just the Catholics. The Center claims that our new party platform is a betrayal of our founding principles, a turn away from God, a selling out of Catholicism. Whatever the case, we are now a party representing all of the people, not just the Catholics.
+
+@no_new_ideas
+on-arrival: neorevisionist_strength -= 6; neorevisionist_dissent += 5; center_strength += 8; interconfessionalism = 0; interconfessionalism_support -= 3
+
+The <span style="color: #000000;">Center</span> have been and will always be the party of Catholics.
+
