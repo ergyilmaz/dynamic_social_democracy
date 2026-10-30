@@ -37,7 +37,7 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 
 @national_concordat_kaas
 title: Sign a Concordat between Germany and the Vatican
-title: The Papacy is willing.
+subtitle: The Papacy is willing.
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
 on-arrival: reichskonkordat = 1; catholics_z += 8*(1-dissent); catholics += 6; foreign_goal_spd_peoples += 1; left_dissent -= 5; center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 5; dvp_relation -= 2; ddp_relation -= 2; lvp_relation -= 1.5
 achievement: reichskonkordat
