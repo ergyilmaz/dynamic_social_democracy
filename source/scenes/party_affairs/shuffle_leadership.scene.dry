@@ -591,8 +591,8 @@ Stegerwald is now an advisor.
 
 @add_adenauer
 title: Konrad Adenauer
-subtitle: Konrad Adenauer is the president of the Prussian State Council and the mayor of Cologne. {!<br><br>!}[? Actions - Building an Interconfessional Party, Building Support for Interconfessionalism, Snap Election
-card-image: img/portraits/LeipartTheodor.jpg
+subtitle: Konrad Adenauer is the president of the Prussian State Council and the mayor of Cologne. {!<br><br>!} Actions - Building an Interconfessional Party, Building Support for Interconfessionalism, Snap Election
+card-image: img/portraits/adenauer.jpg
 tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
 on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 8
