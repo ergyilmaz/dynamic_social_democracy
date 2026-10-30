@@ -1,44 +1,51 @@
-title: Hermann Müller
+title: Ludwig Kass
 is-pinned-card: true 
 tags: advisor, centrist
-card-image: img/portraits/MüllerHermann.jpg
+card-image: img/portraits/Ludwig_Kaas.jpg
 new-page: true
-view-if: muller_advisor = 1
+view-if: kaas_advisor = 1
 
-= Hermann Müller
+= Ludwig Kaas
 
 
-Müller is a former [? if chancellor = "Müller": and current ?] Chancellor, and is a long-time <span style="color: #c00000;">**Social Democratic**</span> leader.
+Kaas is the leader of the Papal delegation to Germany, with his ties to the Papacy going far back.
 
-- @coalition
-- @toleration
-- @snap_election
+- @catholics_kaas
+- @concordat_kaas
+- @national_concordat_kaas
+- @negotiate_concordat_kaas
 - @root: Return to main
 
-@coalition
-title: Negotiating with the Coalition
-subtitle: Müller can improve our relationships with our coalition partners.
-choose-if: advisor_action_timer <= 0 and spd_in_government = 1
+@catholics_kaas
+title: Campaign among Catholics
+subtitle: Kaas can help organize Catholics.
+choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government: The <span style="color: #c00000;">SPD</span> is not in government. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 4; ddp_relation += 4; dvp_relation += 2; dvp_relation += 2 if in_grand_coalition; lvp_relation += 4; dvp_left += 0.5 if in_grand_coalition; lvp_left += 0.5; ddp_left += 0.25
+on-arrival: advisor_action_timer = 6; catholics_z += 6*(1-dissent); catholics += 2
 
-We have improved our relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?][? if not lvp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:, and <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?], and reduced tensions with the coalition.
+We have increasesd our campaigning among Catholics.
 
 
-@toleration
-title: Defending Toleration
-subtitle: Müller supports the toleration arrangement with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The <span style="color: #c00000;">SPD</span> is not in toleration. ?]
-choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_dissent -= 8; neorevisionist_dissent -= 8; center_dissent -= 5;
+@concordat_kaas
+title: Sign the Prussian Concordat
+subtitle: Kaas' ties to the Papacy helps swiften the negotiations.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if far_right_prussia or spd_majority_prussia or left_front_prussia or social_liberal_prussia: The <span style="color: #000000;">Center</span> is not in the Prussian goverment. ?]
+choose-if: in_weimar_coalition_prussia or in_social_catholic_coalition_prussia or in_grand_coalition_prussia or in_center_right_coalition_prussia and spd_toleration = 1 and advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; prussian_concordat = 1; catholics_z += 5*(1-dissent); catholics += 5; left_dissent -= 5; center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 5
 
-We have reduced dissent among the anti-toleration factions. 
+We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.
 
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Müller" : Müller must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and chancellor == "Müller"
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+@national_concordat_kaas
+title: Sign a Concordat between Germany and the Vatican
+view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
+on-arrival: reichskonkordat = 1; catholics_z += 8*(1-dissent); catholics += 6; foreign_goal_spd_peoples += 1; left_dissent -= 5; center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 5; dvp_relation -= 2; ddp_relation -= 2; lvp_relation -= 1.5
+achievement: reichskonkordat
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. This is a moment of celebration within our party, bolstering our support and pleasing dissenting voices.
+
+@negotiate_concordat_kaas
+view-if: reichskonkordat = 0 and reichskonkordat_progress < 4
+on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 1; ddp_relation -= 2; ddp_cohesion -= 0.25; lvp_relation -= 1; foreign_goal_spd_peoples += 1
+
+The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is especially interested in making this agreement. The liberal parties are against this idea.
+[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?] Kaas uses his connections to speed up negotiations.
