@@ -156,19 +156,19 @@ Pfülf has been removed as an advisor. The Reformist faction disapproves.
 title: Remove Stegerwald
 view-if: braun_advisor = 1
 tags: remove_advisor
-on-arrival: braun_advisor = 0; reformist_dissent += 10; n_advisors -= 1
+on-arrival: braun_advisor = 0; labor_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
 Stegerwald has been removed as an advisor. The Labor faction disapproves.
 
-@remove_leipart
-title: Remove Leipart
-view-if: leipart_advisor = 1
+@remove_adenauer
+title: Remove Adenauer
+view-if: adenauer_advisor = 1
 tags: remove_advisor
-on-arrival: leipart_advisor = 0; labor_dissent += 10; n_advisors -= 1
+on-arrival: adenauer_advisor = 0; labor_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+Adenauer has been removed as an advisor. The Labor faction disapproves.
 
 @remove_aufhauser
 title: Remove Aufhäuser
@@ -589,10 +589,9 @@ go-to: advisor_menu
 
 Stegerwald is now an advisor.
 
-@add_leipart
-title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis[? if red_general_unlock and rubicon:, Negotiating with the Red General?]?]
-is-card: true
+@add_adenauer
+title: Konrad Adenauer
+subtitle: Konrad Adenauer is the president of the Prussian State Council and the mayor of Cologne. {!<br><br>!}[? Actions - Building an Interconfessional Party, Building Support for Interconfessionalism, Snap Election
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
 view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
