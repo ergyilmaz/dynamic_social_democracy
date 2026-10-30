@@ -100,14 +100,14 @@ go-to: rm_main_menu
 
 Brüning has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_muller
-title: Remove Müller
-view-if: muller_advisor = 1
+@remove_kaas
+title: Remove Kaas
+view-if: kaas_advisor = 1
 tags: remove_advisor
-on-arrival: muller_advisor = 0; center_dissent += 10; n_advisors -= 1
+on-arrival: kaas_advisor = 0; center_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+Kaas has been removed as an advisor. The Centrist faction disapproves.
 
 
 @remove_breitscheid
@@ -422,14 +422,14 @@ go-to: advisor_menu
 
 Heinrich Brüning is now an advisor.
 
-@add_muller
-title: Hermann Müller
-subtitle: Hermann Müller is the last <span style="color: #c00000;">Social Democratic</span> Chancellor. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
+@add_kaas
+title: Ludwig Kaas
+subtitle: Ludwig Kaas is a member of our clerical wing and the leader of the Papal delegation to Germany. {!<br><br>!} Actions - Campaign among Catholics, Sign the Prussian Concordat, Sign the National Concordat, Negotiate the National Concordat
 is-card: true
-card-image: img/portraits/MüllerHermann.jpg
+card-image: img/portraits/Ludwig_Kaas.jpg
 tags: center_advisor
-view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: muller_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
+view-if: kaas_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: kaas_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
 Hermann Müller is now an advisor.
