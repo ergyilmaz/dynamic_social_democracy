@@ -1,16 +1,16 @@
-title: Theodor Leipart
+title: Konrad Adenauer
 is-pinned-card: true
 tags: advisor, labor
-card-image: img/portraits/LeipartTheodor.jpg
-view-if: leipart_advisor = 1
+card-image: img/portraits/adenauer.jpg
+view-if: adenauer_advisor = 1
 new-page: true 
 
 = Theodor Leipart
 
-Leipart is a leader of the ADGB, the largest federation of <span style="color: #c00000;">socialist</span> trade unions.
+Adenauer is the popular Mayor of Cologne and president of the Prussian State Council. He's one of the most staunch supporters of "leaving the tower" - opening of the party to Protestants.
 
-- @organizing
-- @depression
+- @interconfessialism
+- @interconfessialism_support
 - @schleicher
 - @root: Return to main
 
