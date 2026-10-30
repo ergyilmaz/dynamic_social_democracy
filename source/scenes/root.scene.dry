@@ -1027,14 +1027,14 @@ for (let i = 0; i <= 100; i++) {
 
 // all the initial advisors are centrists.
 Q.bruning_advisor = 1; // Heinrich Bruning
-Q.muller_advisor = -1; // Hermann Müller
+Q.kaas_advisor = 1; // Ludwig Kaas
 Q.muller_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
 Q.hilferding_advisor = -1; // Rudolf Hilferding
 
 // left advisors
-Q.wirth_advisor = 1; // Joseph Wirth
+Q.wirth_advisor = 0; // Joseph Wirth
 Q.kaiser_advisor = 0; // Jakob Kaiser
 Q.sender_advisor = -1; // Toni Sender
 Q.joos_advisor = 0; // Paul Levi
