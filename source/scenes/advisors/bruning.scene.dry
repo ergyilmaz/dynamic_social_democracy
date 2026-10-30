@@ -12,6 +12,7 @@ Heinrich Brüning is a former soldier from the Great War and a member of the Rei
 - @implementing_austerity
 - @party_discipline
 - @emergency_fundraising
+- @bruning_foreign
 - @snap_election
 - @root: Return to main
 
@@ -22,7 +23,7 @@ choose-if: advisor_action_timer = 0 and Chancellor == "Brüning"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] Bruning is not Chancellor.
 on-arrival: welfare -= 1; lower_tax -= 1; workers_kpd += 3; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 3; unemployed_nsdap += 4; unemployed_kpd += 3; workers_z -= 5; unemployed_z -= 5
 
-We cut welfare and increase taxes. This causes even more suffering among the people, and the public is increasingly turning to the <span style="color: #700000;">**KPD**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. We argue that it is a necessary measure to stabilize the economy.
+We have cut welfare and increased taxes. This causes backlash from the workers, and the public is increasingly turning to the <span style="color: #700000;">**KPD**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. We argue that it is a necessary measure to stabilize the economy.
 
 @party_discipline
 title: Party Discipline
@@ -44,6 +45,14 @@ on-arrival: advisor_action_timer = 6; emergency_used += 1; resources += 2; worke
 [? if emergency_used <= 1: Brüning helps pull in donations and arrange quick loans. ?][? if emergency_used > 1 and emergency_used < 3: Discontent is brewing among the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]'s rank and file due to our persistent attempts at begging for money. ?][? if emergency_used > 2: We’re really scraping the barrel now—committed members are pressured into selling their valuables, while many others leave in frustration. ?]
 
 We have gained +2 resources.
+
+@bruning_foreign
+title: Foreign Policy
+subtitle: As Foreign Minister, Brüning can set our foreign policy.
+unavailable-subtitle: [? if not spd_in_government: The <span style="color: #000000;">Center</span> is not in government. ?] [? if foreign_minister_party != "SPD" : The <span style="color: #000000;">Center</span> does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
+on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
+go-to: foreign_policy
 
 @snap_election
 title: Snap Election
