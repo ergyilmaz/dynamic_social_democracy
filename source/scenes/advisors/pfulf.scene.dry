@@ -32,7 +32,6 @@ view-if: peoples_party = 0
 choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
 on-arrival: advisor_action_timer = 6;
-go-to: peoples_party
 
 @campaigning_peoples_party
 title: Campaigning as a People's Party
@@ -41,8 +40,6 @@ view-if: peoples_party = 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6;
-go-to: peoples_party_campaigning
-
 
 @womens_rights_
 title: Women's rights
