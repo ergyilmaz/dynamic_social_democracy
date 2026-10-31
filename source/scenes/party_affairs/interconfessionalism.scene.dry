@@ -1,14 +1,14 @@
-title: Building an Interconfessional_party
+title: Building an Interconfessional Party
 new-page: true
 is-card: true
 card-image: img/zentrum_christlicher.jpg
 view-if: interconfessionalism_support >= 3 and interconfessionalism = 0 and interconfessionalism_timer == 0
-on-arrival: peoples_party_timer = 6
+on-arrival: interconfessionalism_timer = 6
 tags: party_affairs
 max-visits: 4
-#subtitle: Can the SPD move beyond the working class?
+#subtitle: Can the Center become a party for all Christendom?
 
-= Building a People's Party
+= Building an Interconfessional Party
 
 Although our party was founded to defend Catholicism from Protestant oppression, times have changed, and the threat of another <span style="color: #808080;">Kulturkampf</span> has all but subsided. Support has been drumming up across the party to "leave the tower" - open the party to Protestants, and all other Christians, to position ourselves as the party of all Christians, not just Catholics.
 
