@@ -27,7 +27,7 @@ go-to: interconfessionalism
 title: Building Support for Interconfessionalism
 subtitle: Adenauer has been one of the strongest proponents of "Leaving the tower".
 view-if: interconfessionalism = 0
-on-arrival: interconfessionalism_support += 1; labor_strength += 5; left_strength += 5;
+on-arrival: interconfessionalism_support += 1; labor_strength += 5; left_strength += 5; advisor_action_timer = 6
 
 Within our party, we are pushing forward proposals for Interconfessionalism against the Center faction.
 
