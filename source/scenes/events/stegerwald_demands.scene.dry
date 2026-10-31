@@ -1,6 +1,6 @@
 title: Party Demands
 subtitle: Stegerwald's position is not yet secure...
-view-if: year = 1929 and month = 1
+view-if: year = 1929 and month = 1 and z_leader = "Stegerwald"
 new-page: true
 
 = Party Demands
