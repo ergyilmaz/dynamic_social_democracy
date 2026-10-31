@@ -9,33 +9,34 @@ While Stegerwald has been elected party chariman, his position is still very fra
 
 - @essen_program: The party lays out its demands...
 
-@essen_program: The succesful transformation of the party as laid out in the 1920 Essen Programme, into a...
+@essen_program:
+The succesful transformation of the party as laid out in the 1920 Essen Programme, into a...
 
-@christian: <span style="color: #000000;">Christian</span>:
+- @christian: <span style="color: #000000;">Christian</span>:
 
 @christian
   - Sign a concordat with the Vatican in Prussia.
   [? if foreign_minister_party = "Z": - Sign a concordat with the Vatican, covering all of Germany.?]
   - Fund religious schools.
   - Adopt interconfessionalism.
-@democratic: <span style="color: #FF7F00;">Democratic</span>:
+- @democratic: <span style="color: #FF7F00;">Democratic</span>:
 
 @democratic
   - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>.
   - Remain in the National and Prussian goverment.
-@german: <span style="color: #808080;">German</span>,
+- @german: <span style="color: #808080;">German</span>,
 
 @german
   - Raise the party's polls over 20%.
   - Crack down on the <span style="color: #700000;">**RFB**</span>.
   - Progress in reparation negotiations or continue rearmament.
-@social: <span style="color: #c00000;">Social</span>:
+- @social: <span style="color: #c00000;">Social</span>:
 
 @social
   - increase funding for welfare.
   - increase worker's rights.
   - secure more than 35% of the worker vote.
 
-@demand_end: We have our work cut out for us.
+- @demand_end: We have our work cut out for us.
 
   
