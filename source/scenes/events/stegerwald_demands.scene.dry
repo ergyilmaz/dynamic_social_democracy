@@ -7,36 +7,47 @@ new-page: true
   
 While Stegerwald has been elected party chariman, his position is still very fragile. In his ambitious inaguration speech, He vowed to transform the Center into the main party of the German right, affirming commitments to the 1920 Essen Program. the Center is concerned that eroding the pragmatic nature of the party in favor of interconfessionalism and worker's rights wil cause great instability, the clerical wing claims that the party is abandoning Catholicism and that the party's role as protector of the Catholic faith far outweighs whtatever electoral gains will be made. The Unions are already growing impatient, expecting expansion of welfare and worker's rights. In short, if Stegerwald fails to deliver until the 1930 Party Congress, his downfall is all but assured.
 
-- @essen_program: The party lays out its demands...
+- @essen_program
 
 @essen_program
+title: The party lays out its demands...
 The succesful transformation of the party as laid out in the 1920 Essen Programme, into a...
 
-- @christian: <span style="color: #000000;">Christian</span>:
+- @christian
 
 @christian
+title: <span style="color: #000000;">Christian</span,
   - Sign a concordat with the Vatican in Prussia.
   [? if foreign_minister_party = "Z": - Sign a concordat with the Vatican, covering all of Germany.?]
   - Fund religious schools.
   - Adopt interconfessionalism.
-- @democratic: <span style="color: #FF7F00;">Democratic</span>:
+
+- @democratic
 
 @democratic
+title: <span style="color: #D3C24D;">Democratic</span>,
   - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>.
   - Remain in the National and Prussian goverment.
-- @german: <span style="color: #808080;">German</span>,
+
+- @german
 
 @german
+title: <span style="color: #808080;">German</span>,
   - Raise the party's polls over 20%.
   - Crack down on the <span style="color: #700000;">**RFB**</span>.
   - Progress in reparation negotiations or continue rearmament.
-- @social: <span style="color: #c00000;">Social</span>:
+
+- @social
 
 @social
+title: and <span style="color: #c00000;">Social</span> party.
   - increase funding for welfare.
   - increase worker's rights.
   - secure more than 35% of the worker vote.
 
-- @demand_end: We have our work cut out for us.
+- @demand_end
+
+@demand_end
+title: We have our work cut out for us.
 
   
