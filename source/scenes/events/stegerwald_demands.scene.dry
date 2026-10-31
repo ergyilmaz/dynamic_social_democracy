@@ -19,7 +19,7 @@ The succesful transformation of the party as laid out in the 1920 Essen Programm
 @christian
 title: <span style="color: #000000;">Christian</span,
 
-- Sign a concordat with the Vatican in Prussia.
+  - Sign a concordat with the Vatican in Prussia.
   [? if foreign_minister_party = "Z": - Sign a concordat with the Vatican, covering all of Germany.?]
   - Fund religious schools.
   - Adopt interconfessionalism.
