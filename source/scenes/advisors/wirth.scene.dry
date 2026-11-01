@@ -44,7 +44,7 @@ on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_elec
 @interior_ministry_wirth
 title: Internal Security
 subtitle: Wirth is Interior Minister.
-choose-if: interior_minister_party == "Z", advisor_action_timer == 0
+choose-if: interior_minister_party == "Z" and advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if interior_minister_party != "Z": Wirth must be Interior Minister.?]
 on-arrival: advisor_action_Timer = 6
 go-to: police
