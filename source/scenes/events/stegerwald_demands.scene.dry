@@ -22,8 +22,11 @@ The succesful transformation of the party as laid out in the 1920 Essen Programm
 title: <span style="color: #000000;">Christian</span,
 
   - Sign a concordat with the Vatican in Prussia.
+
   [? if foreign_minister_party = "Z": - Sign a concordat with the Vatican, covering all of Germany.?]
+
   - Fund religious schools.
+
   - Adopt interconfessionalism.
 
 - @democratic
@@ -32,6 +35,7 @@ title: <span style="color: #000000;">Christian</span,
 title: <span style="color: #D3C24D;">Democratic</span>,
 
   - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>.
+  
   - Remain in the National and Prussian goverment.
 
 - @german
@@ -40,7 +44,9 @@ title: <span style="color: #D3C24D;">Democratic</span>,
 title: <span style="color: #808080;">German</span>,
   
   - Raise the party's polls over 20%.
+
   - Crack down on the <span style="color: #700000;">**RFB**</span>.
+
   - Progress in reparation negotiations or continue rearmament.
 
 - @social
@@ -49,7 +55,9 @@ title: <span style="color: #808080;">German</span>,
 title: and <span style="color: #c00000;">Social</span> party.
   
   - increase funding for welfare.
+
   - increase worker's rights.
+
   - secure more than 35% of the worker vote.
 
 - @demand_end
