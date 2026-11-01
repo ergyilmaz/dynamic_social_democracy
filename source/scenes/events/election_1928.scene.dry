@@ -1233,15 +1233,15 @@ Q.spd_toleration_right = 0;
 Q.spd_caretaker = 0;
 if (Q.lvp_formed) Q.foreign_minister_party = 'LVP'; 
 if (!Q.lvp_formed) Q.foreign_minister_party = 'DVP';
-Q.interior_minister_party = 'Z';
+Q.interior_minister_party = 'SPD';
 Q.justice_minister_party = 'I';
-Q.labor_minister_party = 'Z';
+Q.labor_minister_party = 'SPD';
 Q.reichswehr_minister_party = 'I';
 if (Q.lvp_formed) Q.economic_minister_party = 'LVP'; 
 if (!Q.lvp_formed) Q.economic_minister_party = Q.ddp_name;
 if (Q.lvp_formed) Q.finance_minister_party = 'LVP'; 
 if (!Q.lvp_formed) Q.finance_minister_party = 'DVP';
-Q.agriculture_minister_party = 'Z';
+Q.agriculture_minister_party = 'SPD';
 
 Q.ddp_in_popular_front = 0;
 
