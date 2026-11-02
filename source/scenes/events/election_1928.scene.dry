@@ -3787,95 +3787,51 @@ As expected, the <span style="color: #c00000;">**SPD**</span> is the largest par
 
 Who should be the chancellor?
 
-- @muller
-- @braun
+- @spd_chancellor
 - @wels
-- @z_chancellor
-- @z_chancellor_wirth
+- @adenauer
+- @bruning
+- @wirth
 - @no_govt
 
 
-@muller
-title: Hermann Müller for Chancellor
+@spd_chancellor
+title: [? if muller_dead = 0 and prussia_leader == "Braun": Hermann Müller for Chancellor ?][? if muller_dead = 1 and prussia_leader == "Braun": Otto Wels for Chancellor][? if prussia_leader != "Braun": Otto Braun for Chancellor ?]
 view-if: muller_dead = 0
-subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
+subtitle: [? if muller_dead = 0 and prussia_leader == "Braun": Müller is popular within the coalition, being the expeccted candidate. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels is a seasoned <span style="color: #c00000;">**SPD**</span> leader, and one of the most outspoken opponents of the <span style="color: #7A3C00;">**Nazi**</span> movement. ?][? if prussia_leader != "Braun": Braun is The long Minister-President of Prussia and one of the most popular figures of the <span style="color: #c00000;">**SPD**</span>. His loss of the Minister-Presidency of Prussia has led him to pursuing the chancellorship.?] This is likely to grant us more leverage in cabinet negoatiations.
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_in_government = 1; [? if muller_dead = 0 and prussia_leader == "Braun": chancellor = "Müller" ?]; [? if muller_dead = 1 and prussia_leader == "Braun": chancellor = "Wels"]; [? if prussia_leader != "Braun": chancellor = "Braun" ?]; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
-Müller's appointment as chancellor is approved by all our potential allies.
+[? if muller_dead = 0 and prussia_leader == "Braun": Müller's appointment as chancellor is approved by all our allies. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels' appointment as chancellor is approved by all our potential allies.][? if prussia_leader != "Braun": Braun is appointed as chancellor, to thunderous applause. ?]
 
-@wels
-title: Otto Wels for Chancellor
-view-if: muller_dead = 1
-subtitle: Otto Wels is a party leader, but can he also be chancellor?
-choose-if: not cvp_chancellor_accepted
-unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+@adenauer
+title: Adenauer for Chancellor
+choose-if:[? if in_grand_coalition == 0 and interconfessionalism == 1 or in_grand_coalition == 1 and stresemann_dead == 1 and interconfessionalism == 1
+unavailable-subtitle: [? if in_grand_coalition == 1 and stresemann_dead == 0: Adenauer will NEVER agree to a coalition that includes the <span style="color: #C0A054;">**DVP**</span>, arguing party leader Gustav Stresemann is "too Prussian".?][? if interconfessionalism == 0: Adenauer doesn't want to waste a chance at the chancellorship governing affiliated with the <span style="color: #000000;">Center</span> who hasn't yet "left the tower". ?]
+on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 10; dvp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Adenauer"; chancellor = "Adenauer" chancellor_party = "Z"; spd_in_government = 1; leverage -= 5; dvp_right += 1; ddp_left += 0.5; ddp_cohesion += 1
 go-to: ministries
 
-Otto Wels's appointment as chancellor is approved by our potential allies.
+Adenauer is unanimously popular for all parties but the <span style="color: #C0A054;">**DVP**</span>, who are angered by his anti-Prussian sentiment. The appointment of another chancellor from our party is a moment of celebration, and is able to bridge internal divisons somewhat.
 
-@braun
-title: Otto Braun for Chancellor
-view-if: not historical_mode or prussia_leader != "Braun"
-subtitle: [? if prussia_leader == "Braun": Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man. ?][? if prussia_leader != "Braun": Braun, the long-time Minister-President of Prussia, remains one of our most popular leaders. ?]
-choose-if: not cvp_chancellor_accepted
-unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-go-to: braun_2 if prussia_leader == "Braun"; braun_4 if prussia_leader != "Braun"
-
-
-@braun_2
-
-The [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
-
-- @muller
-- @wels
-- @braun_3: Let the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have their cabinet positions.
-
-@braun_3
-subtitle: Otto Braun will be Chancellor.
-view-if: not historical_mode
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition); hindenburg_angry += 10
+@bruning
+title: Brüning for Chancellor
+subtitle: Being an experienced statesman and economist, he's the preffered candidate of the center-right prties along with President <span style="color: #808080;">Hindenburg</span>.
+on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; hindenburg_angry -= 10
 go-to: ministries
 
-We have promised to let the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have more influence in the government in response to the appointment of Braun as chancellor.
+Brüning's ascendancy appeases President <span style="color: #808080;">Hindenburg</span>. The appointment of another chancellor from our party is a moment of celebration, and is able to bridge internal divisons somewhat.
 
-@braun_4
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
-go-to: ministries
-
-Braun's appointment as chancellor is approved by all our potential allies.
-
-
-@z_chancellor
-title: Let the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] have their chancellor.
-subtitle: [? if not return_to_normalcy or not stegerwald_path: Heinrich Brüning?][? if return_to_normalcy and stegerwald_path: Konrad Adenauer?] will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor = "Adenauer" if stegerwald_path and return_to_normalcy; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 1; lvp_left += 1; hindenburg_angry -= 10
-go-to: ministries
-
-This is highly unexpected, and many in the left and center of our party are criticizing this decision.
-
-[? if year == 1928 : Since Wilhelm Marx resigned, Heinrich Brüning has been appointed chancellor. ?]
-[? if year > 1928 and (not return_to_normalcy or not stegerwald_path): Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed chancellor. ?]
-[? if year > 1928 and return_to_normalcy and stegerwald_path: Konrad Adenauer of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed chancellor. With Brüning too unpopular, the newly <span class="tooltip-text" title="good mod">dynamic</span> [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] seeks to preserve its electoral strength. ?]
-
-@z_chancellor_wirth
-title: Let Joseph Wirth of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] be chancellor.
+@wirth
+title: Wirth for Chancellor
 view-if: z_ideology == "Left"
-subtitle: Wirth is on the left wing of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5; lvp_left += 1; hindenburg_angry -= 10
+subtitle: Wirth is one of our leftist leaders, and might foster goodwill with the <span style="color: #c00000;">**SPD**</span>.
+on-arrival: left_dissent -= 15; spd_relation += 3; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5; lvp_left += 1
 go-to: ministries
 
-@z_chancellor_cvp
-title: Let the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] have their chancellor.
-subtitle: [? if cvp_chancellor_accepted: Our coalition agreement stipulates that the chancellor must be from the <span style="color: #000000;">**[+ z_party_name +]**</span>, with Heinrich Brüning likely being their choice. ?][? if not cvp_chancellor_accepted: The <span style="color: #000000;">**[+ z_party_name +]**</span> would be happy with one of their own as chancellor, with Heinrich Brüning likely being their choice. ?]
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 5 if not cvp_chancellor_accepted; coalition_dissent = -1 if cvp_chancellor_accepted
-go-to: ministries if z_r <= (spd_r + bvp_r); social_catholic_coalition_cvp_4 if z_r > (spd_r + bvp_r)
-
-Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed chancellor. He is approved by most factions of his party.
-
+Wirth previously having beeen chancellor from 1921 to 1922, has been appointed chancellor. This pleases our left wing and the <span style="color: #c00000;">**SPD**</span>.
+ 
 @social_catholic_coalition_cvp_4
 achievement: merz_und_scholz
 go-to: ministries
