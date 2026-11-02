@@ -3805,7 +3805,7 @@ go-to: ministries
 
 @adenauer
 title: Adenauer for Chancellor
-choose-if:[? if in_grand_coalition == 0 and interconfessionalism == 1 or in_grand_coalition == 1 and stresemann_dead == 1 and interconfessionalism == 1
+choose-if: in_grand_coalition == 0 and interconfessionalism == 1 or in_grand_coalition == 1 and stresemann_dead == 1 and interconfessionalism == 1
 unavailable-subtitle: [? if in_grand_coalition == 1 and stresemann_dead == 0: Adenauer will NEVER agree to a coalition that includes the <span style="color: #C0A054;">**DVP**</span>, arguing party leader Gustav Stresemann is "too Prussian".?][? if interconfessionalism == 0: Adenauer doesn't want to waste a chance at the chancellorship governing affiliated with the <span style="color: #000000;">Center</span> who hasn't yet "left the tower". ?]
 on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 10; dvp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Adenauer"; chancellor = "Adenauer" chancellor_party = "Z"; spd_in_government = 1; leverage -= 5; dvp_right += 1; ddp_left += 0.5; ddp_cohesion += 1
 go-to: ministries
