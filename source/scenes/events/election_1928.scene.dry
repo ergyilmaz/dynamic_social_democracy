@@ -3224,10 +3224,7 @@ Who should be the chancellor?
 
 @soc_lib_chancellor_menu
 
-- @muller
-- @braun
-- @breitscheid_coalition_chancellor
-- @wels
+- @spd_chancellor
 
 @kulturkampf
 achievement: kulturkampf
@@ -3443,10 +3440,10 @@ We have somehow convinced the <span style="color: #000000;">**[+ z_party_name +]
 
 Who should be the chancellor?
 
-- @wels
-- @muller
-- @braun
-- @z_chancellor_cvp
+- @spd_chancellor
+- @adenauer
+- @bruning
+- @wirth
 
 @weimar_coalition_liberal_parliament
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
