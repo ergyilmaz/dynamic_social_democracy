@@ -3798,7 +3798,7 @@ Who should be the chancellor?
 title: [? if muller_dead = 0 and prussia_leader == "Braun": Hermann Müller for Chancellor ?][? if muller_dead = 1 and prussia_leader == "Braun": Otto Wels for Chancellor ?][? if prussia_leader != "Braun": Otto Braun for Chancellor ?]
 view-if: muller_dead = 0
 subtitle: [? if muller_dead = 0 and prussia_leader == "Braun": Müller is popular within the coalition, being the expeccted candidate. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels is a seasoned <span style="color: #c00000;">**SPD**</span> leader, and one of the most outspoken opponents of the <span style="color: #7A3C00;">**Nazi**</span> movement. ?][? if prussia_leader != "Braun": Braun is The long Minister-President of Prussia and one of the most popular figures of the <span style="color: #c00000;">**SPD**</span>. His loss of the Minister-Presidency of Prussia has led him to pursuing the chancellorship.?] This is likely to grant us more leverage in cabinet negoatiations.
-on-arrival: spd_in_government = 1; chancellor = "Müller" if muller_dead = 0 and prussia_leader == "Braun"; chancellor = "Wels" if muller_dead = 1 and prussia_leader == "Braun"; chancellor = "Braun" if prussia_leader != "Braun"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_relation += 5; spd_in_government = 1; chancellor = "Müller" if muller_dead = 0 and prussia_leader == "Braun"; chancellor = "Wels" if muller_dead = 1 and prussia_leader == "Braun"; chancellor = "Braun" if prussia_leader != "Braun"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
 [? if muller_dead = 0 and prussia_leader == "Braun": Müller's appointment as chancellor is approved by all our allies. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels' appointment as chancellor is approved by all our potential allies. ?][? if prussia_leader != "Braun": Braun is appointed as chancellor, to thunderous applause. ?]
@@ -3807,14 +3807,14 @@ go-to: ministries
 title: Adenauer for Chancellor
 choose-if: in_grand_coalition == 0 and interconfessionalism == 1 or in_grand_coalition == 1 and stresemann_dead == 1 and interconfessionalism == 1
 unavailable-subtitle: [? if in_grand_coalition == 1 and stresemann_dead == 0: Adenauer will NEVER agree to a coalition that includes the <span style="color: #C0A054;">**DVP**</span>, arguing party leader Gustav Stresemann is "too Prussian".?][? if interconfessionalism == 0: Adenauer doesn't want to waste a chance at the chancellorship governing affiliated with the <span style="color: #000000;">Center</span> who hasn't yet "left the tower". ?]
-on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 10; dvp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Adenauer"; chancellor = "Adenauer" chancellor_party = "Z"; spd_in_government = 1; leverage -= 5; dvp_right += 1; ddp_left += 0.5; ddp_cohesion += 1
+on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 10; dvp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Adenauer"; chancellor_party = "Z"; spd_in_government = 1; dvp_right += 1; ddp_left += 0.5; ddp_cohesion += 1
 go-to: ministries
 
 Adenauer is unanimously popular for all parties but the <span style="color: #C0A054;">**DVP**</span>, who are angered by his anti-Prussian sentiment. The appointment of another chancellor from our party is a moment of celebration, and is able to bridge internal divisons somewhat.
 
 @bruning
 title: Brüning for Chancellor
-subtitle: Being an experienced statesman and economist, he's the preffered candidate of the center-right prties along with President <span style="color: #808080;">Hindenburg</span>.
+subtitle: Being an experienced statesman and economist, he's the preffered candidate of the center-right parties along with President <span style="color: #808080;">Hindenburg</span>.
 on-arrival: left_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; leverage -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; hindenburg_angry -= 10
 go-to: ministries
 
