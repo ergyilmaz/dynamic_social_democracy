@@ -1,0 +1,39 @@
+title: <span style="color: #c00000;">**SPD**</span> Counteroffensive
+subtitle: The <span style="color: #c00000;">**SPD**</span> is making inroads into our voterbase...
+view-if: (year == 1929 and month >= 3) or (stegerwald_transformation_timer == 9) and z_leader == "Stegerwald"
+new-page: true
+on-arrival: workers_spd -= 3; new_middle_spd += 10; old_middle_spd += 10; rural_spd += 10; unemployed_spd -= 4; workers_kpd += 2; catholics_spd += 10; catholics -= 3; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; unemployed_dnvp += 2 if dnvp_ideology == "Moderate" pro_republic += 5; spd_relation -= 5
+max-visits: 1
+tags: event
+face-image: img/campaign.jpg
+
+= <span style="color: #c00000;">**SPD**</span> Counteroffensive
+
+The <span style="color: #c00000;">**SPD**</span>, in response to Chairman <span style="color: #000000;">Stegerwald</span>'s agressive campaigning towards workers, the <span style="color: #c00000;">**SPD**</span> has changed their rhetoric to appeal to the richer and more religious parts of German society, and in particular, towards Catholics. Our primary voter base is at risk of slipping away. What is our course of action?
+
+This has led to concerns from the center wing of our party, the loss of the Catholics would be disastorous.
+
+- @fightback_working: The tranformation must go on - continue campaigning among workers.
+- @fightback_catholics: We must keep our Party's soul, campaign among Catholics.
+- @nothing: Unfortunate.
+
+@fightback_working
+subtitle: -2 resources.
+choose-if: resources >= 2
+unavailable-subtitle:[? if resources < 2 : We do not have enough resources. ?]
+on-arrival: resources -= 2; workers_z += 8; unemployed_z += 5; new_middle_z += 4; catholics -= 3; interconfessionalism_support += 1; labor_dissent -= 10; center_dissent += 20
+
+We increase our messaging among the workers much to the dismay of the <span style="color: #000000;">Center</span>. The decay of political Catholicism continues. 
+
+@fightback_catholics
+choose-if: resources >= 1
+subtitle: -1 resource.
+unavailable-subtitle:[? if resources < 1 : We do not have enough resources. ?]
+on-arrival: resources -= 1; interconfessionalism_support -= 2; catholics_z += 10; catholics += 3; labor_dissent += 15; center_dissent -= 10; zentrum_disintegration += 1
+
+We redirect our funds back to Catholic-centric campaigns, aiming to fight back against the shift to the left. Our base is partially restored, althought this comes with the sideffect of killing the support of the interconfessionalist movement.
+
+@nothing
+on-arrival: zentrum_disintegration += 1; 
+
+The <span style="color: #c00000;">**SPD**</span>'s support base grows larger.
