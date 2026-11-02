@@ -3804,7 +3804,7 @@ unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span 
 on-arrival: spd_in_government = 1; [? if muller_dead = 0 and prussia_leader == "Braun": chancellor = "Müller" ?]; [? if muller_dead = 1 and prussia_leader == "Braun": chancellor = "Wels"]; [? if prussia_leader != "Braun": chancellor = "Braun" ?]; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
-[? if muller_dead = 0 and prussia_leader == "Braun": Müller's appointment as chancellor is approved by all our allies. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels' appointment as chancellor is approved by all our potential allies.][? if prussia_leader != "Braun": Braun is appointed as chancellor, to thunderous applause. ?]
+[? if muller_dead = 0 and prussia_leader == "Braun": Müller's appointment as chancellor is approved by all our allies. ?][? if muller_dead = 1 and prussia_leader == "Braun": Wels' appointment as chancellor is approved by all our potential allies. ?][? if prussia_leader != "Braun": Braun is appointed as chancellor, to thunderous applause. ?]
 
 @adenauer
 title: Adenauer for Chancellor
