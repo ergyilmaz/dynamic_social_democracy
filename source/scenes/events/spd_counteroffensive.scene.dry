@@ -2,7 +2,7 @@ title: <span style="color: #c00000;">**SPD**</span> Counteroffensive
 subtitle: The <span style="color: #c00000;">**SPD**</span> is making inroads into our voterbase...
 view-if: (year == 1929 and month >= 3) or (stegerwald_transformation_timer == 9) and z_leader == "Stegerwald"
 new-page: true
-on-arrival: workers_spd -= 3; new_middle_spd += 10; old_middle_spd += 10; rural_spd += 10; unemployed_spd -= 4; workers_kpd += 2; catholics_spd += 10; catholics -= 3; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; unemployed_dnvp += 2 if dnvp_ideology == "Moderate" pro_republic += 5; spd_relation -= 5
+on-arrival: workers_spd -= 3; new_middle_spd += 10; old_middle_spd += 10; rural_spd += 10; unemployed_spd -= 4; workers_kpd += 2; catholics_spd += 10; catholics -= 3; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; unemployed_dnvp += 2 if dnvp_ideology == "Moderate"; pro_republic += 5; spd_relation -= 5
 max-visits: 1
 tags: event
 face-image: img/campaign.jpg
