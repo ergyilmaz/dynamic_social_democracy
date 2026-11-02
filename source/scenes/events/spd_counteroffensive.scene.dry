@@ -2,14 +2,14 @@ title: <span style="color: #c00000;">**SPD**</span> Counteroffensive
 subtitle: The <span style="color: #c00000;">**SPD**</span> is making inroads into our voterbase...
 view-if: (year == 1929 and month >= 3) or (stegerwald_transformation_timer == 9) and z_leader == "Stegerwald"
 new-page: true
-on-arrival: workers_spd -= 3; new_middle_spd += 10; old_middle_spd += 10; rural_spd += 10; unemployed_spd -= 4; workers_kpd += 2; catholics_spd += 10; catholics -= 3; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; unemployed_dnvp += 2 if dnvp_ideology == "Moderate"; pro_republic += 5; spd_relation -= 5
+on-arrival: workers_spd -= 2; new_middle_spd += 10; old_middle_spd += 10; rural_spd += 10; unemployed_spd -= 4; workers_kpd += 2; catholics_spd += 10; catholics -= 3; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; unemployed_dnvp += 2 if dnvp_ideology == "Moderate"; pro_republic += 5; spd_relation -= 5
 max-visits: 1
 tags: event
 face-image: img/campaign.jpg
 
 = <span style="color: #c00000;">**SPD**</span> Counteroffensive
 
-The <span style="color: #c00000;">**SPD**</span>, in response to Chairman <span style="color: #000000;">Stegerwald</span>'s agressive campaigning towards workers, the <span style="color: #c00000;">**SPD**</span> has changed their rhetoric to appeal to the richer and more religious parts of German society, and in particular, towards Catholics. Our primary voter base is at risk of slipping away. What is our course of action?
+In response to Chairman <span style="color: #000000;">Stegerwald</span>'s agressive campaigning towards workers, the <span style="color: #c00000;">**SPD**</span> has changed their rhetoric to appeal to the richer and more religious parts of German society, and in particular, towards Catholics. Our primary voter base is at risk of slipping away. What is our course of action?
 
 This has led to concerns from the center wing of our party, the loss of the Catholics would be disastorous.
 
