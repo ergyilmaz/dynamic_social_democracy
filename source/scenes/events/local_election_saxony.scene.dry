@@ -614,7 +614,7 @@ title: A [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We<
 subtitle: the local <span style="color: #c00000;">**SPD**</span> has moderated, and are willing to govern with us again.
 unavailable-subtitle: [? if spd_relation < 50 and stegerwald_path: We need higher relations with the <span style="color: #c00000;">**SPD**</span>.
 view-if: spd_coalition_saxony >= 50
-choose-if: spd_coalition_possible_saxony and left_strength < 15
+choose-if: spd_coalition_possible_saxony
 on-arrival: saxony_spd = 1; saxony_groko = 1; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_spd += 3; workers_z += 3; unemployed_z += 3; unemployed_spd += 3; rural_z += 3; new_middle_z += 3; old_middle_z += 3; spd_relation += 5; ddp_relation += 3; lvp_relation += 3; dvp_relation += 5; pro_republic += 3; reformist_dissent -= 15; reformist_strength += 10; aspd_dead = 1
 
 Somehow, the Saxon <span style="color: #c00000;">**SPD**</span> is willing to form a [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition with the right. With the <span style="color: #fe9e00;">**ASPD**</span>'s electoral decline, the [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?] is willing to change the governing arrangement.
