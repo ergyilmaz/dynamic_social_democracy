@@ -582,8 +582,8 @@ The bourgeois parties have historically been hostile to us in state politics, pa
 
 
 @toleration_saxony
-title: We will enter a toleration agreement with the incumbent government.
-choose-if: toleration_possible_saxony and left_strength < 30
+title: The <span style="color: #c00000;">**SPD**</span> offers us toleration, to keep a stable goverment going.
+choose-if: toleration_possible_saxony
 unavailable-subtitle: [? if not toleration_possible_saxony: The bourgeois parties won't even accept our toleration. ?][? if left_strength >= 30: Our Saxon organization is too left-wing to even consider this as an option. With the reformists having largely split into the <span style="color: #fe9e00;">ASPD</span>, the left wing is dominant. ?]
 on-arrival: saxony_toleration = 1; old_middle_nsdap -= 1; rural_nsdap -= 1; workers_spd += 1; workers_kpd += 2; left_dissent += 10
 
@@ -593,9 +593,9 @@ Despite the unsavory qualities of the <span style="color: #fe9e00;">**ASPD**</sp
 
 @true_bourgeois_coalition_saxony
 title: The incumbent Heldt III cabinet will continue.
-subtitle: They are able to retain their majority. Surprising.
+subtitle: We are able to keep our majority! [? if z_leader == "Stegerwald": <span style="color: #000000;">Stegerwald</span>'s reforms are paying off. ?]
 view-if: true_bourgeois_coalition_saxony >= 50
-on-arrival: saxony_right = 1; saxony_leader = "Heldt"; pro_republic += 1; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_other += 2 if dnvp_ideology == "Radical"; old_middle_other += 2 if dnvp_ideology == "Radical"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"
+on-arrival: saxony_right = 1; saxony_leader = "Heldt"; pro_republic += 1; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_z += 2; workers_z += 2; new_middle_z += 2; old_middle_z += 2
 
 The surprisingly good results for the incumbent coalition[? if aspd_saxony_elections_vote >= 4:&nbsp;and <span style="color: #fe9e00;">**ASPD**</span>?] have allowed them and Heldt to continue governing. The <span style="color: #7A3C00;">**NSDAP**</span> is discouraged by this defeat, as they had hoped to use their gains to influence the government.
 
@@ -611,15 +611,15 @@ Despite the exclusion of many supporting parties from the cabinet in favor of no
 
 @grand_coalition_saxony
 title: A [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition is formed!
-subtitle: We have somehow reconciled with the bourgeois parties, that they're willing to govern with us again.
-unavailable-subtitle: [? if z_relation < 50 and stegerwald_path: We need higher relations with the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?][? if dvp_toleration_threshold_fail_saxony: We need higher relations with the [? if not lvp_formed: <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?][? if left_strength >= 15: Our Saxon organization is too left-wing to even consider this as an option—after all, their stubborn refusal in the past led to the expulsion of the majority of the parliamentary faction and the subsequent formation of the <span style="color: #fe9e00;">ASPD</span>. ?]
+subtitle: the local <span style="color: #c00000;">**SPD**</span> has moderated, and are willing to govern with us again.
+unavailable-subtitle: [? if spd_relation < 50 and stegerwald_path: We need higher relations with the <span style="color: #c00000;">**SPD**</span>.
 view-if: spd_coalition_saxony >= 50
 choose-if: spd_coalition_possible_saxony and left_strength < 15
-on-arrival: saxony_spd = 1; saxony_groko = 1; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_spd += 3; unemployed_spd += 3; z_relation += 3; ddp_relation += 3; lvp_relation += 3; dvp_relation += 5; pro_republic += 3; reformist_dissent -= 15; reformist_strength += 10; aspd_dead = 1
+on-arrival: saxony_spd = 1; saxony_groko = 1; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_spd += 3; workers_z += 3; unemployed_z += 3; unemployed_spd += 3; rural_z += 3; new_middle_z += 3; old_middle_z += 3; spd_relation += 5; ddp_relation += 3; lvp_relation += 3; dvp_relation += 5; pro_republic += 3; reformist_dissent -= 15; reformist_strength += 10; aspd_dead = 1
 
-Somehow, the bourgeois parties are willing to form a [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition with us, rather than continuing their current government with Max Heldt and the right-wing parties.
+Somehow, the Saxon <span style="color: #c00000;">**SPD**</span> is willing to form a [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition with the right. With the <span style="color: #fe9e00;">**ASPD**</span>'s electoral decline, the [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?] is willing to change the governing arrangement.
 
-With the <span style="color: #fe9e00;">**ASPD**</span> (whose Saxon chapter is notably more sane) now convinced of our reformist path, they have rejoined the Saxon <span style="color: #c00000;">**SPD**</span>!
+With the <span style="color: #fe9e00;">**ASPD**</span> (whose Saxon chapter is notably more sane) now convinced of the <span style="color: #c00000;">**SPD**</span>'s reformist path,  they have rejoined the Saxon <span style="color: #c00000;">**SPD**</span>!
 
 @united_left_saxony
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>.
@@ -690,18 +690,18 @@ In an effort to avoid this, they are more open to negotiating a toleration agree
 @no_majority_2
 title: A majority still can't be found!
 subtitle: [? if not toleration_possible_saxony: This is getting ridiculous. ?][? if toleration_possible_saxony: We will refuse to tolerate the bourgeois government, forcing new elections. ?]
-on-arrival: saxony_election_2_trigger_time = time + 3; saxony_no_majority = 1 if not saxony_no_majority; saxony_no_majority += 1 if saxony_no_majority; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 1; unemployed_nsdap += 2; pro_republic -= 3; new_middle_spd -= 2 if toleration_possible_saxony; old_middle_spd -= 2 if toleration_possible_saxony; rural_spd -= 1 if toleration_possible_saxony
+on-arrival: saxony_election_2_trigger_time = time + 3; saxony_no_majority = 1 if not saxony_no_majority; saxony_no_majority += 1 if saxony_no_majority; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 1; unemployed_nsdap += 2; pro_republic -= 3
 
-A coalition of all the parties to the right of the <span style="color: #c00000;">**SPD**</span> isn't possible, and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] is refusing any form of a Grand Coalition including us.
+A coalition of all the parties to the right of the <span style="color: #c00000;">**SPD**</span> isn't possible, and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] is refusing any form of a Grand Coalition including the <span style="color: #c00000;">**SPD**</span>...
 
 With no viable alternatives, the Landtag faces dissolution, triggering new elections—an opportunity the <span style="color: #7A3C00;">**NSDAP**</span> hopes to exploit by capitalizing on political instability and the perceived failure of parliamentary democracy.
 
 [? if saxony_no_majority > 1: Please stop. ?][? if saxony_no_majority > 2: Please stop. ?][? if saxony_no_majority > 3: Please stop. ?][? if saxony_no_majority > 4: Please stop. ?][? if saxony_no_majority > 5: Please stop. ?][? if saxony_no_majority > 6: Please stop. ?][? if saxony_no_majority > 7: Please stop. ?][? if saxony_no_majority > 8: Please stop. ?][? if saxony_no_majority > 9: Please stop. ?][? if saxony_no_majority > 10: Please stop. ?][? if saxony_no_majority > 11: Please stop. ?][? if saxony_no_majority > 12: Please stop. ?]
 
 @spd_majority
-title: Form an SPD only government!
+title: The <span style="color: #c00000;">**SPD**</span> has attained a majority...
 subtitle: Sweat...
 view-if: spd_r_saxony >= 50 
-on-arrival: saxony_spd = 1; reformist_dissent -= 5; left_dissent -= 30; left_strength += 10; center_dissent -= 10; labor_dissent -= 10; aspd_dead = 1; workers_spd += 7; workers_kpd -= 4; new_middle_spd += 3; old_middle_spd += 2; unemployed_spd += 4; unemployed_nsdap -= 3; pro_republic += 5
+on-arrival: saxony_spd = 1; aspd_dead = 1; workers_spd += 7; workers_kpd -= 4; new_middle_spd += 3; old_middle_spd += 2; unemployed_spd += 4; unemployed_nsdap -= 3; pro_republic += 5
 
-Unexpectedly, we've found ourselves controlling a majority of the Saxony landtag and being able to form a government of just the <span style="color: #c00000;">**SPD**</span>! It is unclear how the bourgeois and <span style="color: #808080;">reactionaries</span> will react to a <span style="color: #c00000;">Red</span> Saxony but without the <span style="color: #700000;">**Communists**</span>... [? if aspd_share > 0: The <span style="color: #fe9e00;">**ASPD**</span> seeing as we no longer require on coalition negotiations to form government has decided to join us. ?] 
+Unexpectedly, The <span style="color: #c00000;">**SPD**</span> has attained a majority! It is unclear how the bourgeois and <span style="color: #808080;">reactionaries</span> will react to a <span style="color: #c00000;">Red</span> Saxony but without the <span style="color: #700000;">**Communists**</span>... [? if aspd_share > 0: The #fe9e00;">**ASPD**</span>, seeing as we no longer require on coalition negotiations to form government has decided to join us. ?] 
