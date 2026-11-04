@@ -1,0 +1,63 @@
+title: [+ year +] [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
+subtitle: The Party checks up on Stegerwald's promises...
+view-if: (year == 1929 and month >= 12) or (stegerwald_transformation_timer == 1) and z_leader == "Stegerwald"
+new-page: true
+on-arrival: pro_republic += 5; old_middle_z += 5; rural_z += 10; catholics -= 3; liberal_cooperation += 3
+max-visits: 1
+tags: event
+face-image: img/zentrum_3.jpg
+
+= [+ year +] [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
+
+the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] party conference is underway, and as was promised a year ago in the last conference, the party is checking up on Stegerwald's promises. 
+
+The reformation of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] away from its confessional roots has injected a dose of <span class="tooltip-text" title="good mod">dynamism</span> into the party, making it more willing to change and evolve with current conditions. Jakob Kaiser is a rising star on the left, <span style="color: #FF7F00;">Christian Left</span> wing of the party, supporting Stegerwald's vision for a united Christian union but disagreeing with his right-wing "adventurism". With no rightist candidate other than Stegerwald willing to take up the mantle as of now, Stegerwald losing control all but guarantees Kaiser's ascension.
+
+- @goals: Now, for the fate of Stegerwald's ambitions...
+
+- @stegerwald: 
+- @kaiser: Influence the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to select Jakob Kaiser as the party chair.
+- @kaiser_campaign: We will hold a campaign in support of Jakob Kaiser as party chair.
+
+@goals
+on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_goverment = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1; workers_z >= 35
+- Sign a Prussian Concordat. [? if prussian_concordat = 1: Success ?][? if not prussian_concordat = 1: Failed?]
+- Fund religious schools. [? if religious_funding >= 1: Successs?][? if not religious_funding >= 1: Failed ?]
+- Adopt interconfessionalism. [? if interconfessionalism = 1: Success ?][? if not interconfessionalism = 1: failed ?]
+- have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>. [? if ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50]: Success ?][? if not ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50]: Failed ?]
+- Remain in the National and Prussian goverment. [? if spd_in_goverment = 1: Success ?][? if not spd_in_goverment = 1: Failed ?]
+- Raise the party's polls over 20%. [? if z_r >= 20: Success ?][? if not z_r >= 20: Failed ?]
+- Crack down on the <span style="color: #700000;">**RFB**</span>. [? if rfb_banned = 1: Success ?][? if not rfb_banned = 1: Failed ?]
+- Progress in reparation negotiations or continue rearmament. [? if west_relation >= 2 or reichswehr_strength >= 100 ?][? if not west_relation >= 2 or reichswehr_strength >= 100: Failed ?]
+- Increase funding for welfare. [? if welfare > 1: Success ?][? if not welfare > 1: Failed ?]
+- Increase worker's rights. [? if workers_safety >= 1: Success ?][? if not workers_safety >= 1: Failed ?]
+- Secure more than 35% of the worker vote. [? if workers_z = 35: Success ?][? if not workers_z = 35: Failed ?]
+
+@stegerwald_yay: Stegerwald secures his position!
+@stegerwald_nay: Stegerwald is thrown down in a vote of no confidence!
+
+@stegerwald_yay
+view-if: stegerwald_hurray = 1
+on-arrival: catholics -= 2; old_middle_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); catholics_spd += 8; dnvp_relation += 8 if dnvp_ideology == "Moderate"
+
+Perhaps shockingly, Stegerwald has secured his position as Party Chairman with the unanimous vote of all but the <span style="color: #FF7F00;">Christian Left</span>. He now presides over a truly transformed [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]: A party for all Christians, no matter what class or denomination.[? if dnvp_ideology == "Moderate" whispers of a possible merger with the <span style="color: #003755;">DNVP</span> are growing louder. Time will tell what comes out of this... ?]  
+
+@stegerwald_nay
+view-if: stegerwald_hurray != 1
+subtitle: <span style="color: #FF7F00;">Kaiser</span> will take up the reigns.
+on-arrival: z_leader = "Kaiser"; z_ideology "Center to Center-Left", workers_z += 8*(1-dissent); catholics_spd += 8; interconfessionalism_support += 1; spd_relation += 15; dvp_relation -= 5; ddp_left += 1; dvp_left += 1; dnvp_relation -= 10
+
+Failing to meet his promises to the party, Stegerwald faces a vote of no confidence, being replaced with the main anti-Stegerwald candidate, Jakob Kaiser. Support for interconfessionalism within the party is all but unanimous, and Kaiser's support for it, while critising Stegerwald for his "right-wing adventurism" along with his pro-labor positions has helped him rally the party to his cause. Still, even with this huge victory for the <span style="color: #FF7F00;">Leftists</span> of the party, Kaiser's position is not yet secure - him running a mainly anti-Stegerwald and the increasing <span class="tooltip-text" title="good mod">dynamism</span> of the party campaign has led to a quick fracturing of his coalition. Time will tell what happens in the 1931 Conference...
+
+view
+@kaiser_campaign
+view-if: z_relation < 70
+choose-if: z_relation >= 65 and pro_republic >= 75 and resources >= 2 
+subtitle: -2 resources.
+unavailable-subtitle: [? if z_relation < 65 : Our relations are not high enough. ?] [? if pro_republic < 75 : The party isn't left-wing enough for someone like him. ?] [? if resources < 2 : We do not have enough resources. ?]
+on-arrival: resources -= 2; z_relation += 10; z_ideology = "Left"; z_leader = "Kaiser"; liberal_cooperation += 2; workers_z += 5; workers_spd -= 5; unemployed_z += 5; rural_z -= 4; old_middle_z -= 8; rural_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_dnvp += 8 if dnvp_ideology == "Moderate"; catholics_dnvp += 4 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if kvp_formed; old_middle_dnvp += 8 if kvp_formed; catholics_dnvp += 4 if kvp_formed; rural_other += 4 if not kvp_formed and dnvp_ideology == "Radical"; old_middle_other += 8 if not kvp_formed and dnvp_ideology == "Radical"; catholics_other += 4 if not kvp_formed and dnvp_ideology == "Radical"; prussia_leader = "Stegerwald" if prussia_leader == "Brüning"; kaiser_time = time + 11
+face-image: img/portraits/kaiser.jpg
+
+With our grassroots connections, as well as a professional campaign, we are able to secure the election of Jakob Kaiser to the chairmanship of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. This has come as a complete shock to the political landscape, which has been shifting to the right recently. His progressive, left-wing views on contentious subjects like nationalizations and his vehement anti-<span style="color: #7A3C00;">Nazism</span> are ahead of his time. 
+
+Despite this victory, he finds himself at odds with the rest of his party, as his views are out of place. [? if dnvp_ideology == "Radical": Furthermore, this has stopped the flow of <span style="color: #3E88B3;">**DNVP**</span> moderates to the party, whose voters will head back to the various smaller parties between the two parties. ?][? if dnvp_ideology == "Moderate": Furthermore, this has stopped the process of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] taking over the <span style="color: #3E88B3;">**DNVP**</span> of being the party of the right. ?] Due to the party's <span class="tooltip-text" title="good mod">dynamism</span>, he may be deposed if he proves to be too divisive.
