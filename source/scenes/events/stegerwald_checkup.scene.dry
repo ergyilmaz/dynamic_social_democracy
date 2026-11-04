@@ -18,7 +18,7 @@ The reformation of the [? if z_party_name != "CVP": <span style="color: #000000;
 @goals
 on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_goverment = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1; workers_z >= 35
 
-- Sign a Prussian Concordat. [? if prussian_concordat = 1 : Success ?][? if not prussian_concordat = 1 : Failed ?]
+- Sign a Prussian Concordat. [? if prussian_concordat == 1 : Success ?][? if not prussian_concordat == 1 : Failed ?]
 - Fund religious schools. [? if religious_funding >= 1 : Successs?][? if not religious_funding >= 1 : Failed ?]
 - Adopt interconfessionalism. [? if interconfessionalism = 1 : Success ?][? if not interconfessionalism = 1 : Failed ?]
 - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>. [? if ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Success ?][? if not ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Failed ?]
