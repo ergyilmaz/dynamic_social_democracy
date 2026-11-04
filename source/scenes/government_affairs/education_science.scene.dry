@@ -1,7 +1,7 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: spd_in_government and (prussia_leader == "Braun" or prussia_leader == "Rosenfeld") and chancellor_party = "SPD" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: spd_in_government and (prussia_leader == "Stegerwald" or prussia_leader == "Brüning") and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
 on-arrival: education_science_timer += 9; month_actions += 1
 card-image: img/portraits/EinsteinAlbert.jpg
 go-to: ed_menu
@@ -43,7 +43,7 @@ view-if: not last_advisor_action
 
 @increase_science
 title: Increase funding for scientific research.
-choose-if: economic_minister_party = "SPD"
+choose-if: economic_minister_party = "Z"
 unavailable-subtitle: This requires the Economic Ministry.
 
 <span style="color: #9b0000;">Socialism</span> has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and <span style="color: #808080;">reactionary</span> attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
@@ -95,39 +95,20 @@ title: Change the structure and funding of education.
 
 Education in Germany has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely <span style="color: #005EB8;">Jewish</span>), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by <span style="color: #3E88B3;">conservatives</span> and <span style="color: #808080;">reactionaries</span>, which has negative consequences for bureaucratic recruitment.
 
-- @secularize
+- @religious_funding
 - @public_hs
 - @school_boards
 - @ed_menu: Do not change school funding or organization.
 - @cancel_advisor_action
 
-@secularize
-title: Support secular schools to end the religious dominance in education.
+@religious_funding
+title: Increaes funding for religious schools.
 subtitle: -1 budget
-unavailable-subtitle: -1 budget - requires a majority of parties to support secular schools.
-choose-if: budget >= 1 and ((progressive_coalition + dvp_r >= 50 and not lvp_formed) or (kpd_r + spd_r + lvp_r >= 50 and lvp_formed))
-view-if: secularized = 0
-go-to: secularize_menu if not in_social_liberal_coalition and not in_spd_majority and not in_left_front and not sapd_toleration; secularize_2 if in_social_liberal_coalition or in_spd_majority or in_left_front or sapd_toleration
+unavailable-subtitle: Not enough budget.
+choose-if: budget >= 1
+on-arrival: coalition dissent += 2 if not in_christian_coalition, center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 10; catholics_z += 5*(1-dissent); old_middle_z += 4*(1-dissent)
 
-@secularize_menu
-
-Are you sure about this? The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition had an agreement to not touch religious schools; the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] will revolt.
-
-- @secularize_2: Yes, do it.
-- @ed_menu: No, do not touch religious education.
-- @cancel_advisor_action
-
-@secularize_2
-on-arrival: secularized = 1; secularized_a = 1; budget -= 1; catholics_spd -= 15; catholics -= 5; z_relation -= 15; dvp_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); lvp_relation += 6*(1-dissent); kpd_relation += 6*(1-dissent); new_middle_spd += 3*(1-dissent); workers_spd += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4; new_middle_lvp += 8; dvp_left += 3; ddp_left += 3; ddp_cohesion += 2; lvp_left += 5; education_goal_spd += 1; coalition_dissent += 3 if constructive_vonc and ((in_weimar_coalition and not in_social_liberal_coalition) or in_grand_coalition or in_popular_front or in_emergency_government)
-go-to: vote_of_no_confidence.vonc_menu if ((in_weimar_coalition and not in_social_liberal_coalition) or in_grand_coalition or in_popular_front or in_emergency_government) and not constructive_vonc
-
-# instant VONC from zentrum
-
-The <span style="color: #c00000;">**SPD**</span>, [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, [? if not dvp_exist: former ?]<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], and <span style="color: #700000;">**KPD**</span> vote in favor of secular education, overcoming the opposition of the religiously-oriented [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #3E88B3;">**DNVP**</span>. We have funded secular community schools to replace some previous denominational schools.
-
-[? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is in revolt at this proposal[? if not constructive_vonc: , and have called for a vote of no confidence in our government?]. ?]
-
-
+Funding for religious schools are expected, much to the anger of our coalition partners. Regardless, our base and party is pleased.
 
 @public_hs
 title: Increase educational opportunities for the working class by funding public high schools.
