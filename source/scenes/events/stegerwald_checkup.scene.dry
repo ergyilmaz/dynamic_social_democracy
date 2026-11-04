@@ -7,6 +7,8 @@ max-visits: 1
 tags: event
 face-image: img/zentrum_3.jpg
 
+stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1 and workers_z >= 35
+
 = [+ year +] [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
 
 the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] party conference is underway, and as was promised a year ago in the last conference, the party is checking up on Stegerwald's promises. 
@@ -18,7 +20,6 @@ The reformation of the [? if z_party_name != "CVP": <span style="color: #000000;
 @goals
 title: Now, for the fate of Stegerwald's ambitions...
 subtitle: The party votes...
-on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1 and workers_z >= 35
 
   - Sign a Prussian Concordat. [? if prussian_concordat == 1 : Success ?][? if not prussian_concordat == 1 : Failed ?]
 
