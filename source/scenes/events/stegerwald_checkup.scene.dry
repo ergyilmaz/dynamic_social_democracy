@@ -42,8 +42,8 @@ on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessiona
 
   - Secure more than 35% of the worker vote. [? if workers_z = 35 : Success ?][? if not workers_z = 35 : Failed ?]
 
-@stegerwald_yay
-@stegerwald_nay
+  @stegerwald_yay
+  @stegerwald_nay
 
 @stegerwald_yay
 title: Stegerwald secures his position!
