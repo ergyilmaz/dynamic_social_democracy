@@ -106,7 +106,7 @@ title: Increaes funding for religious schools.
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget.
 choose-if: budget >= 1
-on-arrival: coalition dissent += 2 if not in_christian_coalition, center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 10; catholics_z += 5*(1-dissent); old_middle_z += 4*(1-dissent)
+on-arrival: coalition dissent += 2 if not in_christian_coalition = 1; center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 10; catholics_z += 5*(1-dissent); old_middle_z += 4*(1-dissent)
 
 Funding for religious schools are expected, much to the anger of our coalition partners. Regardless, our base and party is pleased.
 
