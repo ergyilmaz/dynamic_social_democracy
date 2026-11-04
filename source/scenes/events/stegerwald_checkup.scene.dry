@@ -42,16 +42,18 @@ on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessiona
 
   - Secure more than 35% of the worker vote. [? if workers_z = 35 : Success ?][? if not workers_z = 35 : Failed ?]
 
-@stegerwald_yay: Stegerwald secures his position!
-@stegerwald_nay: Stegerwald is thrown down in a vote of no confidence!
+@stegerwald_yay
+@stegerwald_nay
 
 @stegerwald_yay
+title: Stegerwald secures his position!
 view-if: stegerwald_hurray = 1
 on-arrival: catholics -= 2; old_middle_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); catholics_spd += 8; dnvp_relation += 8 if dnvp_ideology == "Moderate"
 
 Perhaps shockingly, Stegerwald has secured his position as Party Chairman with the unanimous vote of all but the <span style="color: #FF7F00;">Christian Left</span>. He now presides over a truly transformed [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]: A party for all Christians, no matter what class or denomination.[? if dnvp_ideology == "Moderate" whispers of a possible merger with the <span style="color: #003755;">DNVP</span> are growing louder. Time will tell what comes out of this... ?]  
 
 @stegerwald_nay
+title: Stegerwald is thrown down in a vote of no confidence!
 view-if: stegerwald_hurray != 1
 subtitle: <span style="color: #FF7F00;">Kaiser</span> will take up the reigns.
 on-arrival: z_leader = "Kaiser"; z_ideology "Center to Center-Left", workers_z += 8*(1-dissent); catholics_spd += 8; interconfessionalism_support += 1; spd_relation += 15; dvp_relation -= 5; ddp_left += 1; dvp_left += 1; dnvp_relation -= 10
