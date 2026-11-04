@@ -13,22 +13,34 @@ the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</spa
 
 The reformation of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] away from its confessional roots has injected a dose of <span class="tooltip-text" title="good mod">dynamism</span> into the party, making it more willing to change and evolve with current conditions. Jakob Kaiser is a rising star on the left, <span style="color: #FF7F00;">Christian Left</span> wing of the party, supporting Stegerwald's vision for a united Christian union but disagreeing with his right-wing "adventurism". With no rightist candidate other than Stegerwald willing to take up the mantle as of now, Stegerwald losing control all but guarantees Kaiser's ascension.
 
-- @goals: Now, for the fate of Stegerwald's ambitions...
+- @goals
 
 @goals
+title: Now, for the fate of Stegerwald's ambitions...
+subtitle: The party votes...
 on-arrival: stegerwald_hurray = 1 if prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_goverment = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1; workers_z >= 35
 
-- Sign a Prussian Concordat. [? if prussian_concordat == 1 : Success ?][? if not prussian_concordat == 1 : Failed ?]
-- Fund religious schools. [? if religious_funding >= 1 : Successs?][? if not religious_funding >= 1 : Failed ?]
-- Adopt interconfessionalism. [? if interconfessionalism = 1 : Success ?][? if not interconfessionalism = 1 : Failed ?]
-- have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>. [? if ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Success ?][? if not ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Failed ?]
-- Remain in the National and Prussian goverment. [? if spd_in_goverment = 1 : Success ?][? if not spd_in_goverment = 1:  Failed ?]
-- Raise the party's polls over 20%. [? if z_r >= 20: Success ?][? if not z_r >= 20 : Failed ?]
-- Crack down on the <span style="color: #700000;">**RFB**</span>. [? if rfb_banned = 1 : Success ?][? if not rfb_banned = 1 : Failed ?]
-- Progress in reparation negotiations or continue rearmament. [? if west_relation >= 2 or reichswehr_strength >= 100 : Success ?][? if not west_relation >= 2 or reichswehr_strength >= 100 : Failed ?]
-- Increase funding for welfare. [? if welfare > 1 : Success ?][? if not welfare > 1 : Failed ?]
-- Increase worker's rights. [? if workers_safety >= 1 : Success ?][? if not workers_safety >= 1 : Failed ?]
-- Secure more than 35% of the worker vote. [? if workers_z = 35 : Success ?][? if not workers_z = 35 : Failed ?]
+  - Sign a Prussian Concordat. [? if prussian_concordat == 1 : Success ?][? if not prussian_concordat == 1 : Failed ?]
+
+  - Fund religious schools. [? if religious_funding >= 1 : Successs?][? if not religious_funding >= 1 : Failed ?]
+
+  - Adopt interconfessionalism. [? if interconfessionalism = 1 : Success ?][? if not interconfessionalism = 1 : Failed ?]
+
+  - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>. [? if ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Success ?][? if not ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Failed ?]
+
+  - Remain in the National and Prussian goverment. [? if spd_in_goverment = 1 : Success ?][? if not spd_in_goverment = 1:  Failed ?]
+
+  - Raise the party's polls over 20%. [? if z_r >= 20 : Success ?][? if not z_r >= 20 : Failed ?]
+
+  - Crack down on the <span style="color: #700000;">**RFB**</span>. [? if rfb_banned = 1 : Success ?][? if not rfb_banned = 1 : Failed ?]
+
+  - Progress in reparation negotiations or continue rearmament. [? if west_relation >= 2 or reichswehr_strength >= 100 : Success ?][? if not west_relation >= 2 or reichswehr_strength >= 100 : Failed ?]
+
+  - Increase funding for welfare. [? if welfare > 1 : Success ?][? if not welfare > 1 : Failed ?]
+
+  - Increase worker's rights. [? if workers_safety >= 1 : Success ?][? if not workers_safety >= 1 : Failed ?]
+
+  - Secure more than 35% of the worker vote. [? if workers_z = 35 : Success ?][? if not workers_z = 35 : Failed ?]
 
 @stegerwald_yay: Stegerwald secures his position!
 @stegerwald_nay: Stegerwald is thrown down in a vote of no confidence!
