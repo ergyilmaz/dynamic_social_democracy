@@ -7,6 +7,9 @@ max-visits: 1
 tags: event
 face-image: img/zentrum_3.jpg
 
+stegerwald_yay = 0;
+stegerwald_yay = 1 if  prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1 and workers_z >= 35;
+
 = [+ year +] [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
 
 the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] party conference is underway, and as was promised a year ago in the last conference, the party is checking up on Stegerwald's promises. 
@@ -27,7 +30,7 @@ Perhaps shockingly, Stegerwald has secured his position as Party Chairman with t
 
 @stegerwald_nay
 title: Stegerwald is thrown down in a vote of no confidence!
-choose-if: not prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and [west_relation >= 2 or reichswehr_strength >= 100] and welfare > 1 and workers_safety >= 1 and workers_z >= 35
+choose-if:
 subtitle: <span style="color: #FF7F00;">Kaiser</span> will take up the reigns.
 on-arrival: z_leader = "Kaiser"; z_ideology "Center to Center-Left", workers_z += 8*(1-dissent); catholics_spd += 8; interconfessionalism_support += 1; spd_relation += 15; dvp_relation -= 5; ddp_left += 1; dvp_left += 1; dnvp_relation -= 10
 
