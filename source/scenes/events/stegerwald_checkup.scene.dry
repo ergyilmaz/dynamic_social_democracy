@@ -19,29 +19,8 @@ The reformation of the [? if z_party_name != "CVP": <span style="color: #000000;
 title: Now, for the fate of Stegerwald's ambitions...
 subtitle: The party votes...
 
-  - Sign a Prussian Concordat. [? if prussian_concordat == 1 : Success ?][? if not prussian_concordat == 1 : Failed ?]
-
-  - Fund religious schools. [? if religious_funding >= 1 : Successs?][? if not religious_funding >= 1 : Failed ?]
-
-  - Adopt interconfessionalism. [? if interconfessionalism = 1 : Success ?][? if not interconfessionalism = 1 : Failed ?]
-
-  - have working relations with the bourgeois parties, the <span style="color: #c00000;">**SPD**</span> and/or the <span style="color: #003755;">DNVP</span>. [? if ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Success ?][? if not ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] : Failed ?]
-
-  - Remain in the National and Prussian goverment. [? if spd_in_goverment = 1 : Success ?][? if not spd_in_goverment = 1:  Failed ?]
-
-  - Raise the party's polls over 20%. [? if z_r >= 20 : Success ?][? if not z_r >= 20 : Failed ?]
-
-  - Crack down on the <span style="color: #700000;">**RFB**</span>. [? if rfb_banned = 1 : Success ?][? if not rfb_banned = 1 : Failed ?]
-
-  - Progress in reparation negotiations or continue rearmament. [? if west_relation >= 2 or reichswehr_strength >= 100 : Success ?][? if not west_relation >= 2 or reichswehr_strength >= 100 : Failed ?]
-
-  - Increase funding for welfare. [? if welfare > 1 : Success ?][? if not welfare > 1 : Failed ?]
-
-  - Increase worker's rights. [? if workers_safety >= 1 : Success ?][? if not workers_safety >= 1 : Failed ?]
-
 @stegerwald_yay
 title: Stegerwald secures his position!
-choose-if:
 on-arrival: catholics -= 2; old_middle_z += 5*(1-dissent); new_middle_z += 5*(1-dissent); catholics_spd += 8; dnvp_relation += 8 if dnvp_ideology == "Moderate"
 
 Perhaps shockingly, Stegerwald has secured his position as Party Chairman with the unanimous vote of all but the <span style="color: #FF7F00;">Christian Left</span>. He now presides over a truly transformed [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]: A party for all Christians, no matter what class or denomination.[? if dnvp_ideology == "Moderate" whispers of a possible merger with the <span style="color: #003755;">DNVP</span> are growing louder. Time will tell what comes out of this... ?]  
