@@ -16,7 +16,7 @@ The <span style="color: #000000;">Center</span> is torn between many different i
 
 - @class_struggle: Following the <span style="color: #FF7F00;">Christian Left</span>, we should seek labour reforms, defence of the republic, and cooperation with the Weimar parties.
 - @centrist: Remaining true to our convictions, we should seek to prevent a new <span style="color: #808080;">Kulturkampf</span>, and maintain stability.  
-- @labor: We shall leave the tower and expand our electorate to protestants and <span style="color: #000000;">Christian</span> workers, and seek an interconfessional bloc with the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">right</span> .
+- @labor: We shall leave the tower and expand our electorate to protestants and <span style="color: #000000;">Christian</span> workers, and seek an interconfessional bloc with the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">DNVP</span>  ?][? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">DNVP</span> ?] .
 - @reform: We should seek to centralize the regime, to rid Germany of degeneracy and <span style=#c00000;"color: #9B0000;">Marxism</span>.
 - @easy_discard
 
