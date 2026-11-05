@@ -33,6 +33,6 @@ Perhaps shockingly, Stegerwald has secured his position as Party Chairman with t
 title: Stegerwald is thrown down in a vote of no confidence!
 choose-if: stegerwald_yay = 0
 subtitle: <span style="color: #FF7F00;">Kaiser</span> will take up the reigns.
-on-arrival: z_leader = "Kaiser"; z_ideology "Center to Center-Left", workers_z += 8*(1-dissent); catholics_spd += 8; interconfessionalism_support += 1; spd_relation += 15; dvp_relation -= 5; ddp_left += 1; dvp_left += 1; dnvp_relation -= 10
+on-arrival: z_leader = "Kaiser"; z_ideology = "Center to Center-Left"; workers_z += 8*(1-dissent); catholics_spd += 8; interconfessionalism_support += 1; spd_relation += 15; dvp_relation -= 5; ddp_left += 1; dvp_left += 1; dnvp_relation -= 10
 
 Failing to meet his promises to the party, Stegerwald faces a vote of no confidence, being replaced with the main anti-Stegerwald candidate, Jakob Kaiser. Support for interconfessionalism within the party is all but unanimous, and Kaiser's support for it, while critising Stegerwald for his "right-wing adventurism" along with his pro-labor positions has helped him rally the party to his cause. Still, even with this huge victory for the <span style="color: #FF7F00;">Leftists</span> of the party, Kaiser's position is not yet secure - him running a mainly anti-Stegerwald and the increasing <span class="tooltip-text" title="good mod">dynamism</span> of the party campaign has led to a quick fracturing of his coalition. Time will tell what happens in the 1931 Conference...
