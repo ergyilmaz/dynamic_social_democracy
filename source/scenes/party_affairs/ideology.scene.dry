@@ -16,9 +16,8 @@ The <span style="color: #000000;">Center</span> is torn between many different i
 
 - @class_struggle: Following the <span style="color: #FF7F00;">Christian Left</span>, we should seek labour reforms, defence of the republic, and cooperation with the Weimar parties.
 - @centrist: Remaining true to our convictions, we should seek to prevent a new <span style="color: #808080;">Kulturkampf</span>, and maintain stability.  
-- @labor: We shall leave the tower and expand our electorate to protestants and <span style="color: #000000;">Christian</span>
- workers, and seek an interconfessional bloc with the <span style="color: #003755;">**DNVP**</span> .
-- @reform: Following <span style="color: #808080;">Franz von Papen</span>, we should seek to centralize the regime, to rid germany of degeneracy and <span style=#c00000;"color: #9B0000;">Marxism</span>.
+- @labor: We shall leave the tower and expand our electorate to protestants and <span style="color: #000000;">Christian</span> workers, and seek an interconfessional bloc with the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">right</span> .
+- @reform: We should seek to centralize the regime, to rid Germany of degeneracy and <span style=#c00000;"color: #9B0000;">Marxism</span>.
 - @easy_discard
 
 @class_struggle
@@ -28,7 +27,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; ddp_relation += 3; ddp_cohesion += 0.5; nationalization_support += 1; kpd_relation += 3; ddp_left += 0.5; dvp_left += 1; lvp_left += 0.5
+on-departure: ideology = "left"; left_strength += 8; communist_coalition += 1; left_dissent -= 5; reformist_dissent += 5; spd_relation += 5; ddp_relation += 3; ddp_cohesion += 0.5; nationalization_support += 1; kpd_relation += 3; ddp_left += 0.5; dvp_left += 1; lvp_left += 0.5
 
 The <span style="color: #FF7F00;">Christian Left</span> supports cooperation with the <span style="color: #c00000;">**SPD**</span>, labor rights, and interconfessionalism.
 
@@ -61,7 +60,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 8; democratization += 1; reformist_dissent -= 5; left_dissent += 5; z_relation += 5; dvp_relation += 5; ddp_relation += 5; lvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
+on-departure: ideology = "reformist"; reformist_strength += 8; reformist_dissent -= 5; left_dissent += 5; spd_relation -= 5; dvp_relation += 5; lvp_relation += 2.5; kpd_relation -= 25; ddp_cohesion -= 0.5
 
 The Right wing of our party seeks an alliance with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> to fight the influence of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>.
 
