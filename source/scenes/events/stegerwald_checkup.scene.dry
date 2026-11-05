@@ -7,8 +7,8 @@ max-visits: 1
 tags: event
 face-image: img/zentrum_3.jpg
 
-[? stegerwald_yay = 0;
-stegerwald_yay = 1 if  prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and welfare > 1 and workers_safety >= 1 and workers_z >= 35; ?]
+[? stegerwald_yay = 0; ?]
+[? stegerwald_yay = 1 if  prussian_concordat = 1 and interconfessionalism = 1 and ddp_relation >= 50 and [spd_relation >= 50 or dnvp_relation >= 50] and spd_in_government = 1 and z_r >= 20 and rfb_banned = 1 and welfare > 1 and workers_safety >= 1 and workers_z >= 35; ?]
 
 = [+ year +] [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
 
