@@ -22,9 +22,9 @@ on-display: {!
 
 As the Great Depression sweeps over Germany, public dissillusionment with the goverment over their inactivity is at an all-time high. As a response to the worsening situation, prominent economist and financial expert Wihelm Lautenbach has developed a plan to counter the crisis - The so-called Lautenbach Plan, calling for public works and fiscal stimulus to restart the economy, funded by wage cuts and taxes. Many in the bourgeois parties are aroused by the idea, including within ours, although the plan directly goes against the orthodox economic policy of the party center.
 
-@support_lautenbach
-@adopt_lautenbach
-@austerity
+- @support_lautenbach
+- @adopt_lautenbach
+- @austerity
 
 @support_lautenbach
 title: Support Lautenbach's ideas, we cannot stand by while the situation deteriorates.
