@@ -18,7 +18,7 @@ Our party is wracked as to how to deal with the economic crisis. From the centri
 
 @support_centrist
 subtitle: Austerity politics to stop economic chaos.
-on-arrival: center_strength += 5; center_dissent -= 5; labor_dissent += 10; wtb_support -= 1; left_dissent += 10;
+on-arrival: center_strength += 5; center_dissent -= 5; labor_dissent += 10; lautenbach_support -= 1; left_dissent += 10;
 
 Leftists and the trade unions vehemently criticize the centrists for their policy. The workers are starving; are we going to further their suffering with austerity? On the other hand, the centrists criticize labor for their recklessness; their position is that goverment spending will further worsen the crisis. They also speak of the fear of another round of hyperinflation that may result from deficit spending.
 
@@ -28,10 +28,9 @@ Our policy course is currently that nothing can be done to alleviate the depress
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Labor faction is not strong enough.
 choose-if: labor_strength >= left_strength and labor_strength >= center_strength
-view-if: wtb_concept
-on-arrival: center_dissent += 10; left_dissent += 5; labor_strength += 5; wtb_support += 1; wtb_points += 10
+on-arrival: center_dissent += 10; labor_strength += 5; lautenbach_support += 1
 
-Our support of the WTB plan alienates the orthodox economics of the Centrist faction, and faces both opposition and support from a variety of sources across the spectrum.
+Our support of the Lautenbach plan alienates the orthodox economics of the Centrist faction, and faces both opposition and support from a variety of sources across the spectrum.
 
 We have not yet convinced the party to formally adopt the plan. More work needs to be done.
 
