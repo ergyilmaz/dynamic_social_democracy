@@ -75,7 +75,7 @@ view-if: black_thursday_seen
 
 - @cut_salaries
 - @industrial_levy
-- @economic_plan_menu: Go back.
+- @economic_plan_dilemma: Go back.
 
 @cut_salaries
 title: Slash the salaries of government employees.
