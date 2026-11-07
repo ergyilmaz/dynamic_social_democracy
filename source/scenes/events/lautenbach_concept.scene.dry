@@ -1,0 +1,53 @@
+title: The "Lautenbach" Plan
+subtitle: A light at the end of the tunnel?
+view-if: (black_thursday_seen and lautenbach_support > 3) or year = 1931 and month = 9
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: crisis_urgency += 1; wtb_support += 1
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/greatdepression.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= The "Lautenbach" Plan
+
+As the Great Depression sweeps over Germany, public dissillusionment with the goverment over their inactivity is at an all-time high. As a response to the worsening situation, prominent economist and financial expert Wihelm Lautenbach has developed a plan to counter the crisis - The so-called Lautenbach Plan, calling for public works and fiscal stimulus to restart the economy, funded by wage cuts and taxes. Many in the bourgeois parties are aroused by the idea, including within ours, although the plan directly goes against the orthodox economic policy of the party center.
+
+@support_lautenbach
+@adopt_lautenbach
+@austerity
+
+@support_lautenbach
+title: Support Lautenbach's ideas, we cannot stand by while the situation deteriorates.
+subtitle: The labor and left wings are united behind the plan.
+choose-if: labor_strength + left_strength > center_strength + reformist_strength
+unavailable_subtitle: the Labor and Left wings aren't strong enough.
+on-arrival: lautenbach_support += 2;
+
+The Labor wings rallies party members for economic change and end to inaction.
+  
+@adopt_lautenbach
+title: Incorporate the plan into the party programme, making it our official economic policy!
+subtitle: A confrontation will occur!
+choose-if: lautenbach_support > 5
+unavailable-subtitle: Public works porgrams don't have enough support within the party.
+on-arrival: lautenbach_adopted = 1; economic_plan = 1; center_dissent += 10; wtb_support += 2
+
+We have adopted the Lautenbach Plan! We can start implementing it when we have the finance or economic ministries.
+
+@austerity
+title: All this recklessness and daydreaming will be the end of Germany!
+subtitle: We cannot abandon our orthodox ideas for such unadulterated nonsense.
+on-arrival: center_strength += 10; lautenbach_support -= 2; labor_strength -= 10
+
+After all, 99% of Orthodox economists quit right before they are about to balance the budget...
+
