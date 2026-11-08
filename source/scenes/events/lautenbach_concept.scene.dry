@@ -1,6 +1,6 @@
 title: The "Lautenbach" Plan
 subtitle: A light at the end of the tunnel?
-view-if: (black_thursday_seen and lautenbach_support > 3) or year = 1931 and month = 9
+view-if: (black_thursday_seen and lautenbach_support > 3) or (year == 1931 and month == 9)
 max-visits: 1
 tags: event
 new-page: true
