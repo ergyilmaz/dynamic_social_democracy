@@ -1,57 +1,20 @@
-title: Understanding the Enemy
-subtitle: Why did the <span style="color: #7A3C00;">Nazis</span> gain so many votes?
-view-if: year >= 1929 and year <= 1932 and nsdap_r >= 15 and understanding_enemy_seen = 0 and understanding_enemy_timer = 0 and neorevisionism = 0
-on-arrival: understanding_enemy_seen = 1
+title: New Ideas in the <span style="color: #c00000;">**SPD**</span>
+subtitle: Something stirs among the <span style="color: #c00000;">**socialist**</span> youth... 
+view-if: year >= 1929 and year <= 1931 and (nsdap_r >= 10 or (workers_nsdap >= 15 and new_middle_nsdap >= 20 and old_middle_nsdap >= 25))
 max-visits: 1
 new-page: true
 tags: event
 
-= Understanding the Enemy
+= New Ideas in the <span style="color: #c00000;">**SPD**</span>
 
-The <span style="color: #7A3C00;">Nazis</span>' rise is unprecedented for a political party in modern Germany, and <span style="color: #c00000;">socialist</span> intellectuals are doing their best to come to terms with the rapid rise of this dangerous party.
+The <span style="color: #7A3C00;">Nazis</span>' rise is unprecedented for a political party in modern Germany, and <span style="color: #c00000;">socialist</span> intellectuals are doing their best to come to terms with the rapid rise of this dangerous party. Among the mess of voices trying to push the party left or right, an unusual group has emerged, the "new revisionists" led by politican and activist Carlo Mierendorff. Basing its support primarily in the youth wing, they reject the <span style="color: #c00000;">Marxist Determinism</span> championed by the Center Marxists, Instead arguing that the <span style="color: #c00000;">**SPD**</span> should take action against the <span style="color: #7A3C00;">Nazi</span> threat before it grows out of control.
 
-# Harsch p. 106-109
+Although the movement is still on the fringes of the party, it is rapidly gaining ground, namely with brand new propaganda tactics focused on emotion and symbols rather than reason - a tactic which eerily resembles the <span style="color: #7A3C00;">fascists</span>.
 
-The trade union researcher Theodor Geiger has written an article titled "Panik im Mittelstand", in which he describes the <span style="color: #7A3C00;">Nazis</span> as being primarily a movement of the middle class, especially lower-middle civil servants and professionals who fear the proletarianizing effects of the Depression. Geiger argues that the middle class has been economically and politically unmoored, long split between many competing parties, squeezed between the big businesses and the proletariat. The mix of nationalist, anti-democratic, and loosely anti-capitalist rhetoric of the <span style="color: #7A3C00;">Nazis</span> appeals to this group, perhaps only temporarily before the middle class discovers its true class interests.
+@neorev_ideas
 
-By contrast, the theoretician Alexander Schifrin understands the <span style="color: #7A3C00;">Nazis</span> as a new, unprecedented type of political movement, a <span style="color: #7A3C00;">fascist</span> party that has non-economic appeal across class lines. He calls to attention its use of violent propaganda and street demonstrations as central to their rise.
+@neorev_ideas
+title: Their ideas are put to test...
+on-arrival: workers_kpd -= 1; unemployed_kpd -= 1; workers_nsdap -= 2; unemployed_nsdap -= 2; new_middle_nsdap -= 1; old_middle_nsdap -= 1; workers_spd += 3; unemployed_spd += 3; new_middle_spd += 2; old_middle_spd += 2; rural_spd += 4
 
-# Harsch p. 77-78
-
-Carlo Mierendorff, a leader of the "new revisionists", understands the <span style="color: #7A3C00;">Nazis</span> as a politically incoherent but nevertheless powerful movement. They are kept together by the strength of their organizing machine and the emotional appeal of their nebulous ideology, which is able to attract less informed voters who voted based on feeling. Countering them would require a new style of campaigning, focused more on symbols and emotion rather than reason.
-
-
-It is possible that all or none of these hypotheses are correct. Whatever the case, there must be something we can do to stop their rise.
-
-# Georg Decker
-
-# Alexander Shifrin
-
-# Carlo Mierendorff
-
-- @p1: The <span style="color: #7A3C00;">Nazis</span> are the fault of the <span style="color: #000000;">petit</span> <span style="color: #C0A054;">bourgeois</span>. It is not our responsibility as a working-class party to stop them.
-- @p2: We can combat the <span style="color: #7A3C00;">Nazis</span> by adopting a "People's Party" posture that might compete for support among the middle class.
-- @p3: We should use new Mierendorff's new propaganda methods to fight the the <span style="color: #7A3C00;">Nazis</span>.
-- @p4: We must focus our work among the working class to prevent <span style="color: #7A3C00;">Nazi</span> in-roads.
-
-@p1
-
-The <span style="color: #7A3C00;">Nazis</span> are the fault of the petit bourgeoisie. It is not our responsibility as a working-class party to stop them.
-
-@p2
-on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 3; left_dissent += 4; center_dissent += 3;
-
-We can combat the <span style="color: #7A3C00;">Nazis</span> by adopting a "People's Party" posture that might compete for support among the middle class. In order to do this, we can create a new and inclusive vision of the party that encompasses all people who work for a living, which is almost everyone in the country save the aristocrats and top capitalists.
-
-[? if peoples_party = 0 : This effort faces great opposition from the left and center of our party, who would prefer a party focused on the working class. To fully adopt the vision of a people's party, we should increase our campaigning among other demographics. ?]
-
-
-@p3
-on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism += 1;
-
-Working together with other "neorevisionists" such as Sergei Chakhotin, Mierendorff has developed new propaganda methods to fight the rise of the Nazis. They focus on visually striking symbols and repetitious slogans. Time will tell how effective they are.
-
-@p4
-on-arrival: left_strength += 4; center_strength += 4; labor_strength += 4; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent)
-
-The <span style="color: #7A3C00;">Nazis</span>' appeals are making in-roads even among the working class, so we must redouble our propaganda campaigns among our base in order to prevent any <span style="color: #7A3C00;">Nazi</span> attachment.
+The <span style="color: #c00000;">**SPD**</span> incorporats the neorevisionist rhetoric into their propaganda with the "<span style="color: #c00000;">Three Arows</span>" bring developed as an answer against the Nazi <span style="color: #7A3C00;">Swastika</span>, symbolizing opposition to <span style="color: #7A3C00;">Nazism</span>, <span style="color: #700000;">Stalinism</span> and <span style="color: #808080;">reaction</span>. The <span style="color: #c00000;">**SPD**</span> takes a breath of fresh air.
