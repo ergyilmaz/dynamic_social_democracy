@@ -3820,7 +3820,7 @@ subtitle: Wirth is one of our leftist leaders, and might foster goodwill with th
 on-arrival: left_dissent -= 15; spd_relation += 3; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5; lvp_left += 1
 go-to: ministries
 
-Wirth previously having beeen chancellor from 1921 to 1922, has been appointed chancellor. This pleases our left wing and the <span style="color: #c00000;">**SPD**</span>.
+Wirth, previously having been chancellor from 1921 to 1922, has been appointed chancellor. This pleases our left wing and the <span style="color: #c00000;">**SPD**</span>.
  
 @social_catholic_coalition_cvp_4
 achievement: merz_und_scholz
