@@ -3,69 +3,71 @@ subtitle: Wladimir Woytinsky and the ADGB have presented a proposal.
 view-if: black_thursday_seen and wtb_support > 3
 tags: event
 new-page: true
-on-arrival:{! crisis_urgency += 1; wtb_proposed = 1
+on-arrival:{! 
+Q.crisis_urgency += 1;
+Q.wtb_proposed = 1
 Q.wtb_score = 0;
 Q.centrist_score = 0;
 Q.leftist_score = 0;
 
 if (Q.spd_in_goverment == 0) {
-    leftist_score += 2;
+    Q.leftist_score += 2;
 }
-leftist_score += 1 if spd_relation < 50
-leftist_score += 2 if spd_relation < 25
+Q.leftist_score += 1 if spd_relation < 50
+Q.leftist_score += 2 if spd_relation < 25
 
 if (Q.in_grand_coalition) {
-centrist_score += 4;
-wtb_score -= 1;
-leftist_score -= 2;
+Q.centrist_score += 4;
+Q.wtb_score -= 1;
+Q.leftist_score -= 2;
 }
 
 if (Q.unemployed > 15) {
-    leftist_score += 1;
-    wtb_score += 1;
+    Q.leftist_score += 1;
+    Q.wtb_score += 1;
 }
 
 if (Q.z_ideology == "Left") {
-    wtb_score += 2;
-    centrist_score -= 1;
+    Q.wtb_score += 2;
+    Q.centrist_score -= 1;
 }
 
 if (Q.z_leader == "Kaiser") {
-    wtb_score += 3;
-    leftist_score += 1;
+    Q.wtb_score += 3;
+    Q.leftist_score += 1;
 }
 
 if (Q.budget < 0) {
-    centrist_score += 2;
+    Q.centrist_score += 2;
 }
 
 if (Q.in_weimar_coalition) {
-    wtb_score += 2;
+    Q.wtb_score += 2;
 }
 
 if (Q.kpd_leader == "Conciliators") {
-    leftist_score += 2;
-    centrist_score -= 1;
+    Q.leftist_score += 2;
+    Q.centrist_score -= 1;
 }
 
 if (Q.in_popular_front) {
-    leftist_score += 3;
-    wtb_score += 1;
-    centrist_score -= 3;
+    Q.leftist_score += 3;
+    Q.wtb_score += 1;
+    Q.centrist_score -= 3;
 }
 if (Q.in_left_front) {
-    leftist_score += 20;
-    centrist_score -= 50;
+    Q.leftist_score += 20;
+    Q.centrist_score -= 50;
 }
 if (Q.neorevisionism_spd == 1) {
-    wtb_score += 1;
-    centrist_score -= 1;
+    Q.wtb_score += 1;
+    Q.centrist_score -= 1;
 }
 
-wtb_plan_yay = 1 if wtb_score > centrist_score and wtb_score > leftist_score;
-wtp_plan_nay = 1 if centrist_score > wtb_score and centrist_score > leftist_score;
-leftis_plan_woo = 1 if leftist_score > wtb_score and leftist_score > centrist_score;
-wtb_plan nay = 1 if (centrist score = wtb_score = leftist_score);
+Q.wtb_plan_yay = 1 if wtb_score > centrist_score and wtb_score > leftist_score;
+Q.wtp_plan_nay = 1 if centrist_score > wtb_score and centrist_score > leftist_score;
+Q.leftist_plan_woo = 1 if leftist_score > wtb_score and leftist_score > centrist_score;
+Q.wtb_plan nay = 1 if (centrist score = wtb_score = leftist_score);
 !}
 on-display: {!  
     var cardEl = document.createElement('div');  
