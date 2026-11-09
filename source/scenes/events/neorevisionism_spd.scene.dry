@@ -15,6 +15,6 @@ Although the movement is still on the fringes of the party, it is rapidly gainin
 
 @neorev_ideas
 title: Their ideas are put to test...
-on-arrival: workers_kpd -= 1; unemployed_kpd -= 1; workers_nsdap -= 2; unemployed_nsdap -= 2; new_middle_nsdap -= 1; old_middle_nsdap -= 1; workers_spd += 3; unemployed_spd += 3; new_middle_spd += 2; old_middle_spd += 2; rural_spd += 4
+on-arrival: workers_kpd -= 1; unemployed_kpd -= 1; workers_nsdap -= 2; unemployed_nsdap -= 2; new_middle_nsdap -= 1; old_middle_nsdap -= 1; workers_spd += 3; unemployed_spd += 3; new_middle_spd += 2; old_middle_spd += 2; rural_spd += 4; neorevisionism_spd = 1
 
 The <span style="color: #c00000;">**SPD**</span> incorporats the neorevisionist rhetoric into their propaganda with the "<span style="color: #c00000;">Three Arows</span>" bring developed as an answer against the Nazi <span style="color: #7A3C00;">Swastika</span>, symbolizing opposition to <span style="color: #7A3C00;">Nazism</span>, <span style="color: #700000;">Stalinism</span> and <span style="color: #808080;">reaction</span>. The <span style="color: #c00000;">**SPD**</span> takes a breath of fresh air.
