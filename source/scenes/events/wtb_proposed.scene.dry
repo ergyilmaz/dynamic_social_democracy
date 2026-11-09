@@ -107,6 +107,7 @@ title: The <span style="color: #000000;">W</span><span style="color: #DD0000;">T
 choose-if: wtb_plan_yay == 1
 unavailable-subtitle: [? if z_ideology != "Left": The plan's enaction seems hopeless, looking at the <span style="color: #c00000;">**SPD**</span>'s current coalition partners.?] The Center faction is able to convince the rest of the party against the Plan.
 on-arrival: wtb_adopted = 1; workers_spd += 5; unemployed_spd += 6; new_middle_spd += 3
+
 the ADGB, and the masterminds behind the WTB-Plan, Woytinsky, Tarnow and Baade are able to convince the party into adopting the WTB-Plan! The base is glad to see that the <span style="color: #c00000;">**SPD**</span> is taking action against the Crisis, reinvogarating support.
 
 @leftist_plan
@@ -115,4 +116,5 @@ choose-if: leftist_plan_woo == 1
 unavailable-subtitle: The Left faction is not strong enough. The <span style="color: #c00000;">**SPD**</span> is too commited to reform. The <span style="color: #000000;">W</span><span style="color: #DD0000;">T</span><span style="color: #FFCC00;">B</span>-Plan has taken the spotlight.
 subtitle: Huh?
 on-arrival: workers_spd += 8; unemployed_spd += 8; new_middle_spd -= 5; old_middle_spd -= 5; spd_relation -= 10 if z_leader != "Kaiser"
+
 Suprisingly, the division between the Center and Labor, combined with [? if in_popular_front or in_left_front: the <span style="color: #c00000;">**SPD**</span>'s cooperation with the <span style="color: #700000;">**KPD**</span> in national goverment,?][? if spd_in_government == 0; The <span style="color: #c00000;">**SPD**</span>'s exclusion from goverment,?] The radicalization caused by the Crisis and the rise of the <span style="color: #700000;">**KPD**</span> in the polls has led to the Left Plan, advocating for agressive nationalizations and class war, being adopted as the <span style="color: #c00000;">**SPD**</span>'s economic plan. This has led to increased support from the proletariat and backlas from the middle classes. [? if z_leader != Kaiser: Our relations are strained with the <span style="color: #c00000;">**SPD**</span>, as their rhetoric increasingly targets us as one of the "bourgeois" parties and enemy of the working class. ?]
