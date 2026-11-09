@@ -99,6 +99,7 @@ title: The WTB-Plan is rejected!
 subtitle: Nothing ever happens.
 choose-if: wtb_plan_nay == 1
 unavailable-subtitle: [? if z_ideology == "Left": Our cooperative leadership has given them confidence in the possibility of the Plan's enaction. ?] the WTB-Plan's supoort is overwhelming among the base and ADGB.
+
 the Center wing, primarily led by Orthodox Marxist economist Rudolf Hilferding, has come out victorious in rejecting the WTB-Plan. They argue that [? if z_ideology != Left: the plan will never make it through the Reichstag due to the hostility of the bourgeois parties, ?] the Plan is a band-aid to capitalism and that the inflation caused by the plan will cause greater suffering among the people. The <span style="color: #c00000;">**SPD**</span>'s current position of waiting for capitalism to collapse if maintained.
 
 @wtb_plan
