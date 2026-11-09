@@ -10,16 +10,16 @@ Q.wtb_score = 0;
 Q.centrist_score = 0;
 Q.leftist_score = 0;
 
-if (Q.spd_in_goverment == 0) {
+if (Q.spd_in_government == 0) {
     Q.leftist_score += 2;
 }
 Q.leftist_score += 1 if spd_relation < 50
 Q.leftist_score += 2 if spd_relation < 25
 
 if (Q.in_grand_coalition) {
-Q.centrist_score += 4;
-Q.wtb_score -= 1;
-Q.leftist_score -= 2;
+    Q.centrist_score += 4;
+    Q.wtb_score -= 1;
+    Q.leftist_score -= 2;
 }
 
 if (Q.unemployed > 15) {
