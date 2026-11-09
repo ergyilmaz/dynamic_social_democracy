@@ -13,9 +13,12 @@ Q.leftist_score = 0;
 if (Q.spd_in_government == 0) {
     Q.leftist_score += 2;
 }
-Q.leftist_score += 1 if spd_relation < 50
-Q.leftist_score += 2 if spd_relation < 25
-
+if (Q.spd_relation < 25) {
+    Q.leftist_score += 1;
+}
+if (Q.spd_relation < 50) {
+    Q.leftist_score += 1;
+}
 if (Q.in_grand_coalition) {
     Q.centrist_score += 4;
     Q.wtb_score -= 1;
@@ -64,10 +67,27 @@ if (Q.neorevisionism_spd == 1) {
     Q.centrist_score -= 1;
 }
 
-Q.wtb_plan_yay = 1 if wtb_score > centrist_score and wtb_score > leftist_score;
-Q.wtp_plan_nay = 1 if centrist_score > wtb_score and centrist_score > leftist_score;
-Q.leftist_plan_woo = 1 if leftist_score > wtb_score and leftist_score > centrist_score;
-Q.wtb_plan nay = 1 if (centrist score = wtb_score = leftist_score);
+if (Q.wtb_score > Q.centrist_score && Q.wtb_score > Q.leftist_score) {
+    Q.wtb_plan_yay = 1;
+} else {
+    Q.wtb_plan_yay = 0;
+}
+
+if (Q.centrist_score > Q.wtb_score && Q.centrist_score > Q.leftist_score) {
+    Q.wtb_plan_nay = 1;
+} else {
+    Q.wtb_plan_nay = 0;
+}
+
+if (Q.leftist_score > Q.wtb_score && Q.leftist_score > Q.centrist_score) {
+    Q.leftist_plan_woo = 1;
+} else {
+    Q.leftist_plan_woo = 0;
+}
+
+if (Q.centrist_score = Q.leftist_score = Q.wtb_score) {
+    Q.wtb_plan_nay = 1;
+}
 !}
 on-display: {!  
     var cardEl = document.createElement('div');  
