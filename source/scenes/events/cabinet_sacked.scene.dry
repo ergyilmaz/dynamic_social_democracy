@@ -26,7 +26,7 @@ title: Brüning forms a majority government with the [? if dnvp_ideology == "Mod
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and dnvp_relation >= 50 and right_coalition > 50
 unavailable-subtitle: [? if dnvp_ideology == "Radical": the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?] refuses to work with us, committed to their radical ways under Hugenberg.
 on-arrival: dnvp_relation += 5; spd_relation -= 5; hindenburg_anger -= 50; leverage -= 5
-go-to: ministries
+go-to: election_1928.ministries
 
 We have formed a majority coalition with the <span style="color: #003755;">**DNVP**</span>, managing to avoid new elections. Now we have to choose our ministries.
 
