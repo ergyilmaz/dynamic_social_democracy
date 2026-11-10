@@ -1,1 +1,201 @@
+title: <span style="color: #000000;">**CVP**</span> Party Conference
+view-if: interconfessionalism = 1 and "dnvp_ideology == "Moderate" and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_relation >= 70 and (dnvp_votes < 10 or in_center_right_coalition)
+on-arrival: {!
+Q.cvp_formed = 1;
+Q.leverage = 0;
+if (spd_relation > 50) Q.leverage += 5;
+if (z_votes > 25) Q.leverage += 8;
+if (dnvp_votes < 10) Q.leverage += 10;
+if (left_strength > 20) Q.leverage += 3;
+if (pro_republic > 70) Q.leverage += 7;
+if (pro_republic > 80) Q.leverage += 5;
+if (pro_republic > 90) Q.leverage += 2;
+if (in_weimar_coalition) Q.leverage += 6;
+if (in_center_right_coalition) Q.leverage -= 6;
+!}
+cvp_dnvp_balance == 1
+subtitle: Some sort of... Union of Christian Democratic parties...
 
+= The <span style="color: #000000;">**CVP**</span> Party Conference
+
+After months of negotiations between the The <span style="color: #000000;">Center</span> and the <span style="color: #003755;">**DNVP**</span>, an agreement has finally been reached, uniting the Christian Right into a single party, formally called the <span style="color: #000000;">**CVP**</span>. Still, many "national questions" are to be answered in the party's first conference, held now. This conference may very well decide the fate of the entire <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system.
+
+In answering these questions, we must be careful to not to make too many concessions to the right - if they grow too powerful, there will be consequences...
+
+@cvp_formation_start: The conference starts.
+
+- @republic_question
+
+@republic_question
+title: The party will endorse the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system.
+subtitle: An inconspicuous start...
+on-arrival: pro_republic += 5; old_middle_dnf += 5; rural_dnf += 5
+
+the party votes to endorse the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ic</span>, whether by reason or conviction. While the most right-wing supportes of the former <span style="color: #003755;">**DNVP**</span> jump ship to the <span style="color: #3E88B3;">**DNF**</span> this is a pretty uncontroversial issue among even the former <span style="color: #003755;">**DNVP**</span>, which has moderated thanks to the leadership of [+ dnvp_leader +].
+
+- @nazi_cooperation_question
+
+@nazi_cooperation_question
+title: The party votes to rule out all cooperation with the <span style="color: #7A3C00;">**NSDAP**</span>!
+on-arrival: old_middle_dnf += 3; rural_dnf += 3
+
+Expectedly, the party of the anti-<span style="color: #7A3C00;">**NSDAP**</span> Right has ruled out cooperation with them. However, this where uncontroversial issues end.
+
+- @junker_question: The question of the old junker estates...
+
+@junker_question
+
+- @junker_nay
+- @junker_yay
+
+@junker_nay
+choose-if: leverage >= 30
+title: The Junker estates will not be protected, if push comes to shove.
+on-arrival: reformist_dissent += 10; rural_z += 5
+unavailable-subtitle: We do not have enough leverage.
+
+In a narrow vote, it is declared that Junker estates are not something to be defended, and that unproductive ones can be seized and redistributed to boost land usage. This angers the former <span style="color: #003755;">**DNVP**</span>, as expected.
+
+- @economic_policy_question: Now, the question of economic policy..
+
+@economic_policy_question
+
+- @adenauerite
+- @austerity
+
+@junker_yay
+title: The Junker estates will be protected from <span style="color: #700000;">Agrarian Bolshevik</span> terror!
+subtitle: This will stop us from doing land reform in the future.
+
+The party votes to leave the estates be, even when they are unproductive. The party will never accept land reform from this point onwards.
+
+- @economic_policy_question: Now, the question of economic policy..
+
+@economic_policy_question
+
+- @adenauerite
+- @austerity
+
+@adenauerite
+title: The <span style="color: #000000;">social</span><span style="color: #DD0000;">-</span><span style="color: #FFCC00;">market</span> economy is adopted!
+choose-if: leverage > 19
+unavailable-subtitle: Not enough leverage.
+on-arrival: workers_z += 4; unemployed_z += 4; center_dissent += 8
+subtitle: Being supportive of Public Works, the <span style="color: #000000;">social</span><span style="color: #DD0000;">-</span><span style="color: #FFCC00;">market</span> economy seeks a middle ground between <span style="color: #c00000;">Socialism</span> and <span style="color: #C0A054;">Capitalism</span>.
+
+The <span style="color: #000000;">social</span><span style="color: #DD0000;">-</span><span style="color: #FFCC00;">market</span> economy is our preffered economic policy, and reassures our worker base of our integrity.
+
+- @paramilitaries_question: Now, to tackle the question of the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>...
+
+@paramilitaries_question
+
+- @reichbanner_true_cvp
+- @paramilitary_no_true_cvp
+
+@austerity
+title: Austerity is adopted.
+subtitle: Nothing ever happens.
+on-arrival: workers_z -= 2; unemployed_z -= 2; lautenbach_support -= 50; austerity_adopted = 1; left_dissent += 10; labor_dissent += 5
+
+As expected, Orthodox economists and industrialists of the party have rallied the party to adopt austerity. This dissapoints the left of the party and our working class base. We cannot pursue public works from this point onwards.
+
+- @paramilitaries_question: Now, to tackle the question of the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>...
+
+@paramilitaries_question
+
+- @reichbanner_true_cvp
+- @paramilitary_no_true_cvp
+
+@reichsbanner_true_cvp
+title: We will remain in the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>, no matter the Right's pleas against it.
+subtitle: What?
+choose-if: leverage > 30
+unavailable-subtitle: Not enough leverage.
+on-arrival: spd_relation += 8; pro_republic += (z_votes/2.2); ddp_relation += 10; reformist_dissent += 20
+
+Against all odds, the Party votes to stay in the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>! This greatly helps relations with the <span style="color: #c00000;">**SPD**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, relieved by our continued cooperation. The right is very agitated, however.
+
+- @spd_question: Now, for the question of the <span style="color: #c00000;">**SPD**</span>....
+
+@spd_question
+
+- @spd_cooperation
+- @spd_neutral
+- @spd_hate
+
+@paramilitary_no_true_cvp
+title: We will denounce all paramilitarism, the plague of Germany!
+subtitle: The <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span> is nothing but a socialist milita anyway.
+on-arrival: rb_strength *= 0.85; z_relation -= 5; lvp_relation -= 3; lvp_right += 3; pro_republic -= 5; cvp_right += 3; cvp_leave_reichsbanner = 1
+
+Unexpectedly, literal reactionaries vote against staying in the republican paramilitary organization. Our relations with the <span style="color: #c00000;">**SPD**</span> are strained, and the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span> is weakened.
+
+- @spd_question: Now, for the question of the <span style="color: #c00000;">**SPD**</span>....
+
+@spd_question
+
+- @spd_cooperation
+- @spd_neutral
+- @spd_hate
+
+@spd_cooperation
+title: The <span style="color: #c00000;">**SPD**</span> shall be our preffered governing partner!
+choose-if: leverage > 25 and spd_relation >= 60 
+subtitle: They've been our closest ally throughout the Republic!
+unavailable-subtitle: [? if leverage <= 25:?]
+on-arrival: spd_relation += 10; left_dissent -= 5; reformist_dissent += 10
+
+With the influence of the <span style="color: #FF7F00;">Christian Left</span>, We have reaffirmed the <span style="color: #c00000;">**SPD**</span> as our preffered governing partner, much to the dismay of the Right.
+
+@spd_neutral
+title: Eh, we would rather work with the <span style="color: #FFCC00;">**liberals**</span>.
+choose-if: leverage > 10
+unavailable-subtitle: We do not have enough leverage.
+
+No consesus is reached on the <span style="color: #c00000;">**SPD**</span> and no statement is released as a compromise solution.
+
+@spd_hate
+title: Rule out all cooperation with the godless <span style="color: #c00000;">**socialists**</span>!
+on-arrival: left_dissent += 10; center_dissent += 5; reformist_dissent -= 15; spd_relation -= 30
+
+We have ruled out all possibilites of entering goverment with the <span style="color: #c00000;">**SPD**</span>. Pragmatic republicans and leftist are questioning our choices, which they claim are eroding stability.
+
+- @foreign_policy_question
+
+@foreign_policy_question: And finally, the question of reparations...
+
+- @normal_reparations
+- @compromise_reparations
+- @anti_reparations
+
+@normal_reparations
+title: We must steer our current course of negotiating for the gradual end of reparations.
+choose-if: leverage > 20
+unavailable-subtitle: Not enough leverage.
+
+The party agrees to continue negotiating for the end of reparations, keeping our progress intact.
+
+- @end_cvp
+
+@compromise_reparations
+title: We will demand an immediate end to reparations, and closer ties to Austria.
+choose-if: leverage >= 10
+unavailable-subtitle: Not enough leverage.
+on-arrival: west_relation -= 3; east_relation -= 3; european_union_no = 1
+
+With no solution being reached due to the divisive nature of reparations, we reach a compromise, demanding the immediate end of reparations and closer ties to Austria. This strains our relations with the West and makes the dream of a European Union all but impossible.
+
+- @end_cvp
+
+@anti_reparations
+title: No negotiations with the Devil! We will stand firmly against reparations, and for the return of all rightfully German lands!
+on-arrival: west_relation -= 5; east_relation -= 5; european_union_no = 1
+
+The Right scores a firm victory, demanding the return of all formerly German lands and an immediate end to reparation negotiatons. Expectedly, our relation with the West is strained, perhaps irreperably, and the dream of a European Union seems farther than ever.
+
+- @end_cvp
+
+@end_cvp
+title: The Conference is complete!
+
+The <span style="color: #000000;">**CVP**</span>'s first conference is over, with the leadership elections due in a month.
