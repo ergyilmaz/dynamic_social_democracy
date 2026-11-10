@@ -21,7 +21,9 @@ After months of negotiations between the The <span style="color: #000000;">Cente
 
 In answering these questions, we must be careful to not to make too many concessions to the right - if they grow too powerful, there will be consequences...
 
-@cvp_formation_start: The conference starts.
+- @cvp_formation_start: The conference starts.
+
+@cvp_formation_start
 
 - @republic_question
 
