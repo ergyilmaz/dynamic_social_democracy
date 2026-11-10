@@ -128,7 +128,7 @@ Unexpectedly, literal reactionaries vote against staying in the republican param
 title: The <span style="color: #c00000;">**SPD**</span> shall be our preffered governing partner!
 choose-if: leverage > 25 and spd_relation >= 60 
 subtitle: They've been our closest ally throughout the Republic!
-unavailable-subtitle: [? if leverage <= 25:?]
+unavailable-subtitle: [? if leverage <= 25: Not enough leverage.?][? if spd_relation < 60: We lack adequate relations with the <span style="color: #c00000;">**SPD**</span>. ?]
 on-arrival: spd_relation += 10; left_dissent -= 5; reformist_dissent += 10
 
 With the influence of the <span style="color: #FF7F00;">Christian Left</span>, We have reaffirmed the <span style="color: #c00000;">**SPD**</span> as our preffered governing partner, much to the dismay of the Right.
