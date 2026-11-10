@@ -13,7 +13,6 @@ if (pro_republic > 90) Q.leverage += 2;
 if (in_weimar_coalition) Q.leverage += 6;
 if (in_center_right_coalition) Q.leverage -= 6;
 !}
-cvp_dnvp_balance == 1
 subtitle: Some sort of... Union of Christian Democratic parties...
 
 = The <span style="color: #000000;">**CVP**</span> Party Conference
