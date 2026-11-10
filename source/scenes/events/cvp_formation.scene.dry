@@ -1,5 +1,5 @@
 title: <span style="color: #000000;">**CVP**</span> Party Conference
-view-if: interconfessionalism = 1 and "dnvp_ideology == "Moderate" and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_relation >= 70 and (dnvp_votes < 10 or in_center_right_coalition)
+view-if: interconfessionalism = 1 and dnvp_ideology == "Moderate" and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_relation >= 70 and (dnvp_votes < 10 or in_center_right_coalition)
 on-arrival: {!
 Q.cvp_formed = 1;
 Q.leverage = 0;
