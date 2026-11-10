@@ -59,11 +59,6 @@ In a narrow vote, it is declared that Junker estates are not something to be def
 
 - @economic_policy_question: Now, the question of economic policy..
 
-@economic_policy_question
-
-- @adenauerite
-- @austerity
-
 @junker_yay
 title: The Junker estates will be protected from <span style="color: #700000;">Agrarian Bolshevik</span> terror!
 subtitle: This will stop us from doing land reform in the future.
@@ -87,11 +82,6 @@ subtitle: Being supportive of Public Works, the <span style="color: #000000;">so
 The <span style="color: #000000;">social</span><span style="color: #DD0000;">-</span><span style="color: #FFCC00;">market</span> economy is our preffered economic policy, and reassures our worker base of our integrity.
 
 - @paramilitaries_question: Now, to tackle the question of the <span style="color: #000000;">Reic</span><span style="color: #DD0000;">hsba</span><span style="color: #FFCC00;">nner</span>...
-
-@paramilitaries_question
-
-- @reichbanner_true_cvp
-- @paramilitary_no_true_cvp
 
 @austerity
 title: Austerity is adopted.
@@ -118,11 +108,6 @@ Against all odds, the Party votes to stay in the <span style="color: #000000;">R
 
 - @spd_question: Now, for the question of the <span style="color: #c00000;">**SPD**</span>....
 
-@spd_question
-
-- @spd_cooperation
-- @spd_neutral
-- @spd_hate
 
 @paramilitary_no_true_cvp
 title: We will denounce all paramilitarism, the plague of Germany!
@@ -148,6 +133,8 @@ on-arrival: spd_relation += 10; left_dissent -= 5; reformist_dissent += 10
 
 With the influence of the <span style="color: #FF7F00;">Christian Left</span>, We have reaffirmed the <span style="color: #c00000;">**SPD**</span> as our preffered governing partner, much to the dismay of the Right.
 
+- @foreign_policy_question: And finally, the question of reparations...
+
 @spd_neutral
 title: Eh, we would rather work with the <span style="color: #FFCC00;">**liberals**</span>.
 choose-if: leverage > 10
@@ -155,15 +142,17 @@ unavailable-subtitle: We do not have enough leverage.
 
 No consesus is reached on the <span style="color: #c00000;">**SPD**</span> and no statement is released as a compromise solution.
 
+- @foreign_policy_question: And finally, the question of reparations...
+
 @spd_hate
 title: Rule out all cooperation with the godless <span style="color: #c00000;">**socialists**</span>!
 on-arrival: left_dissent += 10; center_dissent += 5; reformist_dissent -= 15; spd_relation -= 30
 
 We have ruled out all possibilites of entering goverment with the <span style="color: #c00000;">**SPD**</span>. Pragmatic republicans and leftist are questioning our choices, which they claim are eroding stability.
 
-- @foreign_policy_question
+- @foreign_policy_question: And finally, the question of reparations...
 
-@foreign_policy_question: And finally, the question of reparations...
+@foreign_policy_question
 
 - @normal_reparations
 - @compromise_reparations
