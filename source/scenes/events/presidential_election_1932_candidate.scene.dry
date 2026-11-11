@@ -10,7 +10,17 @@ if (!Q.hitler_deported && Q.hitler_citizen) {
     Q.nsdap_candidate_1932 = "Göring";
     Q.nsdap_candidate_1932_disp = "Hermann Göring";
 }
-Q.spd_candidate_1932 = "Braun";
+if (Q.neorevisionist_spd) {
+Q.spd_candidate_1932 == "Mierendorff"
+Q.spd_candidate_1932_disp == "Carlo Mierendorff"
+}
+if (Q.leftist_spd) {
+Q.spd_candidate_1932 == "Rosenfeld"
+Q.spd_candidate_1932_disp = "Kurt Rosenfeld";
+} else {
+Q.spd_candidate_1932 == "Braun"
+Q.spd_candidate_1932_disp = "Otto Braun";
+}
 if (Q.hindenburg_run) {
     Q.reactionary_candidate_1932 = "Hindenburg";
     // angry that he is running in the first place
@@ -18,7 +28,6 @@ if (Q.hindenburg_run) {
 }
 Q.communist_candidate_1932 = "Thälmann";
 
-Q.spd_candidate_1932_disp = "Otto Braun";
 if (Q.hindenburg_run) Q.reactionary_candidate_1932_disp = "Paul von Hindenburg";
 Q.communist_candidate_1932_disp = "Ernst Thälmann";
 
@@ -72,10 +81,8 @@ Q.bourgeois_votes = Q.ddp_votes + Q.dvp_votes + Q.lvp_votes + Q.other_votes + Q.
 if ((Q.lvp_ideology == "Right" && Q.lvp_leader == "Dingeldey" && Q.lvp_formed || Q.dvp_votes >= 6 && Q.bourgeois_parliament && Q.bourgeois_votes >= 40 && !Q.lvp_formed) && Q.liberal_vote >= 8) Q.jarres_unlock_pres = 1;
 if ((Q.dvp_leader == "Luther" || Q.lvp_leader == "Luther") && Q.pro_republic >= 50 && Q.liberal_vote >= 8 && Q.bourgeois_votes >= 35) Q.luther_unlock_pres = 1;
 if (((Q.dstp_formed || Q.ddp_relation < 40 || Q.pro_republic < 40) && Q.ddp_ideology != "Left" && !Q.lvp_formed || Q.lvp_formed && Q.lvp_ideology != "Left" && Q.pro_republic < 50) && Q.liberal_vote >= 8 && Q.bourgeois_votes >= 35) Q.gessler_unlock_pres = 1;
-if (Q.stegerwald_path) Q.adenauer_unlock_pres = 1;
-if (!Q.stegerwald_path && Q.z_relation >= 30 && Q.chancellor != "Brüning" && Q.bourgeois_votes >= 40) Q.bruning_unlock_pres = 1;
 if (!Q.stegerwald_path && !Q.bruning_unlock_pres && !Q.adenauer_unlock_pres) Q.stegerwald_unlock_pres = 1;
-if (Q.dnvp_ideology == "Moderate" && Q.bourgeois_votes < 35 || Q.kvp_formed && Q.bourgeois_votes < 35 || Q.cvp_formed && Q.cvp_ideology == "Right") Q.vorbeck_unlock_pres = 1;
+if (Q.dnvp_ideology == "Moderate" && Q.bourgeois_votes < 35 || Q.kvp_formed && Q.bourgeois_votes < 35) Q.vorbeck_unlock_pres = 1;
 if (Q.dnvp_ideology == "Moderate" && Q.bourgeois_votes >= 35) Q.westarp_unlock_pres = 1;
 
 if (!Q.jarres_unlock_pres && !Q.gessler_unlock_pres && !Q.adenauer_unlock_pres && !Q.bruning_unlock_pres && !Q.stegerwald_unlock_pres && !Q.vorbeck_unlock_pres && !Q.westarp_unlock_pres) {
@@ -330,9 +337,9 @@ With local elections fast approaching, many parties have opted not to field thei
 - @jarres
 - @luther
 - @gessler
-- @adenauer
-- @bruning
-- @stegerwald
+- @braun
+- @mierendorff
+- @rosenfeld
 - @vorbeck
 - @westarp
 
@@ -378,49 +385,41 @@ His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A
 
 - @harzburg: We await the decision of the Harzburg Front.
 
-@adenauer
-title: Konrad Adenauer, Mayor of Cologne, and an advocate for the <span style="color: #000000;">Center Party</span> "leaving the tower".
-view-if: adenauer_unlock_pres
+@braun
+title: Otto Braun, [? if prussia_leader != "Braun": former ?] Minister-President of Prusssia and the <span style="color: #c00000;">**SPD**</span>'s candidate in 1925.
+view-if: spd_candidate_1932 == "Braun"
 on-arrival: reactionary_candidate_1932_count_2 -= 1
-face-image: img/portraits/adenauer.jpg
+face-image: img/portraits/BraunOtto.jpg
 max-visits: 1
 go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
-Konrad Adenauer, a staunch advocate of the <span style="color: #000000;">Center Party</span>'s strategy to "leave the tower" and open itself to Protestant support, has decided to run for the presidency after achieving that very aim. Still relatively inexperienced in national politics, the Mayor is known for his strong anti-Prussian stance—going so far as to reject a chancellorship offer in 1926 on the grounds that Stresemann was "too Prussian." Aligned with Stegerwald and situated on the party's right wing, Adenauer has expressed interest in the so-called "taming strategy" toward the <span style="color: #7A3C00;">Nazis</span>.
+Otto Braun, who has long served as the Minister-President of Prussia, is a reformist member of the <span style="color: #c00000;">**SPD**</span>. He has been responsible for the transformation of Prussia into the "Democratic Bulwark", cracking down on the far-<span style="color: #7A3C00;">right</span> and <span style="color: #700000;">left</span>. He remains one the <span style="color: #c00000;">**SPD**</span>'s most popular leaders.
 
-His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+His candidacy is supported by the <span style="color: #c00000;">**SPD**</span>.
 
-- @harzburg: We await the decision of the Harzburg Front.
-
-@bruning
-title: Heinrich Brüning, on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and their[? if chancellor == "Brüning":&nbsp;candidate for?] chancellor.
-view-if: bruning_unlock_pres
+@mierendorff
+title: Carlo Mierendorff, <span style="color: #c00000;">**SPD**</span> and <span style="color: #c00000;">Iron Front</span> leader.
+view-if: spd_candidate_1932 == "Mierendorff"
 on-arrival: reactionary_candidate_1932_count_2 -= 1
-unavailable-subtitle: Words.
-face-image: img/portraits/BrüningHeinrich.jpg
+face-image: img/portraits/MierendorffCarlo.jpg
 max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
+go-to: reactionary candidates if reactionary_candidate_1932_count_2 > 0
 
-Heinrich Brüning, a politician we know all too well, is running for the most powerful position in the Reich. He has a long history, tracing back to the Christian Trade Unions and his mentorship under Stegerwald, eventually rising to become the leader of the party's parliamentary group and its candidate for Chancellor. Despite his record of favoring austerity and deflationary policies in response to the Great Depression, he is a flexible figure—intelligent enough to recognize the dangers of the "taming strategy," and not entirely opposed to governing alongside the <span style="color: #c00000;">**SPD**</span>.
+Carlo Mierendorff is the brand new leader of the <span style="color: #c00000;">**SPD**</span> andthe anti-<span style="color: #7A3C00;">fascist</span> organization <span style="color: #c00000;">Iron Front</span>. He has led the student wing and later the neorevisionist wing of the <span style="color: #c00000;">**SPD**</span> before becoming leader, advocationg for the <span style="color: #c00000;">**SPD**</span> to become a "militant party" to combat the three dangers to German Democracy: <span style="color: #700000;">Stalinism</span>, <span style="color: #808080;">Reaction</span> and <span style="color: #7A3C00;">Nazism</span>.
 
-His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. 
+His candidacy is supported by the <span style="color: #c00000;">**SPD**</span>.
 
-- @harzburg: We await the decision of the Harzburg Front.
-
-@stegerwald
-title: Adam Stegerwald, on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and a prominent Christian trade unionist.
-view-if: stegerwald_unlock_pres
-on-arrival: reactionary_candidate_1932_count_2 -= 1
-unavailable-subtitle: Words.
-face-image: img/portraits/stegerwald.jpg
+@rosenfeld
+title: Kurt Rosenfeld, the leftist lawyer.
+view-if: spd_candidate_1932 == "Rosenfeld"
+on-arrival: reactionary_canddiate_1932_count_2 -= 1
+face-image: img/portraits/MierendorffCarlo.jpg
 max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
+go-to: reactionary candidates if reactionary_candidate_1932_count_2 > 0
 
-Adam Stegerwald, situated on the right wing of the <span style="color: #000000;">Center Party</span>, and having advocated for it to "leave the tower" and open up the party to Protestants, has made himself a controversial figure among many. However, perhaps a man with his ideals—of a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> Germany—can be the one to unite it. Despite his background as a unionist, he would rather work with the political Right than the <span style="color: #c00000;">**SPD**</span> if possible.
+Kurt Rosenfeld is one of the furthest left figures in the <span style="color: #c00000;">**SPD**</span>, being a unity candidate with the <span style="color: #700000;">**KPD**</span>.
 
-His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. [? if kvp_formed or dnvp_ideology == "Moderate": He may attract some crossover support from the <span style="color: #3E88B3;">nationalists</span>. ?]
-
-- @harzburg: We await the decision of the Harzburg Front.
+His candidacy is supported by the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>.
 
 @vorbeck
 title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] member.
@@ -537,9 +536,9 @@ face-image: img/portraits/ThälmannErnst.jpg
 
 The <span style="color: #700000;">**Communists**</span> will run Ernst Thälmann, their leader and candidate in 1925. If we were to not run a candidate, or to support a right-wing or bourgeois one, Thälmann and the <span style="color: #700000;">**KPD**</span> would greatly capitalize by painting themselves as the only left-wing option in the race. However, if our relations with the <span style="color: #700000;">**KPD**</span> are high enough, we may be able to convince him to drop out in favour of a unity candidate between our two parties.
 
-- @socialist: So, what is our decision? Should we run our own candidate?
+- @christian: So, what is our decision? Should we run our own candidate?
 
-@socialist
+@christian
 go-to: braun
 
 
@@ -552,8 +551,8 @@ Otto Braun has been floated around as a candidate for the presidency once more, 
 
 So, what's our choice?
 
-- @run_braun: Run Otto Braun of the <span style="color: #c00000;">**SPD**</span>.
-- @run_rosenfeld: Run Kurt Rosenfeld of the [? if not left_split: <span style="color: #c00000;">**SPD**</span>?][? if left_split: <span style="color: #9B0000;">**SAPD**</span>?].
+- @run_: Run Otto Braun of the <span style="color: #c00000;">**SPD**</span>.
+- @run_kaiser: Run Kurt Rosenfeld of the [? if not left_split: <span style="color: #c00000;">**SPD**</span>?][? if left_split: <span style="color: #9B0000;">**SAPD**</span>?].
 - @run_eckener: Run Hugo Eckener as a unity candidate.
 - @support_hindenburg: Support <span style="color: #808080;">Hindenburg</span>.
 - @support_reactionary: Support [? if (reactionary_candidate_1932 == "Luther" or reactionary_candidate_1932 == "Gessler" or reactionary_candidate_1932 == "Jarres") and lvp_formed: <span style="color: #FFCC00;">**[+ reactionary_candidate_1932 +]**</span>?][? if (reactionary_candidate_1932 == "Luther" or reactionary_candidate_1932 == "Jarres") and not lvp_formed: <span style="color: #C0A054;">**[+ reactionary_candidate_1932 +]**</span>?][? if reactionary_candidate_1932 == "Gessler" and not lvp_formed: <span style="color: #D3C24D;">**[+ reactionary_candidate_1932 +]**</span>?][? if ((reactionary_candidate_1932 == "Lettow-Vorbeck" and not cvp_formed) or reactionary_candidate_1932 == "Westarp") and not kvp_formed: <span style="color: #3E88B3;">**[+ reactionary_candidate_1932 +]**</span>?][? if ((reactionary_candidate_1932 == "Lettow-Vorbeck" and not cvp_formed) or reactionary_candidate_1932 == "Westarp") and kvp_formed: <span style="color: #0087DC;">**[+ reactionary_candidate_1932 +]**</span>?][? if reactionary_candidate_1932 == "Adenauer" or reactionary_candidate_1932 == "Brüning" or reactionary_candidate_1932 == "Stegerwald" or (reactionary_candidate_1932 == "Lettow-Vorbeck" and cvp_formed): <span style="color: #000000;">**[+ reactionary_candidate_1932 +]**</span>?].
