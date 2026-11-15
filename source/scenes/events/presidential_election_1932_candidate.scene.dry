@@ -816,7 +816,7 @@ It takes effort to run a somewhat unexpected campaign. First, Adenauer has to be
 subtitle: This will cost us 2 resources.
 choose-if: resources >= 2 and left_strength > reformist_strength
 unavailable-subtitle: [? if resources <= 2: not enough resources. ?], [? if left_strength < reformist_strength: The right wing of our party manages to steer the party away from this decision. ?]
-on-arrival: resources -= 2; spd_campaign = 1; kaşser_campaign = 1; reformist_dissent += 20; left_dissent -= 20; left_strength += 10; spd_relation += 10; dvp_relation -= 5; ddp_relation -= 5; lvp_relation -= 5; lvp_right += 3; dvp_right += 3; ddp_right += 3; ddp_cohesion -= 2; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0; z_candidate_1932 = "Kaiser"; spd_candidate_1932_disp = "Jakob Kaiser"
+on-arrival: resources -= 2; spd_campaign = 1; kaiser_campaign = 1; reformist_dissent += 20; left_dissent -= 20; left_strength += 10; spd_relation += 10; dvp_relation -= 5; ddp_relation -= 5; lvp_relation -= 5; lvp_right += 3; dvp_right += 3; ddp_right += 3; ddp_cohesion -= 2; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0; z_candidate_1932 = "Kaiser"; z_candidate_1932_disp = "Jakob Kaiser"
 
 It takes effort to run a somewhat unexpected campaign. First, Kaiser has to be convinced to run.
 
