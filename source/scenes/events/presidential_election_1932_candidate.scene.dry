@@ -412,10 +412,10 @@ His candidacy is supported by the <span style="color: #c00000;">**SPD**</span>.
 @rosenfeld
 title: Kurt Rosenfeld, the leftist lawyer.
 view-if: spd_candidate_1932 == "Rosenfeld"
-on-arrival: reactionary_canddiate_1932_count_2 -= 1
+on-arrival: reactionary_candidate_1932_count_2 -= 1
 face-image: img/portraits/MierendorffCarlo.jpg
 max-visits: 1
-go-to: reactionary candidates if reactionary_candidate_1932_count_2 > 0
+go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Kurt Rosenfeld is one of the furthest left figures in the <span style="color: #c00000;">**SPD**</span>, being a unity candidate with the <span style="color: #700000;">**KPD**</span>.
 
