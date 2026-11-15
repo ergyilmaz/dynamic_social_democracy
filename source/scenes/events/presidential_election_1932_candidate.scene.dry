@@ -542,12 +542,12 @@ The <span style="color: #700000;">**Communists**</span> will run Ernst Thälmann
 go-to: braun
 
 
-@braun
+@adenauer
 face-image: img/portraits/braun.jpg
 
-Otto Braun has been floated around as a candidate for the presidency once more, after his failed run in 1925. He is personally reluctant, and it would take a lot of convincing to get him to run, but after that, could he even win? It's unlikely for bourgeois parties to outright support a <span style="color: #c00000;">socialist</span> for President, even with his reformist and right-wing leanings within our own party. Carl Severing and other Prussian officials have instead proposed running Hugo Eckener, a nationalist anti-<span style="color: #7A3C00;">Nazi</span> Zeppelin pilot[? if hindenburg_run:, but this possibility has been extinguished with Hindenburg's decision to run again?][? if not hindenburg_run:, but he is personally reluctant?].
+Konrad Adenauer has floated around for the party's presidantial nomination, thanks to his influence within the party and Germany as a whole. He is personally reluctant, thanks to his cautious and calculated approach to politics, but after that, could he even win? It's unlikely for the <span style="color: #c00000;">socialists</span> parties to outright support a bourgeois for President though it seems more plausible thanks to the national environment. Hugo Eckener, a nationalist anti-<span style="color: #7A3C00;">Nazi</span> Zeppelin pilot is being considered by some of our party for an independent <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> unity candidate[? if hindenburg_run:, but this possibility has been extinguished with Hindenburg's decision to run again?][? if not hindenburg_run:, but he is personally reluctant?].
 
-[? if kpd_relation >= 50: Another proposal from our Left faction is the candidacy of Kurt Rosenfeld as a <span style="color: #9B0000;">Marxist</span> unity candidate representing both the <span style="color: #c00000;">**SPD**</span>[? if left_split:, <span style="color: #9B0000;">**SAPD**</span>?] and the <span style="color: #700000;">**KPD**</span>. His alignment with our left wing, his ideological convictions, and his legal defense of <span style="color: #700000;">**KPD**</span> members make such a ticket plausible. However, this move would almost certainly alienate the bourgeois parties—perhaps permanently. ?]
+Another proposal from the <span style="color: #FF7F00;">Christian Left</span> is Jakob Kaiser, prominent union leader and anti-<span style="color: #7A3C00;">nazi</span> fighter. He's very likely to secure the endorsement of the <span style="color: #c00000;">**SPD**</span> but will likely face backlash from the industrialists and [if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNVP**</span>][if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span>]
 
 So, what's our choice?
 
@@ -802,9 +802,9 @@ None of the candidates are worthy of our support, and we are either unable or un
 
 @run_adenauer
 subtitle: This will cost us 2 resources.
-choose-if: resources >= 2 and not schleicher_spd
-unavailable-subtitle: [? if resources < 2: Not enough resources. ?][? if schleicher_spd: As part of our deal with Schleicher, we are now obligated to support Hindenburg’s re-election. ?]
-on-arrival: resources -= 2; spd_campaign = 1; braun_campaign = 1; labor_dissent -= 10; center_strenght += 10; labor_strength += 10; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0
+choose-if: resources >= 2
+unavailable-subtitle: [? if resources < 2: Not enough resources. ?]
+on-arrival: resources -= 2; spd_campaign = 1; adenauer_campaign = 1; labor_dissent -= 10; center_strength += 10; labor_strength += 10; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0
 
 It takes effort to run a somewhat unexpected campaign. First, Adenauer has to be convinced to run. [? if hindenburg_run: He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny. ?][? if not hindenburg_run: It takes a good deal of prodding to convince him of his destiny. ?]
 
@@ -814,13 +814,13 @@ It takes effort to run a somewhat unexpected campaign. First, Adenauer has to be
 
 @run_kaiser
 subtitle: This will cost us 2 resources.
-choose-if: resources >= 2 and not schleicher_spd and left_strength > reformist_strength
-unavailable-subtitle: [? if resources < 2: Not enough resources. ?][? if schleicher_spd: As part of our deal with Schleicher, we are now obligated to support Hindenburg’s re-election. ?][? if reformist_strength >= left_strength: Our reformist elements manage to steer the party toward supporting Braun instead. ?][? if (spd_votes + kpd_votes + sapd_votes < 40): The <span style="color: #700000;">KPD</span> is unwilling to back Rosenfeld as a unity candidate, citing pessimism about our electoral prospects. ?][? if spd_votes < kpd_votes: The <span style="color: #700000;">KPD</span> sees no reason to support our candidate, as they currently enjoy greater popular support than we do. ?][? if kpd_relation < 40: The <span style="color: #700000;">KPD</span> has made their stance clear—there’s little point in proposing a unity candidate they are unlikely to support. ?]
-on-arrival: resources -= 2; spd_campaign = 1; rosenfeld_campaign = 1; reformist_dissent += 20; left_dissent -= 20; left_strength += 10; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; lvp_right += 3; dvp_right += 3; ddp_right += 3; ddp_cohesion -= 2; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0; spd_candidate_1932 = "Rosenfeld"; spd_candidate_1932_disp = "Kurt Rosenfeld"
+choose-if: resources >= 2 and left_strength > reformist_strength
+unavailable-subtitle: [? if resources <= 2: not enough resources. ?], [? if left_strength < reformist_strength: The right wing of our party manages to steer the party away from this decision. ?]
+on-arrival: resources -= 2; spd_campaign = 1; kaşser_campaign = 1; reformist_dissent += 20; left_dissent -= 20; left_strength += 10; spd_relation += 10; dvp_relation -= 5; ddp_relation -= 5; lvp_relation -= 5; lvp_right += 3; dvp_right += 3; ddp_right += 3; ddp_cohesion -= 2; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0; z_candidate_1932 = "Kaiser"; spd_candidate_1932_disp = "Jakob Kaiser"
 
 It takes effort to run a somewhat unexpected campaign. First, Kaiser has to be convinced to run.
 
-Kaiser is very amneable to the <span style="color: #c00000;">**SPD**</span>, and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> the <span style="color: #C0A054;">**DVP**</span> is scared off by his support for nationalisation, and the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNVP**</span> ?][if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span>] will never even consider supporting him.
+Kaiser is very amneable to the <span style="color: #c00000;">**SPD**</span>, and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> the <span style="color: #C0A054;">**DVP**</span> is scared off by his support for nationalisation, and the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?] will never even consider supporting him.
 ]
 
 - @endorsements_z: Scout out potential endorsements. 
@@ -863,7 +863,7 @@ on-arrival: z_support_spd = 0 if z_support_spd == 2
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
-- @convince_z: Convince the <span style="color: #c00000;">**SPD**</span>.
+- @convince_spd: Convince the <span style="color: #c00000;">**SPD**</span>.
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">Braun</span>.
 - @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
@@ -1024,67 +1024,55 @@ go-to: endorsements_braun
 
 Perhaps expectedly, we have failed to persuade the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>, owing to their strong antipathy toward <span style="color: #c00000;">socialism</span> in general.
 
-@convince_z
-choose-if: spd_votes >= z_votes and not cvp_formed
-unavailable-subtitle: [? if spd_votes < z_votes: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?][? if cvp_formed: The <span style="color: #000000;">CVP</span> can never be convinced. ?]
+@convince_spd
 on-arrival: {!
 Q.z_support_spd = 0;
 if (!Q.bruning_time) {
-    if ((Q.z_relation >= 60 || (Q.z_relation > 50 && Q.z_ideology == "Left")) && Q.prussia_leader != "Braun") {
-        Q.z_support_spd = 1;
-    } else if (Q.prussia_leader == "Braun" && Q.z_relation >= 50) {
-        Q.z_support_spd = 2;
+    if ((Q.spd_relation >= 60 || (Q.spd_relation > 50 && Q.z_ideology != "Leftist")) && Q.prussia_leader != "Braun") {
+        Q.spd_support_z = 1;
+    } else if (Q.prussia_leader != "Braun" && 60 > Q.spd_relation >= 50) {
+        Q.spd_support_z = 2;
     } else {
-        Q.z_support_spd = 0;
-    }
-}
-if (Q.bruning_time) {
-    if ((Q.z_relation >= 70 || (Q.z_relation > 60 && Q.z_ideology == "Left")) && Q.prussia_leader != "Braun") {
-        Q.z_support_spd = 1;
-    } else if (Q.prussia_leader == "Braun" && Q.z_relation >= 60) {
-        Q.z_support_spd = 2;
-    } else {
-        Q.z_support_spd = 0;
+        Q.spd_support_z = 0;
     }
 }
 !}
-go-to: z_failed if z_support_spd = 0 or (z_support_spd == 2 and historical_mode); z_success if z_support_spd = 1; z_partial if z_support_spd = 2 and not historical_mode
+go-to: spd_failed if spd_support_z = 0 or (spd_support_z == 2 and historical_mode); spd_success if spd_support_z = 1; spd_partial if spd_support_z = 2 and not historical_mode
 max-visits: 1
 
 We remind the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] leaders of [? if hindenburg_run: <span style="color: #808080;">Hindenburg</span>'s anti-Catholicism, and try to convince them that Hindenburg's path will eventually lead to Hitler. ?][? if not hindenburg_run: our genuine <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> and democratic credentials. ?] [? if in_weimar_coalition_prussia: We also remind them of the successes they've had as part of our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition in Prussia with [+ spd_candidate_1932_disp +], and our support for the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] candidate Wilhelm Marx in the 1925 presidential election?][? if not in_weimar_coalition_prussia: We also remind them of our support for the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] candidate Wilhelm Marx in the 1925 presidential election?]. [? if bruning_time and hindenburg_run: Unfortunately, Hindenburg's support for Brüning's government has left them with little room to oppose the very president sustaining his cabinet. ?]
 
-@z_success
+@spd_success
 on-arrival: hindenburg_angry_bruning += 50 if bruning_time
 go-to: endorsements_braun
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is convinced! They will be part of the Braun coalition.
+The <span style="color: #c00000;">**SPD**</span> is convinced! They will be part of the Adenauer coalition.
 
-@z_partial
+@spd_partial
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we concede the Prussian Minister-President position to them, as they are opposed to Braun holding both the President and Minister-President positions.
-
+The <span style="color: #c00000;">**SPD**</span> is not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we concede the Prussian Minister-President position to them.
 - @give_up_prussia: Give up on leadership of Prussia.
 - @endorsements_braun: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
 @give_up_prussia
-subtitle: Braun will resign.
-on-arrival: z_support_spd = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; reformist_dissent += 10; center_dissent += 10; labor_dissent += 10; left_dissent += 5; workers_spd -= 5; new_middle_spd -= 5; rural_spd -= 3; braun_resign = 1; hindenburg_angry_bruning += 30 if bruning_time
+subtitle: [+ prussia_leader +] will resign.
+on-arrival: spd_support_z = 1; prussia_leader = "Braun"; reformist_dissent += 10; center_dissent += 10; labor_dissent += 10; workers_spd += 5; new_middle_spd += 5; rural_spd += 3; hindenburg_angry_bruning += 30 if bruning_time
 go-to: endorsements_braun
 
 Ironic, considering that seven years ago, we brokered a deal for Wilhelm Marx to resign in favor of Braun in exchange for our support for him in the presidential elections. Anyhow, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is now convinced to support Braun over [? if not hindenburg_run: [+ z_choice +]?][? if hindenburg_run: Hindenburg?].
 
 The Minister-President position is transferred to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]'s [+ prussia_leader +]. Hopefully, their support will outweigh the loss of popularity and internal dissent caused by the resignation of our most well-known figure.
 
-@z_failed
+@spd_failed
 go-to: endorsements_braun
 
-Unfortunately, we fail to turn the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] away from [? if not hindenburg_run: [+ z_choice +]?][? if hindenburg_run: Hindenburg?]. 
+Unfortunately, we fail to turn the <span style="color: #c00000;">**SPD**</span> away from [? if not hindenburg_run: [+ spd_choice_1932 +]?][? if hindenburg_run: Hindenburg?]. 
 
 @endorsements_eckener
 
 Eckener can't win this election alone, he needs support from other parties.
 
-- @convince_z_eckener: Convince the <span style="color: #c00000;">**SPD**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ spd_candidate_1932 +]?].
+- @convince_spd_eckener: Convince the <span style="color: #c00000;">**SPD**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ spd_candidate_1932 +]?].
 - @convince_ddp_eckener: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_lvp_eckener: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_dvp_eckener: Convince the <span style="color: #C0A054;">**DVP**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
@@ -1134,12 +1122,10 @@ choose-if: spd_votes >= z_votes and not cvp_formed
 unavailable-subtitle: [? if spd_votes < z_votes: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?][? if cvp_formed: The <span style="color: #000000;">CVP</span> can never be convinced. ?]
 on-arrival: {!
 Q.z_support_spd = 0;
-if (Q.z_relation >= 45 || (Q.z_relation > 35 && Q.z_ideology == "Left")) {
-    Q.z_support_spd = 1;
-} else if (Q.z_relation >= 30) {
-    Q.z_support_spd = 2;
+if (Q.spd_relation >= 45 && spd_relation != "Leftist")) {
+    Q.spd_support_z = 1;
 } else {
-    Q.z_support_spd = 0;
+    Q.spd_support_z = 0;
 }
 if (Q.z_relation >= 65) Q.bvp_support_spd = 1;
 !}
@@ -1148,31 +1134,15 @@ max-visits: 1
 
 We remind the <span style="color: #000000;">Center Party</span> of our past friendships, our support of Wilhelm Marx in 1925, and promote Eckener as a non-partisan unity candidate that can stop the <span style="color: #7A3C00;">Nazis</span>.
 
-@z_success_eckener
+@spd_success_eckener
 go-to: endorsements_eckener
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is convinced! They will be part of the Eckener coalition. [? if bvp_support_spd: The <span style="color: #A2D8E0;">**BVP**</span> has also, surprisingly, joined the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in endorsing Eckener. ?][? if not bvp_support_spd: However, the <span style="color: #A2D8E0;">**BVP**</span> has split from the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and refuses to back Eckener. ?]
+The <span style="color: #c00000;">**SPD**</span> is convinced! They will be part of the Eckener coalition.
 
-@z_failed_eckener
+@spd_failed_eckener
 go-to: endorsements_eckener
 
-Unfortunately, we are unable to convince the <span style="color: #000000;">Center Party</span> for some reason. 
-
-@z_partial_eckener
-
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced if we front the resources.
-
-- @pay_z_eckener: Give them the resources they need.
-- @endorsements_braun: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-
-@pay_z_eckener
-choose-if: resources >= 1
-subtitle: -1 resource
-unavailable-subtitle: Not enough resources
-on-arrival: resources -= 1; z_support_spd = 1; bvp_support_spd = 1 if z_relation >= 65
-go-to: endorsements_eckener
-
-With our resources, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced to support Eckener. [? if bvp_support_spd: The <span style="color: #A2D8E0;">**BVP**</span> has also, surprisingly, joined the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in endorsing Eckener. ?][? if not bvp_support_spd: However, the <span style="color: #A2D8E0;">**BVP**</span> has split from the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and refuses to back Eckener. ?]
+Unfortunately, we are unable to convince the <span style="color: #c00000;">**SPD**</span> for some reason. 
 
 @convince_dvp_eckener
 view-if: not lvp_formed and dvp_exist
