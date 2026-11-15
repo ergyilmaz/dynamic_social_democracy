@@ -821,7 +821,6 @@ on-arrival: resources -= 2; spd_campaign = 1; kaiser_campaign = 1; reformist_dis
 It takes effort to run a somewhat unexpected campaign. First, Kaiser has to be convinced to run.
 
 Kaiser is very amneable to the <span style="color: #c00000;">**SPD**</span>, and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> the <span style="color: #C0A054;">**DVP**</span> is scared off by his support for nationalisation, and the [? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?] will never even consider supporting him.
-]
 
 - @endorsements_z: Scout out potential endorsements. 
 
