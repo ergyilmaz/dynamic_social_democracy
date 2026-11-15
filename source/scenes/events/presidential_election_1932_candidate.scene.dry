@@ -403,7 +403,7 @@ view-if: spd_candidate_1932 == "Mierendorff"
 on-arrival: reactionary_candidate_1932_count_2 -= 1
 face-image: img/portraits/MierendorffCarlo.jpg
 max-visits: 1
-go-to: reactionary candidates if reactionary_candidate_1932_count_2 > 0
+go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Carlo Mierendorff is the brand new leader of the <span style="color: #c00000;">**SPD**</span> andthe anti-<span style="color: #7A3C00;">fascist</span> organization <span style="color: #c00000;">Iron Front</span>. He has led the student wing and later the neorevisionist wing of the <span style="color: #c00000;">**SPD**</span> before becoming leader, advocationg for the <span style="color: #c00000;">**SPD**</span> to become a "militant party" to combat the three dangers to German Democracy: <span style="color: #700000;">Stalinism</span>, <span style="color: #808080;">Reaction</span> and <span style="color: #7A3C00;">Nazism</span>.
 
