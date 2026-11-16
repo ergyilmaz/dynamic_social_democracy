@@ -13,7 +13,7 @@ Our party is wracked as to how to deal with the economic crisis. From the centri
 [? if wtb_conceptualized: However, leftists in the party argue that the Lautenbach plan will cause too much suffering among the workers, instead calling for the newly conceptualized <span style="color: #000000;">W</span><span style="color: #DD0000;">T</span><span style="color: #FFCC00;">B</span>-Plan, named after the <span style="color: #c00000;">**Socialist**</span> economists Woytinsky, Tarnow, and Baade, promoting aggresive deficit spending to stimulate the economy. ?]
 
 - @support_centrist: Support austerity.
-- @support_lautenbach: [? if lautenbach_conceptualized = 1: Call for increased public works and fiscal stimulus. ?][? if lautenbach_conceptualized = 1: Muster support for the Lautenbach Plan. ?]
+- @support_lautenbach: [? if lautenbach_conceptualized = 0: Call for increased public works and fiscal stimulus. ?][? if lautenbach_conceptualized = 1: Muster support for the Lautenbach Plan. ?]
 - @defer: Defer making a decision until we have more information.
 
 @support_centrist
