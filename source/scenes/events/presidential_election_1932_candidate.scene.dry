@@ -1115,22 +1115,20 @@ go-to: endorsements_eckener
 
 We have failed to persuade the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>, due to their deep antipathy toward cooperating with the <span style="color: #c00000;">socialists</span>—even with Eckener at the head of the ticket. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
 
-@convince_z_eckener
-choose-if: spd_votes >= z_votes and not cvp_formed
-unavailable-subtitle: [? if spd_votes < z_votes: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?][? if cvp_formed: The <span style="color: #000000;">CVP</span> can never be convinced. ?]
-on-arrival: {!
+@convince_spd_eckener
+on-arrival:{!
 Q.z_support_spd = 0;
-if (Q.spd_relation >= 45 && spd_relation != "Leftist") {
+if (Q.spd_relation >= 45 && spd_ideology != "Leftist") {
     Q.spd_support_z = 1;
 } else {
     Q.spd_support_z = 0;
 }
 if (Q.z_relation >= 65) Q.bvp_support_spd = 1;
 !}
-go-to: z_failed_eckener if z_support_spd = 0; z_success_eckener if z_support_spd = 1; z_partial_eckener if z_support_spd = 2
+go-to: spd_failed_eckener if spd_support_z = 0; spd_success_eckener if spd_support_z = 1
 max-visits: 1
 
-We remind the <span style="color: #000000;">Center Party</span> of our past friendships, our support of Wilhelm Marx in 1925, and promote Eckener as a non-partisan unity candidate that can stop the <span style="color: #7A3C00;">Nazis</span>.
+We remind the <span style="color: #000000;">Center Party</span> of our past friendships, our coalition in support of Wilhelm Marx in 1925, and promote Eckener as a non-partisan unity candidate that can stop the <span style="color: #7A3C00;">Nazis</span>.
 
 @spd_success_eckener
 go-to: endorsements_eckener
