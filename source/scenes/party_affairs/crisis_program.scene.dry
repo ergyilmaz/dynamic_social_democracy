@@ -2,8 +2,8 @@ title: The Economic Crisis
 new-page: true
 is-card: true
 view-if: (crisis_urgency >= 2 or year >= 1931 or (month >= 6 and year == 1930)) and crisis_program_timer = 0 and economic_plan = 0 and black_thursday_seen == 1
-frequency: 200
-on-arrival: month_actions += 1; crisis_program_timer = 5
+frequency: 400
+on-arrival: month_actions += 1; crisis_program_timer = 4
 card-image: img/bankrun.jpg
 tags: party_affairs, govt_affairs
 
@@ -13,7 +13,7 @@ Our party is wracked as to how to deal with the economic crisis. From the centri
 [? if wtb_conceptualized: However, leftists in the party argue that the Lautenbach plan will cause too much suffering among the workers, instead calling for the newly conceptualized <span style="color: #000000;">W</span><span style="color: #DD0000;">T</span><span style="color: #FFCC00;">B</span>-Plan, named after the <span style="color: #c00000;">**Socialist**</span> economists Woytinsky, Tarnow, and Baade, promoting aggresive deficit spending to stimulate the economy. ?]
 
 - @support_centrist: Support austerity.
-- @support_lautenbach: Support public works and fiscal stimulus.
+- @support_lautenbach: [? if lautenbach_conceptualized = 1: Call for increased public works and fiscal stimulus. ?][? if lautenbach_conceptualized = 1: Muster support for the Lautenbach Plan. ?]
 - @defer: Defer making a decision until we have more information.
 
 @support_centrist
@@ -29,7 +29,7 @@ subtitle: Intervention is needed if we want to end the crisis.
 unavailable-subtitle: The Labor faction is not strong enough.
 choose-if: labor_strength >= left_strength and labor_strength >= center_strength
 on-arrival: center_dissent += 10; labor_strength += 5; lautenbach_support += 1
-go-to: adopt_lautenbach if lautenbach_support > 5
+go-to: adopt_lautenbach if lautenbach_support >= 5
 
 Our support of the Lautenbach plan alienates the orthodox economists of the Centrist faction, and faces both opposition and support from a variety of sources across the spectrum.
 
