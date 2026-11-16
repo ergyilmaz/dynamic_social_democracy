@@ -1,14 +1,14 @@
 title: The Prussian Bulwark
 new-page: true
 is-card: true
-view-if: prussia_leader = "Stegerwald" and in_spd_majority_prussia and not in_weimar_coalition_prussia and not in_grand_coalition_prussia
+view-if: prussia_leader = "Hitler"
 on-arrival: prussian_affairs_timer += 6; prussian_affairs_timer += 6 if prussia_leader != "Braun"; month_actions += 1
 tags: govt_affairs
 card-image: img/center_prussia.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
 = Prussian Affairs
-
+#center majoirty prussia is not coded in yet
 Prussia, by far the largest and most important state in Germany, is governed solely by our party, free from the compromises demanded by the bourgeois parties. This grants us the opportunity to pursue meaningful reforms. Under the capable leadership of Otto Braun, Prussia stands as the most stable and democratic government in the Republic.
 
 All our actions have increased effectiveness. 
