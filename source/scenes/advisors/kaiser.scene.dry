@@ -11,7 +11,7 @@ Kaiser is a leading figure in the Christian trade unions and the Christian Left.
 
 - @organize_workers
 - @public_works
-- @implement_plan
+- @carry_out_policy
 - @snap_election
 - @root: Return to main
 
@@ -30,13 +30,14 @@ on-arrival: advisor_action_timer = 6; wtb_support += 0.5; center_dissent += 10; 
 
 Kaiser pushes for action to be taken to solve the economic crisis.
 
-@implement_plan
-title: Implementing the Economic Plan
-subtitle: Continue implementing the Plan, and look back on our results...
-choose-if: advisor_action_timer <= 0 and public_works > 0
-unavailable-subtitle: We haven't adopted an economic plan [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+@carry_out_policy
+title: Carry out the economic plan.
+subtitle: If we are in government, we can carry out a public works program such as the Lautenbach Plan.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: #c00000;">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?]
+choose-if: advisor_action_timer <= 0 and wtb_adopted and wtb_implemented <= 1 and economic_minister_party == "Z" or finance_minister_party == "Z" and spd_in_government
+on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
+go-to: economic_policy
 
-WIP
 
 @snap_election
 title: Snap Election
