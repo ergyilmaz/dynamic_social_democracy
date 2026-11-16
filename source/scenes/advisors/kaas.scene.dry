@@ -47,7 +47,7 @@ We have successfully signed a Concordat between Germany and the Roman Catholic C
 @negotiate_concordat_kaas
 title: Negotiate a Concordat covering all of Germany
 choose-if: foreign_minister_party == "Z"
-unavailable-subititle: We don't control the Foreign Ministry.
+unavailable-subtitle: We don't control the Foreign Ministry.
 subtitle: Kaas' ties to the Papacy helps swiften the negotiations.
 view-if: reichskonkordat = 0 and reichskonkordat_progress < 4
 on-arrival: advisor_action_timer = 6; reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 1; ddp_relation -= 2; ddp_cohesion -= 0.25; lvp_relation -= 1; foreign_goal_spd_peoples += 1
