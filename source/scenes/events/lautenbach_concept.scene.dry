@@ -4,7 +4,7 @@ view-if: (black_thursday_seen and lautenbach_support > 3) or (year == 1931 and m
 max-visits: 1
 tags: event
 new-page: true
-on-arrival: crisis_urgency += 1; wtb_support += 1
+on-arrival: crisis_urgency += 1; wtb_support += 1; lautenbach_concept = 1
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
