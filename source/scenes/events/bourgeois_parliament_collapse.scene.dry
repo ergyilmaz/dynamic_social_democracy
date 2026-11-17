@@ -10,9 +10,9 @@ max-visits: 1
 
 The various disagreements that have arisen between the bourgeois parties themselves, as well as with Chancellor Brüning, have caused the parliamentary group to fracture, with each party now going its own separate way. This division significantly weakens their collective influence over Brüning and his policies, granting him greater autonomy as he now negotiates with each party individually.
 
-- @damn: The affairs of the bourgeois parties don't concern us.
+- @damn: It seems that infighting still plagues the bourgeois parties.
 
 @damn
 on-arrival: bourgeois_parliament = 0; bourgeois_parliament_no_liberals = 0; bourgeois_parliament_ddp = 0; bourgeois_parliament_kvp = 0; bourgeois_list = 0; bourgeois_list_ddp = 0; bourgeois_list_kvp = 0
 
-Brüning’s austerity measures will likely intensify from this point forward.
+The cannibalisation of the bourgeois parties continues.
