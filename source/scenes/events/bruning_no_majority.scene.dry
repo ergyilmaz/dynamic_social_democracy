@@ -12,21 +12,22 @@ The defection of multiple bourgeois and special interest parties from their prev
 
 The <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> remains committed to its all-or-nothing approach, refusing to support the government unless they are granted the Chancellery. Despite this, many on the Right still believe that a compromise with Hitler and Hugenberg is possible and believe that Brüning is not making enough of an effort to achieve it.
 
-- @vonc_yes
-- @vonc_no
+- @spd_toleration_question: The Goverment's fate rests in the hands of the <span style="color: #c00000;">socialists</span>....
 
 @vonc_yes
-title: Support the vote of no confidence, voting against the government.
-subtitle: Might as well cut our losses here.
+title: The <span style="color: #c00000;">**SPD**</span> votes for the vote of no confidence.
+subtitle: Well we're fucked.
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 3; z_relation -= 5; ddp_relation -= 3; lvp_relation -= 3; dvp_right += 1; ddp_right += 1; lvp_right += 1
 call: set_next_election_time
 
-We have officially broken with the [+ chancellor +] government, voting against them in a vote of no confidence. The bourgeois parties have also joined in, rather than engage in a futile attempt to save Brüning’s government.
+The <span style="color: #c00000;">**SPD**</span>, thanks to our not so stellar relations, have broken with us, thus stunting any hope of the bourgeois parties getting their act together.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @vonc_no
-title: Oppose the vote of no confidence, voting in favor of the government.
+title: The <span style="color: #c00000;">**SPD**</span> stays the course.
+choose-if: (spd_relation >= 50 and spd_ideology == "Centrist") or (spd_relation >= 80 and spd_ideology != "Centrist")
+unavailable-subtitle: We do not have adequate relations with the <span style="color: #c00000;">**SPD**</span>.
 subtitle: Currently, [+ bruning_coalition +]% of the Reichstag supports Brüning, but subject to change.
 on-arrival: {!
 Q.bruning_joever = 1;
