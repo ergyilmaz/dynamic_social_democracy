@@ -24,7 +24,7 @@ Although our party was founded to defend Catholicism from Protestant oppression,
 view-if: (neorevisionist_strength + reformist_strength < left_strength + center_strength) or peoples_party_support < 5
 on-arrival: interconfessionalism_support += 1; labor_strength += 5; center_dissent += 5
 
-Within our party, we are pushing forward proposals for a people's party against the Center faction.
+Within our party, we are pushing forward proposals for an interconfessional party against the Center faction.
 
 
 @support_interconfessionalism
