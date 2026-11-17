@@ -41,5 +41,6 @@ We have refused to take up the mantle of goverment, going against the wishes of 
 @new_election_bruning
 title: With no way to a majority goverment, the Reichstag is dissolved for new elections.
 on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; spd_toleration_right = 0; pro_republic -= 3
+call: set_next_election_time
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
