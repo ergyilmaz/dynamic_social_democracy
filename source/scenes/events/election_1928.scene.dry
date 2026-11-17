@@ -2025,7 +2025,7 @@ title: A bourgeois coalition is formed, with the <span style="color: #c00000;">*
 subtitle: <span style="color: #000000;">**[+ center_party_name +]** + </span>+<span style="color: #A2D8E0;">**BVP**</span>[? if not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed:&nbsp;+ <span style="color: #FFCC00;">**LVP**</span>?]+[? if lvp_formed:&nbsp;+ <span style="color: #FFCC00;">**LVP**</span>? + **Others** ([+ bruning_coalition +])
 view-if: bruning_coalition > 50 
 unavailable-subtitle: The <span style="color: #c00000;">**SPD**</span> is uninterested in this arrangement.
-on-arrival: leverage -= 5; spd_toleration = 1; economic_minister_party = "DVP"; finance_minister_party = "DDP"; foreign_minister_party = "DVP"; chancellor = "Brüning"; chancellor_party = "Z"; justive_minister_party = "DDP" reichswehr_minister_party = "I"; labor_minister_party = "DDP"; agriculture_minister_party == "I"; in_minority_bourgeois_coalition == 1; hindenburg_angry -= 20
+on-arrival: leverage -= 5; spd_toleration = 1; economic_minister_party = "DVP"; finance_minister_party = "DDP"; foreign_minister_party = "DVP"; chancellor = "Brüning"; chancellor_party = "Z"; justive_minister_party = "DDP"; reichswehr_minister_party = "I"; labor_minister_party = "DDP"; agriculture_minister_party == "I"; in_minority_bourgeois_coalition == 1; hindenburg_angry -= 20
 go-to: ministries
 
 Brüning secures a minority coalition tolerated by the <span style="color: #c00000;">**SPD**</span>. Now, we must choose our ministries.
