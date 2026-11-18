@@ -12,8 +12,8 @@ if Q.neorev_spd == spd_neorev += 2;
 !}
 view-if: year = 1931 and month = 6
 face-image: img/big_strong_socialdemocrat.jpg
-
 max-visits: 1
+
 = <span style="color: #c00000;">**SPD**</span> Party Congress
 
   The <span style="color: #c00000;">**SPD**</span> is holding its 1931 Party Congress in Leipzig. The economic crisis, President <span style="color: #808080;">Hindenburg</span>'s hostility and the question of toleration might yield some unexpected results...
