@@ -1999,7 +1999,6 @@ go-to: coalition_menu
 - @spd_minority
 - @weimar_coalition
 - @weimar_coalition_liberal_parliament
-- @wholesome_coalition
 - @schleicher_majority_coalition
 - @schleicher_left_coalition
 - @schleicher_right_coalition
