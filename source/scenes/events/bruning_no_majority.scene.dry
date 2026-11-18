@@ -14,6 +14,11 @@ The <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">
 
 - @spd_toleration_question: The Goverment's fate rests in the hands of the <span style="color: #c00000;">socialists</span>....
 
+@spd_toleration_question
+
+- @vonc_yes
+- @vonc_no
+
 @vonc_yes
 title: The <span style="color: #c00000;">**SPD**</span> votes for the vote of no confidence.
 subtitle: Well we're fucked.
