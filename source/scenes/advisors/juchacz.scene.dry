@@ -1,57 +1,40 @@
-title: Marie Juchacz
+title: Heinrich Brauns
 is-pinned-card: true
-tags: advisor, reformist
-card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 1
+tags: advisor, labor
+card-image: img/portraits/BraunsHeinrich.jpg
+view-if: brauns_advisor = 1
 new-page: true 
 
-= Marie Juchacz
+= Heinrich Brauns
 
-Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her experiences as a single mother in poverty led her to <span style="color: #c00000;">socialism</span>. She is the most senior woman among the <span style="color: #c00000;">**SPD**</span> leadership, who is often treated as the "go-to" when the predominantly male leadership sought out womens' voices.
+Brauns is a member of the Reichstag and has served as labor minister for 8 years under vraious goverments. He is a proponent of having employers and workers negotiate on equal footing. Despite this, he remains in the party's right wing, supporting the formation of a Interdenominational Christian party. He's likely to be useful in negotiations with the DNVP.
 
-- @emergency_fundraising
+- @dnvp_relations
 - @welfare
-- @organizing_women
-- @bdf
+- @cvp_negotiations
 - @root: Return to main
 
-@emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
-view-if: difficulty < 1
+@dnvp_relations
+title: Strengthen ties with the [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?]
+subtitle: Built up goodwill with the [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?]
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; emergency_used += 1; resources += 2; workers_spd -= 2 if emergency_used > 1; labor_dissent += 5 if emergency_used > 1; unemployed_spd -= 2 if emergency_used > 1; workers_spd -= 2 if emergency_used > 2; unemployed_spd -= 2 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2
+on-arrival: advisor_action_timer = 6; dnvp_relation += 10
 
-[? if emergency_used <= 1: Juchacz has leveraged her position to pull in donations and arrange quick loans. ?][? if emergency_used > 1 and emergency_used < 3: Discontent is brewing among the <span style="color: #c00000;">**SPD**</span>'s rank and file due to our persistent attempts at begging for money. ?][? if emergency_used > 2: We’re really scraping the barrel now—committed members are pressured into selling their valuables, while many others leave in frustration. ?]
-
-We have gained +2 resources.
+The [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?] appreciates our olive branch.
 
 @welfare
-title: Support Workers' Welfare, our mutual aid organization.
+title: Social Welfare Policy
 subtitle: -1 resources
 choose-if: resources > 0 and advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
-on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6;
+on-arrival: advisor_action_timer = 6;
+go-to: social_welfare
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
-
-@organizing_women
-title: Organizing women
-subtitle: Juchacz's strategies are aimed at more "traditional" women.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+@cvp_negotiations
+title: Begin negotiations for an interdenominational Christian party!
+subtitle: The time is now!
+choose-if: advisor_action_timer = 0 and interconfessionalism = 1 and dnvp_ideology == "Moderate" and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_relation >= 70 and (dnvp_votes < 10 or in_center_right_coalition)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if interconfessionalism != 1: The party is commited to confessionalism. ?][? if z_ideology != "Right": Our leadership isn't willing to entertain the idea.?][? if dnvp_ideology != "Moderate": The [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?] isn't willing to entertain the idea. ?][? if dnvp_relation < 70: We don't have adequate relations with the [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?].?][? if not (dnvp_votes < 10 or in_center_right_coalition): The [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?] isn't desperate enough to approve the merger, they must either suffer a huge electoral defeat or enter a national coalition with us. ?]
 on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
-
-Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
-
-[? if ((spd_r < 50) and not bdf_cooperation) : Unfortunately, women still disproportionately support the bourgeois parties. ?]
-
-@bdf
-title: Feminism beyond suffrage?
-subtitle: Can we bring liberal and leftist women's rights organizations together?
-view-if: womens_work >= 3 and family_law >= 2 and bdf_cooperation = 0
-choose-if: (womens_rights >= 8 or abortion_rights) and nationalism <= 40 and advisor_action_timer = 0
-unavailable-subtitle: [? if nationalism > 40: The environment is too polarized: we must push against <span style="color: #3E88B3;">nationalist</span> propaganda. ?][? if womens_rights <= 7 or abortion_rights = 0: More work needs to be done. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: bdf_cooperation
+go-to: cvp_formation
