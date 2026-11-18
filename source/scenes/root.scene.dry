@@ -1049,10 +1049,10 @@ Q.breitscheid_advisor = -1; // Rudolf Breitscheid
 // Reformist advisors
 Q.severing_advisor = -1; // Carl Severing
 Q.braun_advisor = 1; // Otto Braun
-Q.juchacz_advisor = -1; // Marie Juchacz
 Q.baade_advisor = -1; // Fritz Baade
 
 // Labor advisors
+Q.brauns_advisor = 0; // Heinrich Brauns
 Q.adenauer_advisor = 0; // Konrad Adenauer
 Q.aufhauser_advisor = -1; // Siegfried Aufhäuser
 Q.woytinsky_advisor = -1; // Wladimir Woytinsky (post-1930)
