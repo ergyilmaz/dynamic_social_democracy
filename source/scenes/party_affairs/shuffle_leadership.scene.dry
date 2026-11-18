@@ -131,14 +131,14 @@ go-to: rm_main_menu
 
 Severing has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_juchacz
-title: Remove Juchacz
-view-if: juchacz_advisor = 1
+@remove_brauns
+title: Remove Brauns
+view-if: brauns_advisor = 1
 tags: remove_advisor
-on-arrival: juchacz_advisor = 0; reformist_dissent += 10; n_advisors -= 1
+on-arrival: brauns_advisor = 0; labor_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+Brauns has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_pfulf
 title: Remove Pfülf
@@ -461,18 +461,6 @@ go-to: advisor_menu
 
 Carl Severing is now an advisor.
 
-@add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
-is-card: true
-card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
-go-to: advisor_menu
-tags: reformist_advisor
-
-Marie Juchacz is now an advisor.
-
 @add_pfulf
 title: Antonie Pfülf
 subtitle: Antonie Pfülf is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
@@ -600,6 +588,18 @@ on-arrival: adenauer_advisor = 1; n_advisors += 1; labor_strength += 5; labor_di
 go-to: advisor_menu
 
 Konrad Adenauer is now an advisor.
+
+@add_brauns
+title: Heinrich Brauns
+subtitle: Heinrich Braun is a right-wing labor leader. {!<br><br>!} Actions - Foster relations with the [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?], Social Welfare Policy, Begin negotiations for an interdenominational Christian party
+is-card: true
+card-image: img/portraits/braunsHeinrich.jpg
+view-if: brauns_advisor = 0 and n_advisors < 3
+on-arrival: brauns_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
+go-to: advisor_menu
+tags: labor_advisor
+
+Heinrich Brauns is now an advisor.
 
 @add_aufhauser
 title: Siegfried Aufhäuser
