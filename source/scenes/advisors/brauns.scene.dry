@@ -7,7 +7,7 @@ new-page: true
 
 = Heinrich Brauns
 
-Brauns is a member of the Reichstag and has served as labor minister for 8 years under vraious goverments. He is a proponent of having employers and workers negotiate on equal footing. Despite this, he remains in the party's right wing, supporting the formation of a Interdenominational Christian party. He's likely to be useful in negotiations with the DNVP.
+Brauns is a member of the Reichstag and has served as labor minister for 8 years under various goverments. He is a proponent of having employers and workers negotiate on equal footing. Despite this, he remains in the party's right wing, supporting the formation of a interdenominational Christian party. He's likely to be useful in negotiations with the DNVP.
 
 - @dnvp_relations
 - @welfare
@@ -32,7 +32,7 @@ on-arrival: advisor_action_timer = 6;
 go-to: social_welfare
 
 @cvp_negotiations
-title: Begin negotiations for an interdenominational Christian party!
+title: Begin negotiations for an interdenominational Christian party
 subtitle: The time is now!
 choose-if: advisor_action_timer = 0 and interconfessionalism = 1 and dnvp_ideology == "Moderate" and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_relation >= 70 and (dnvp_votes < 10 or in_center_right_coalition)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if interconfessionalism != 1: The party is commited to confessionalism. ?][? if z_ideology != "Right": Our leadership isn't willing to entertain the idea.?][? if dnvp_ideology != "Moderate": The [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?] isn't willing to entertain the idea. ?][? if dnvp_relation < 70: We don't have adequate relations with the [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?].?][? if not (dnvp_votes < 10 or in_center_right_coalition): The [? if dnvp_ideology = "Moderate": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Radical": <span style="color: #003755;">**DNVP**</span> ?] isn't desperate enough to approve the merger, they must either suffer a huge electoral defeat or enter a national coalition with us. ?]
