@@ -8,7 +8,7 @@ if Q.spd_toleration == 1 {Q.spd_center -= 1}
 if Q.in_weimar_coalition == {1 Q.spd_left -= 2}
 if Q.spd_in_goverment != 1 {Q.spd_center -= 2}
 if Q.spd_in_goverment == 1 {Q.spd_center += 2}
-if Q.neorev_spd == q.spd_neorev += 2;
+if Q.neorev_spd == {Q.spd_neorev += 2}
 !}
 view-if: year = 1931 and month = 6
 face-image: img/big_strong_socialdemocrat.jpg
