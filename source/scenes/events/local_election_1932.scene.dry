@@ -1151,7 +1151,7 @@ title: A <span style="color: #000000;">We</span><span style="color: #DD0000;">im
 subtitle: We have somehow convinced the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to let us into government.
 unavailable-subtitle: [? if spd_relation < 60: We need higher relations with the <span style="color: #c00000;">**SPD**</span>. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
 view-if: spd_coalition_wurttemberg >= 50
-choose-if: spd_relation >= 60 and and (ddp_relation > 40 or lvp_relation > 40) and reformist_strength <= 20
+choose-if: spd_relation >= 60 and (ddp_relation > 40 or lvp_relation > 40) and reformist_strength <= 20
 on-arrival: wurttemberg_spd = 1; wurttemberg_weimar = 1; rural_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_other += 4; spd_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3; catholics_nsdap -= 2; catholics_spd += 2; catholics_z += 1; catholics_other += 1; sa_strength -= 25
 go-to: election_menu
 
