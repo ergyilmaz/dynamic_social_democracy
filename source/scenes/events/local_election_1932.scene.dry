@@ -681,6 +681,7 @@ go-to: election_menu
 
 How the hell.
 
+@spd_coalition
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the bourgeois parties.
 subtitle: The <span style="color: #38C538;">Bavarian Peasants’ League</span> had a falling out right? Let's utilize our contacts with their left wing. -1 resource
 unavailable-subtitle: [? if spd_coalition_bavaria < 50: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> ([+ spd_coalition_bavaria +]%)  ?][? if resources < 1: - Not enough resources (need 1). ?]
