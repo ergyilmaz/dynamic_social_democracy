@@ -9,12 +9,12 @@ new-page: true
 
 Adenauer is the popular Mayor of Cologne and president of the Prussian State Council. He's one of the most staunch supporters of "leaving the tower" - opening of the party to Protestants.
 
-- @interconfessionalism
+- @interconfessionalism_adopt
 - @interconfessionalism_support
 - @snap_election
 - @root: Return to main
 
-@interconfessionalism
+@interconfessionalism_adopt
 title: Building an Interconfessional Party
 subtitle: Can we expand our party to all Christians?
 view-if: interconfessionalism = 0
