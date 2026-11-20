@@ -3821,9 +3821,9 @@ title: Interior Ministry
 subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 5
+choose-if: leverage >= 3
 view-if: interior_minister_party != "Z"
-on-arrival: leverage -= 5; interior_minister_party = "Z"; interior_minister = "Wirth"
+on-arrival: leverage -= 3; interior_minister_party = "Z"; interior_minister = "Wirth"
 go-to: ministries
 
 Joseph Wirth of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed Interior Minister.
@@ -3833,9 +3833,9 @@ title: Finance Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: finance_minister_party != "Z"
-on-arrival: leverage -= 10; finance_minister_party = "Z"; finance_minister = "Köhler"
+on-arrival: leverage -= 5; finance_minister_party = "Z"; finance_minister = "Köhler"
 go-to: ministries
 
 Heinrich Köhler of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed Finance Minister.
@@ -3845,9 +3845,9 @@ title: Economic Ministry
 subtitle: The Economic Ministry controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: economic_minister_party != "Z"
-on-arrival: leverage -= 10; economic_minister_party = "Z"; economic_minister = "Stegerwald"
+on-arrival: leverage -= 5; economic_minister_party = "Z"; economic_minister = "Stegerwald"
 go-to: ministries
 
 Adam Stegerwald of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed Economic Minister.
@@ -3857,9 +3857,9 @@ title: Justice Ministry
 subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
 tags: mins_1928
-choose-if: leverage >= 10 and not cvp_ministers_accepted
+choose-if: leverage >= 7 and not cvp_ministers_accepted
 view-if: justice_minister_party != "Z"
-on-arrival: leverage -= 10; justice_minister_party = "Z"; justice_minister = "Guerard"
+on-arrival: leverage -= 7; justice_minister_party = "Z"; justice_minister = "Guerard"
 go-to: ministries
 
 Theodor von Guérard of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed Justice Minister.
@@ -3869,9 +3869,9 @@ title: Foreign Ministry
 subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: foreign_minister_party != "Z"
-on-arrival: leverage -= 10; foreign_minister_party = "Z"; foreign_minister = "Brüning"
+on-arrival: leverage -= 5; foreign_minister_party = "Z"; foreign_minister = "Brüning"
 go-to: ministries
 
 Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has been appointed Foreign Minister.
@@ -3881,9 +3881,9 @@ Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #00000
 title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
-choose-if: leverage >= 10 and not cvp_ministers_accepted
+choose-if: leverage >= 5 and not cvp_ministers_accepted
 view-if: agriculture_minister_party != "Z"
-on-arrival: leverage -= 10; agriculture_minister_party = "Z"; agriculture_minister = "Haslinde"
+on-arrival: leverage -= 5; agriculture_minister_party = "Z"; agriculture_minister = "Haslinde"
 go-to: ministries
 tags: mins_1928
 
