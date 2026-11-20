@@ -1,5 +1,7 @@
 title: <span style="color: #c00000;">**SPD**</span> Party Congress
 subtitle: The fate of the workers' movement will be decided now.
+new-page: true
+tags: event
 on-arrival: {!
 if (Q.spd_relation > 50) {
 Q.spd_left -= 1;
@@ -29,6 +31,7 @@ Q.spd_neorev += 2;
 view-if: year = 1931 and month = 6
 face-image: img/big_strong_socialdemocrat.jpg
 max-visits: 1
+priority: 1
 
 = <span style="color: #c00000;">**SPD**</span> Party Congress
 
