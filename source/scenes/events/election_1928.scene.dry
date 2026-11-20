@@ -1196,7 +1196,7 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1 && weimar_coalition <= 50) {
 if (Q.z_r <= 20) {
 Q.leverage = (Q.z_r*2.5);
 }
-if Q.z_r > 20 and z_r < 30 {
+if (Q.z_r > 20 && z_r < 30) {
 Q.leverage = (Q.z_r*1.5);
 } else {
 Q.leverage = Q.z_r;
