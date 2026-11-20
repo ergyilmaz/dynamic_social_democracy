@@ -1,13 +1,13 @@
-title: Dealing with the  <span style="color: #c00000;">**SPD**</span>
+title: Dealing with Toleration
 new-page: true
 is-card: true
 card-image: img/portraits/BrüningHeinrich.jpg
 view-if: dealing_with_toleration_timer = 0 and spd_toleration and not spd_toleration_right and chancellor_party == "Z" and not cvp_formed
 on-arrival: dealing_with_toleration_timer += 6; month_actions += 1
 tags: govt_affairs
-#subtitle: Despite not being in government, teh <span style="color: #c00000;">**SPD**</span> still holds influence.
+#subtitle: Despite not being in government, t0eh <span style="color: #c00000;">**SPD**</span> still holds influence.
 
-= Dealing with the <span style="color: #c00000;">**SPD**</span>
+= Dealing with Toleration
 
 We are currently in a goverment held up by the toleration of the <span style="color: #c00000;">**SPD**</span>. Which action should we take?
 
@@ -16,15 +16,6 @@ We are currently in a goverment held up by the toleration of the <span style="co
 - @paramilitary_crackdown
 - @stay_course: Stay the course, for stability's sake.
 - @easy_discard
-
-@invite_goverment
-view-if: not constructive_vonc
-title: Can we forge a "New Grand Coalition"=
-
-Are we sure about this? President <span style="color: #808080;">Hindenburg</span> is vehemently against this move, and displeasing him may mean the end of our goverment.
-
-- @include: Yes, hold out the olive branch!
-- @stay_course: No, we should stay the course.
 
 @include
 on-arrival: spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; spd_relation += 10; left_strength += 8; pro_republic += 5; worker_spd += 4; workers_kpd -= 4; reformist_dissent += 5; left_dissent -= 5; dvp_relation -= 4; dvp_right += 2; hindenburg_anger += 15
@@ -43,7 +34,7 @@ We have increased welfare spending! Unfortunately, this harms our relations wit,
 view-if: political_decree < 2 and not sa_nationwide_ban
 choose-if: spd_prussia and strife >= 3 and z_relation >= 35 and not second_bruning_cabinet_seen
 unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?] [? if second_bruning_cabinet_seen: Joseph Wirth is no longer in charge of the Interior Ministry, meaning we can no longer rely on his connections. ?]
-title: Crackdown on violent paramilitaries of the <span style="color: #7A3C00;">**far**</span>-<span style="color: #3E88B3;">right</span> and <span style="color: #700000;">**left**</span>, and restrict certain rights.
+title: Crackdown on violent paramilitaries of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> and <span style="color: #700000;">left</span>, and restrict certain rights.
 on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_strength *= 0.98; workers_kpd -= 1; workers_nsdap -= 1; unemployed_kpd -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 2; hindenburg_anger += 5
 
 Carl Severing and other Prussian officials have successfully urged Brüning to issue an emergency decree expanding police authority to suppress political extremism. The decree imposes restrictions on political meetings, organizations, newspapers, and posters, all of which now require police approval beforehand.
