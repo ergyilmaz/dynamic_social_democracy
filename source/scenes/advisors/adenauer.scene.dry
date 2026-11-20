@@ -26,6 +26,8 @@ go-to: interconfessionalism
 @interconfessionalism_support
 title: Building Support for Interconfessionalism
 subtitle: Adenauer has been one of the strongest proponents of "Leaving the tower".
+choose-if: advisor_action_timer == 0
+unavailable_subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 view-if: interconfessionalism = 0
 on-arrival: interconfessionalism_support += 1; labor_strength += 5; left_strength += 5; advisor_action_timer = 6
 
