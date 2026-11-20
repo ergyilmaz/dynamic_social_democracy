@@ -17,6 +17,7 @@ Kaiser is a leading figure in the Christian trade unions and the Christian Left.
 
 @organize_workers
 title: Organizing Workers
+choose-if: advisor_action_timer == 0
 subtitle: Kaiser can help rally workers behind our cause.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; workers_z += 4*(1-dissent)
