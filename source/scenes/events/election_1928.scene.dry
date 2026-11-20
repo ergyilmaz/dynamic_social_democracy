@@ -2002,7 +2002,6 @@ go-to: coalition_menu
 - @schleicher_majority_coalition
 - @schleicher_left_coalition
 - @schleicher_right_coalition
-- @social_liberal_coalition
 - @social_catholic_coalition
 - @social_liberal_coalition_cvp
 - @social_catholic_coalition_cvp
