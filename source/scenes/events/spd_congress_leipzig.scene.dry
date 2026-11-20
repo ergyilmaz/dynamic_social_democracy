@@ -35,31 +35,31 @@ priority: 1
 
 = <span style="color: #c00000;">**SPD**</span> Party Congress
 
-  The <span style="color: #c00000;">**SPD**</span> is holding its 1931 Party Congress in Leipzig. The economic crisis, President <span style="color: #808080;">Hindenburg</span>'s hostility and the question of toleration might yield some unexpected results...
+The <span style="color: #c00000;">**SPD**</span> is holding its 1931 Party Congress in Leipzig. The economic crisis, President <span style="color: #808080;">Hindenburg</span>'s hostility and the question of toleration might yield some unexpected results...
 
-  - @spd_congress_leipzig: The party votes...,
+- @spd_congress_leipzig: The party votes...
 
-  @spd_congress_leipzig
-  go-to: spd_left_triumph if spd_left > spd_center and spd_left > spd_neorev; spd_center_triumph if spd_center > spd_left and spd_center > spd_neorev; spd_neorev_triumph if spd_neorev > spd_center and spd_neorev > spd_left
+@spd_congress_leipzig
+go-to: spd_left_triumph if spd_left > spd_center and spd_left > spd_neorev; spd_center_triumph if spd_center > spd_left and spd_center > spd_neorev; spd_neorev_triumph if spd_neorev > spd_center and spd_neorev > spd_left
 
-  @spd_left_triumph
-  on-arrival: spd_ideology == "Left"; spd_worker += 9; spd_unemployed += 9; new_middle_spd -= 5; old_middle_spd -= 5; spd_relation -= 10; left_adopted == 1; wtb_adopted == 0; communist_coalition += 10; spd_leader == "Seydewitz-Rosenfeld"; rb_militancy += 0.15; rb_strength += 100
-  subtitle: Revolution triumphs over Reform!
+@spd_left_triumph
+on-arrival: spd_ideology == "Left"; spd_worker += 9; spd_unemployed += 9; new_middle_spd -= 5; old_middle_spd -= 5; spd_relation -= 10; left_adopted == 1; wtb_adopted == 0; communist_coalition += 10; spd_leader == "Seydewitz-Rosenfeld"; rb_militancy += 0.15; rb_strength += 100
+subtitle: Revolution triumphs over Reform!
 
-  Against all odds, the <span style="color: #700000;">Leftists</span> of the <span style="color: #c00000;">**SPD**</span> have emerged victorious following bourgeois hostility, radicalization due to the rise of the <span style="color: #7A3C00;">**NSDAP**</span>, and the economic crisis. Our relations have worsened, as the <span style="color: #c00000;">**SPD**</span> sees us as a bourgeois party. The <span style="color: #700000;">**KPD**</span> is happy to hear the news, as they sign a truce with the <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span>.
+Against all odds, the <span style="color: #700000;">Leftists</span> of the <span style="color: #c00000;">**SPD**</span> have emerged victorious following bourgeois hostility, radicalization due to the rise of the <span style="color: #7A3C00;">**NSDAP**</span>, and the economic crisis. Our relations have worsened, as the <span style="color: #c00000;">**SPD**</span> sees us as a bourgeois party. The <span style="color: #700000;">**KPD**</span> is happy to hear the news, as they sign a truce with the <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span>.
 
-  The revolutionary rhetoric of the <span style="color: #c00000;">**SPD**</span> also helps them regain their reputation as the party of the workeres, while alienating their middle class supporters.
+The revolutionary rhetoric of the <span style="color: #c00000;">**SPD**</span> also helps them regain their reputation as the party of the workeres, while alienating their middle class supporters.
 
-  @spd_center_triumph
-  on-arrival: spd_ideology == "Moderate"; spd_relation += 5; spd_leader == "Wels"
-  subtitle: Nothing ever happens.
+@spd_center_triumph
+on-arrival: spd_ideology == "Moderate"; spd_relation += 5; spd_leader == "Wels"
+subtitle: Nothing ever happens.
 
-  As expected, the <span style="color: #c00000;">**SPD**</span> stays their <span style="color: #c00000;">Center Marxist</span> course. Wels, being an experienced party leader, will manage internal dissent in the face of the crisis.
+As expected, the <span style="color: #c00000;">**SPD**</span> stays their <span style="color: #c00000;">Center Marxist</span> course. Wels, being an experienced party leader, will manage internal dissent in the face of the crisis.
 
-  @spd_neorev_triumph
-  on-arrival: spd_ideology == "Revisionist"; spd_relation -= 5 if z_ideology == "Right"; spd_relation -= 5 if spd_toleration = 1; spd_relation += 5 if z_ideology == "Left"; spd_relation += 3 if z_leader == "Kaiser"; workers_spd += 7; unemployed_spd += 7; new_middle_spd += 5; old_middle_spd += 5; rural_spd += 6; catholics_spd += 5; spd_leader == "Mierendorff"; rb_strength += 500; rb_militancy += 0.1
+@spd_neorev_triumph
+on-arrival: spd_ideology == "Revisionist"; spd_relation -= 5 if z_ideology == "Right"; spd_relation -= 5 if spd_toleration = 1; spd_relation += 5 if z_ideology == "Left"; spd_relation += 3 if z_leader == "Kaiser"; workers_spd += 7; unemployed_spd += 7; new_middle_spd += 5; old_middle_spd += 5; rural_spd += 6; catholics_spd += 5; spd_leader == "Mierendorff"; rb_strength += 500; rb_militancy += 0.1
 
-  Unexpectedly, the nascent <span style="color: #c00000;">Neorevisionists</span> are eleveated to <span style="color: #c00000;">**SPD**</span> leadership thanks to the support of the Reformists, the youth wing and the <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span>. They quickly get to radical change within the <span style="color: #c00000;">**SPD**</span>, massively increasing <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span> funding, building a so-called "Militant Democratic" party, declaring <span style="color: #c00000;">**SPD**</span> a People's Party in an attempt to appeal to all parts of German society and outlawing toleration as a strategy of fighting <span style="color: #7A3C00;">fascism</span>.
+Unexpectedly, the nascent <span style="color: #c00000;">Neorevisionists</span> are eleveated to <span style="color: #c00000;">**SPD**</span> leadership thanks to the support of the Reformists, the youth wing and the <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span>. They quickly get to radical change within the <span style="color: #c00000;">**SPD**</span>, massively increasing <span style="color: #000000;">rei</span><span style="color: #DD0000;">chs</span><span style="color: #FFCC00;">banner</span> funding, building a so-called "Militant Democratic" party, declaring <span style="color: #c00000;">**SPD**</span> a People's Party in an attempt to appeal to all parts of German society and outlawing toleration as a strategy of fighting <span style="color: #7A3C00;">fascism</span>.
 
-  [? if spd_toleration == 1: This is bad news for Brüning's goverment, which is all but guaranteed to collapse without the support of the <span style="color: #c00000;">**SPD**</span>.?][? if z_leader == "Kaiser": We have seen an improvement in relations with the <span style="color: #c00000;">**SPD**</span>, as they admire Kaiser's anti-<span style="color: #7A3C00;">fascist</span> convictions. ?] The <span style="color: #c00000;">**SPD**</span>'s campaigning and propaganda methods are also reformed, aiming to meet the <span style="color: #7A3C00;">fascism</span> appeal to emotion rather than logic. Populist rhetoric regarding the economy, helped by their adoption of the WTB-Plan, protection of democracy in the face of <span style="color: #808080;">authoritarianism</span> and opposition to the establishment parties is enshrined, helping their poling massively.
+[? if spd_toleration == 1: This is bad news for Brüning's goverment, which is all but guaranteed to collapse without the support of the <span style="color: #c00000;">**SPD**</span>.?][? if z_leader == "Kaiser": We have seen an improvement in relations with the <span style="color: #c00000;">**SPD**</span>, as they admire Kaiser's anti-<span style="color: #7A3C00;">fascist</span> convictions. ?] The <span style="color: #c00000;">**SPD**</span>'s campaigning and propaganda methods are also reformed, aiming to meet the <span style="color: #7A3C00;">fascism</span> appeal to emotion rather than logic. Populist rhetoric regarding the economy, helped by their adoption of the WTB-Plan, protection of democracy in the face of <span style="color: #808080;">authoritarianism</span> and opposition to the establishment parties is enshrined, helping their poling massively.
   
