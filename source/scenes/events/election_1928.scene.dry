@@ -3905,99 +3905,99 @@ Franz von Papen of the [? if z_party_name != "CVP": <span style="color: #000000;
 @no_more
 title: No more ministries.
 on-arrival: {!
-if (Q.labor_minister_party !== "SPD") Q.labor_minister_party = "Z";
-if (Q.labor_minister !== "Wissell") Q.labor_minister = "Stegerwald";
+if (Q.labor_minister_party !== "Z") Q.labor_minister_party = "SPD";
+if (Q.labor_minister !== "Stegerwald") Q.labor_minister = "Wissell";
 
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.labor_minister_party = Q.ddp_name;
-if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.labor_minister_party = "LVP";
-if (Q.labor_minister !== "Wissell" && Q.in_social_liberal_coalition) Q.labor_minister = "Lemmer";
+if (Q.labor_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.labor_minister_party = Q.ddp_name;
+if (Q.labor_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.labor_minister_party = "LVP";
+if (Q.labor_minister !== "Stegerwald" && Q.in_social_liberal_coalition) Q.labor_minister = "Lemmer";
 
-if (Q.interior_minister_party !== "SPD") Q.interior_minister_party = "Z";
-if (Q.interior_minister !== "Severing") Q.interior_minister = "Wirth";
+if (Q.interior_minister_party !== "Z") Q.interior_minister_party = "Z";
+if (Q.interior_minister !== "Wirth") Q.interior_minister = "Wirth";
 
-if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.interior_minister_party = Q.ddp_name;
-if (Q.interior_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.interior_minister_party = "LVP";
-if (Q.interior_minister !== "Severing" && Q.in_social_liberal_coalition) Q.interior_minister = "Külz";
+if (Q.interior_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.interior_minister_party = Q.ddp_name;
+if (Q.interior_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.interior_minister_party = "LVP";
+if (Q.interior_minister !== "Wirth" && Q.in_social_liberal_coalition) Q.interior_minister = "Külz";
 
-if (Q.finance_minister_party !== "SPD" && Q.in_grand_coalition && !Q.lvp_formed) {
+if (Q.finance_minister_party !== "Z" && Q.in_grand_coalition && !Q.lvp_formed) {
     Q.finance_minister_party = "DVP";
-} else if (Q.finance_minister_party !== "SPD" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
+} else if (Q.finance_minister_party !== "Z" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
     Q.finance_minister_party = "LVP";
 }
-if (Q.finance_minister !== "Hilferding" && (Q.in_grand_coalition)) Q.finance_minister = "Moldenhauer";
+if (Q.finance_minister !== "Köhler" && (Q.in_grand_coalition)) Q.finance_minister = "Moldenhaur";
 
-if (Q.finance_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.finance_minister_party = "Z";
-if (Q.finance_minister !== "Hilferding" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.finance_minister = "Köhler";
+if (Q.finance_minister_party !== "Z" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.finance_minister_party = "Z";
+if (Q.finance_minister !== "Köhler" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.finance_minister = "Köhler";
 
-if (Q.finance_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.finance_minister_party = Q.ddp_name;
-if (Q.finance_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.finance_minister_party = "LVP";
-if (Q.finance_minister !== "Hilferding" && Q.in_social_liberal_coalition) Q.finance_minister = "Reinhold";
-if (Q.finance_minister !== "Hilferding" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.finance_minister = "Moldenhauer";
+if (Q.finance_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.finance_minister_party = Q.ddp_name;
+if (Q.finance_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.finance_minister_party = "LVP";
+if (Q.finance_minister !== "Köhler" && Q.in_social_liberal_coalition) Q.finance_minister = "Reinhold";
+if (Q.finance_minister !== "Köhler" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.finance_minister = "Moldenhauer";
 
-if (Q.economic_minister_party !== "SPD" && Q.in_grand_coalition && !Q.lvp_formed) {
+if (Q.economic_minister_party !== "Z" && Q.in_grand_coalition && !Q.lvp_formed) {
     Q.economic_minister_party = "DVP";
-} else if (Q.economic_minister_party !== "SPD" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
+} else if (Q.economic_minister_party !== "Z" && (Q.in_grand_coalition || Q.in_weimar_coalition) && Q.lvp_formed) {
     Q.economic_minister_party = "LVP";
 }
-if (Q.economic_minister !== "Schmidt" && Q.in_grand_coalition) Q.economic_minister = "Curtius";
+if (Q.economic_minister !== "Stegerwald" && Q.in_grand_coalition) Q.economic_minister = "Curtius";
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) Q.economic_minister_party = Q.ddp_name;
-if (Q.economic_minister_party !== "SPD" && (Q.in_weimar_coalition && Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.lvp_formed))) Q.economic_minister_party = "LVP";
-if (Q.economic_minister !== "Schmidt" && (Q.in_weimar_coalition || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) Q.economic_minister = "Dietrich";
+if (Q.economic_minister_party !== "Z" && (Q.in_weimar_coalition && !Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) Q.economic_minister_party = Q.ddp_name;
+if (Q.economic_minister_party !== "Z" && (Q.in_weimar_coalition && Q.lvp_formed || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.lvp_formed))) Q.economic_minister_party = "LVP";
+if (Q.economic_minister !== "Stegerwald" && (Q.in_weimar_coalition || (Q.in_popular_front && Q.liberal_parliament === 0 && Q.bourgeois_parliament_ddp == 0 && !Q.lvp_formed))) Q.economic_minister = "Dietrich";
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_popular_front && (Q.liberal_parliament || Q.bourgeois_parliament_ddp) && !Q.lvp_formed)) Q.economic_minister_party = "Z";
-if (Q.economic_minister_party !== "SPD" && (Q.in_popular_front && Q.lvp_formed)) Q.economic_minister_party = "Z";
-if (Q.economic_minister_party == "Z" && Q.in_popular_front) Q.economic_minister = "Brüning";
+if (Q.economic_minister_party !== "Z" && (Q.in_popular_front && (Q.liberal_parliament || Q.bourgeois_parliament_ddp) && !Q.lvp_formed)) Q.economic_minister_party = "Z";
+if (Q.economic_minister_party !== "Z" && (Q.in_popular_front && Q.lvp_formed)) Q.economic_minister_party = "Z";
+if (Q.economic_minister_party == "Z" && Q.in_popular_front) Q.economic_minister = "Stegerwald";
 
-if (Q.economic_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.economic_minister_party = Q.ddp_name;
-if (Q.economic_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.economic_minister_party = "LVP";
-if (Q.economic_minister !== "Schmidt" && Q.in_social_liberal_coalition) Q.economic_minister = "Trendelenburg";
+if (Q.economic_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.economic_minister_party = Q.ddp_name;
+if (Q.economic_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.economic_minister_party = "LVP";
+if (Q.economic_minister !== "Stegerwald" && Q.in_social_liberal_coalition) Q.economic_minister = "Trendelenburg";
 if (Q.economic_minister !== "Schmidt" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.economic_minister = "Curtius";
 
-if (Q.economic_minister_party !== "SPD" && (Q.in_social_catholic_coalition || (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) Q.economic_minister_party = "Z";
-if (Q.economic_minister !== "Schmidt" && (Q.in_social_catholic_coalition || (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) Q.economic_minister = "Brüning";
+if (Q.economic_minister_party !== "Z" && (Q.in_social_catholic_coalition || (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) Q.economic_minister_party = "Z";
+if (Q.economic_minister !== "Stegerwald" && (Q.in_social_catholic_coalition || (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed)))) Q.economic_minister = "Brüning";
 
-if (Q.justice_minister_party !== "SPD" && !Q.lvp_formed) {
+if (Q.justice_minister_party !== "Z" && !Q.lvp_formed) {
     Q.justice_minister_party = Q.ddp_name;
-} else if (Q.justice_minister_party !== "SPD" && Q.lvp_formed) {
+} else if (Q.justice_minister_party !== "Z" && Q.lvp_formed) {
     Q.justice_minister_party = "LVP";
 }
-if (Q.justice_minister !== "Radbruch") Q.justice_minister = "Koch-Weser";
+if (Q.justice_minister !== "Guerard") Q.justice_minister = "Koch-Weser";
 
-if (Q.justice_minister_party !== "SPD" && (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed) || Q.in_social_catholic_coalition)) Q.justice_minister_party = "Z";
+if (Q.justice_minister_party !== "Z" && (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed) || Q.in_social_catholic_coalition)) Q.justice_minister_party = "Z";
 if (Q.justice_minister !== "Radbruch" && (Q.in_popular_front && (Q.liberal_parliament === 1 || Q.bourgeois_parliament_ddp == 1 || Q.lvp_formed) || Q.in_social_catholic_coalition)) Q.justice_minister = "Guérard";
 
-if (Q.justice_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.justice_minister_party = Q.ddp_name;
-if (Q.justice_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.justice_minister_party = "LVP";
-if (Q.justice_minister !== "Radbruch" && Q.in_social_liberal_coalition) Q.justice_minister = "Koch-Weser";
+if (Q.justice_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.justice_minister_party = Q.ddp_name;
+if (Q.justice_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.justice_minister_party = "LVP";
+if (Q.justice_minister !== "Guerard" && Q.in_social_liberal_coalition) Q.justice_minister = "Koch-Weser";
 
-if (Q.foreign_minister_party !== "SPD" && !Q.lvp_formed) {
+if (Q.foreign_minister_party !== "Z" && !Q.lvp_formed) {
     Q.foreign_minister_party = "DVP";
-} else if (Q.foreign_minister_party !== "SPD" && Q.lvp_formed) {
+} else if (Q.foreign_minister_party !== "Z" && Q.lvp_formed) {
     Q.foreign_minister_party = "LVP";
 }
-if (Q.foreign_minister !== "Breitscheid") Q.foreign_minister = "Stresemann";
-if (Q.foreign_minister !== "Breitscheid" && Q.stresemann_dead === 1) Q.foreign_minister = "Curtius";
-if (Q.foreign_minister_party !== "SPD" && (Q.in_weimar_coalition && Q.lvp_formed)) Q.foreign_minister_party = "LVP";
-if (Q.foreign_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.foreign_minister_party = "Z";
-if (Q.foreign_minister !== "Breitscheid" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.foreign_minister = "Wirth";
+if (Q.foreign_minister !== "Bruning") Q.foreign_minister = "Stresemann";
+if (Q.foreign_minister !== "Bruning" && Q.stresemann_dead === 1) Q.foreign_minister = "Curtius";
+if (Q.foreign_minister_party !== "Z" && (Q.in_weimar_coalition && Q.lvp_formed)) Q.foreign_minister_party = "LVP";
+if (Q.foreign_minister_party !== "Z" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.foreign_minister_party = "SPD";
+if (Q.foreign_minister !== "Bruning" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.foreign_minister = "Breitscheid";
 
-if (Q.foreign_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.foreign_minister_party = Q.ddp_name;
-if (Q.foreign_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.foreign_minister_party = "LVP";
-if (Q.foreign_minister !== "Breitscheid" && Q.in_social_liberal_coalition) Q.foreign_minister = "Prittwitz";
+if (Q.foreign_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.foreign_minister_party = Q.ddp_name;
+if (Q.foreign_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.foreign_minister_party = "LVP";
+if (Q.foreign_minister !== "Bruning" && Q.in_social_liberal_coalition) Q.foreign_minister = "Prittwitz";
 
-if (Q.agriculture_minister_party !== "SPD" && !Q.lvp_formed) {
+if (Q.agriculture_minister_party !== "Z" && !Q.lvp_formed) {
     Q.agriculture_minister_party = Q.ddp_name;
-} else if (Q.agriculture_minister_party !== "SPD" && Q.lvp_formed) {
+} else if (Q.agriculture_minister_party !== "Z" && Q.lvp_formed) {
     Q.agriculture_minister_party = "LVP";
 }
-if (Q.agriculture_minister !== "Baade") Q.agriculture_minister = "Dietrich";
+if (Q.agriculture_minister !== "Haslinde") Q.agriculture_minister = "Dietrich";
 
-if (Q.agriculture_minister_party !== "SPD" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.agriculture_minister_party = "Z";
-if (Q.agriculture_minister !== "Baade" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.agriculture_minister = "Hermes";
+if (Q.agriculture_minister_party !== "Z" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.agriculture_minister_party = "Z";
+if (Q.agriculture_minister !== "Haslinde" && (Q.in_weimar_coalition && !Q.lvp_formed || Q.in_popular_front || Q.in_social_catholic_coalition)) Q.agriculture_minister = "Hermes";
 
-if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.agriculture_minister_party = Q.ddp_name;
-if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.agriculture_minister_party = "LVP";
+if (Q.agriculture_minister_party !== "Z" && Q.in_social_liberal_coalition) Q.agriculture_minister_party = Q.ddp_name;
+if (Q.agriculture_minister_party !== "Z" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.agriculture_minister_party = "LVP";
 if (Q.agriculture_minister !== "Baade" && Q.in_social_liberal_coalition) Q.agriculture_minister = "Dietrich";
 
 if (Q.reichswehr_minister_party !== "SPD") Q.reichswehr_minister_party = "I";
@@ -4062,42 +4062,42 @@ go-to: ministries
 @drop_interior
 title: Drop the Interior Ministry.
 view-if: interior_minister_party = "Z"
-on-arrival: interior_minister_party = "SPD"; interior_minister = "Severing"; leverage += 5;
+on-arrival: interior_minister_party = "SPD"; interior_minister = "Severing"; leverage += 3;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
 view-if: finance_minister_party = "Z"
-on-arrival: finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "SPD" if in_weimar_coalition or in_popular_front; finance_minister = "Hilferding" if in_weimar_coalition or in_popular_front
+on-arrival: finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister = "Moldenhauer"; leverage += 5; finance_minister_party = "SPD" if in_weimar_coalition or in_popular_front; finance_minister = "Hilferding" if in_weimar_coalition or in_popular_front
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
 view-if: economic_minister_party = "Z"
-on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
+on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; leverage += 5; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
 view-if: justice_minister_party = "Z"
-on-arrival: justice_minister_party = ddp_name; justice_minister = "Koch-Weser"; leverage += 10;
+on-arrival: justice_minister_party = ddp_name; justice_minister = "Koch-Weser"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
 view-if: foreign_minister_party = "Z"
-on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "SPD" if in_weimar_coalition or in_popular_front; foreign_minister = "Breitscheid" if in_weimar_coalition or in_popular_front;
+on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 5; foreign_minister_party = "SPD" if in_weimar_coalition or in_popular_front; foreign_minister = "Breitscheid" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "Z"
-on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "SPD" if in_weimar_coalition; agriculture_minister = "Baade" if in_weimar_coalition
+on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 5; agriculture_minister_party = "SPD" if in_weimar_coalition; agriculture_minister = "Baade" if in_weimar_coalition
 tags: drop_mins_1928
 go-to: ministries
 
