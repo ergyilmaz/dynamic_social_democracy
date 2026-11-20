@@ -1083,9 +1083,9 @@ if (Q.lvp_formed) {
 }
 
 if (Q.lvp_formed) {
-    Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r).toFixed(1));
+    Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_minus_bvp_r).toFixed(1));
 } else {
-    Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r).toFixed(1));
+    Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_minus_bvp_r).toFixed(1));
 }
 
 if (Q.lvp_formed) {
