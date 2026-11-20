@@ -348,6 +348,8 @@ Otto Braun, who has long served as the Minister-President of Prussia, is a refor
 
 His candidacy is supported by the <span style="color: #c00000;">**SPD**</span>.
 
+- @harzburg: We await the decision of the Harzburg Front.
+
 @mierendorff
 title: Carlo Mierendorff, <span style="color: #c00000;">**SPD**</span> and <span style="color: #c00000;">Iron Front</span> leader.
 view-if: spd_candidate_1932 == "Mierendorff"
@@ -360,6 +362,8 @@ Carlo Mierendorff is the brand new leader of the <span style="color: #c00000;">*
 
 His candidacy is supported by the <span style="color: #c00000;">**SPD**</span>.
 
+- @harzburg: We await the decision of the Harzburg Front.
+
 @rosenfeld
 title: Kurt Rosenfeld, the leftist lawyer.
 view-if: spd_candidate_1932 == "Rosenfeld"
@@ -371,6 +375,8 @@ go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 Kurt Rosenfeld is one of the furthest left figures in the <span style="color: #c00000;">**SPD**</span>, being a unity candidate with the <span style="color: #700000;">**KPD**</span>.
 
 His candidacy is supported by the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>.
+
+- @harzburg: We await the decision of the Harzburg Front.
 
 @vorbeck
 title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] member.
@@ -398,8 +404,6 @@ max-visits: 1
 go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: #3E88B3;">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
-
-It is imperative that we prevail over these forces of reaction if we are to have any hope of returning to government.
 
 His candidacy is backed by the [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties.
 
@@ -765,7 +769,7 @@ None of the candidates are worthy of our support, and we are either unable or un
 subtitle: This will cost us 2 resources.
 choose-if: resources >= 2
 unavailable-subtitle: [? if resources < 2: Not enough resources. ?]
-on-arrival: resources -= 2; spd_campaign = 1; adenauer_campaign = 1; labor_dissent -= 10; center_strength += 10; labor_strength += 10; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0
+on-arrival: resources -= 2; spd_campaign = 1; secondary_reactionary_candidate_1932 = "Adenauer"; adenauer_campaign = 1; labor_dissent -= 10; center_strength += 10; labor_strength += 10; ddp_support_spd = 0; lvp_support_spd = 0; dvp_support_spd = 0
 
 It takes effort to run a somewhat unexpected campaign. First, Adenauer has to be convinced to run. [? if hindenburg_run: He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny. ?][? if not hindenburg_run: It takes a good deal of prodding to convince him of his destiny. ?]
 
