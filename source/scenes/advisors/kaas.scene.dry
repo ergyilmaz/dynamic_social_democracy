@@ -20,7 +20,7 @@ Kaas is the leader of the Papal delegation to Germany, with his ties to the Papa
 title: Campaign among Catholics
 subtitle: Kaas can help organize Catholics.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government: The <span style="color: #c00000;">SPD</span> is not in government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; catholics_z += 6*(1-dissent); catholics += 2
 
 We have increasesd our campaigning among Catholics.
@@ -38,6 +38,8 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 @national_concordat_kaas
 title: Sign a Concordat between Germany and the Vatican
 subtitle: The Papacy is willing.
+choose-if: foreign_minister_party == "Z"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if foreign_minister_party != "Z": The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] doesn't control the Foreign Ministry. ?]
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
 on-arrival: advisor_action_timer = 6; reichskonkordat = 1; catholics_z += 8*(1-dissent); catholics += 6; foreign_goal_spd_peoples += 1; left_dissent -= 5; center_dissent -= 10; labor_dissent -= 5; reformist_dissent -= 5; dvp_relation -= 2; ddp_relation -= 2; lvp_relation -= 1.5
 achievement: reichskonkordat
