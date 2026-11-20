@@ -23,7 +23,7 @@ choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; catholics_z += 6*(1-dissent); catholics += 2
 
-We have increasesd our campaigning among Catholics.
+We have increased our campaigning among Catholics.
 
 
 @concordat_kaas
