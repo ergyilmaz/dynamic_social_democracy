@@ -710,7 +710,7 @@ if ((Q.lvp_support_spd && Q.lvp_formed || (Q.dvp_support_spd || Q.ddp_support_sp
 if (Q.z_support_spd == 1 && Q.center_reactionary_candidate_1932 && !Q.z_drop_out_bourgeois && !Q.z_drop_out) Q.z_drop_out_2 = 1;
 !}
 
-- @round2_convince_z: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to switch their support to us.
+- @round2_convince_spd: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?] <span style="color: #c00000;">**SPD**</span> to switch their support to us.
 - @round2_convince_kpd: Convince the <span style="color: #700000;">**KPD**</span> to switch their support to us. 
 - @round2_convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to switch their support to us.
 - @round2_convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to switch their support to us.
@@ -764,17 +764,17 @@ go-to: round2_menu
 We have failed to persuade the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>, due to their deep antipathy toward cooperating with the <span style="color: #c00000;">socialists</span>—even with Eckener at the head of the ticket. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
 
 @convince_z_eckener
-view-if: eckener_campaign and not z_support_spd
+view-if: eckener_campaign and not spd_support_z
 choose-if: spd_votes >= z_votes and not cvp_formed
 unavailable-subtitle: [? if spd_votes < z_votes: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?][? if cvp_formed: The <span style="color: #000000;">CVP</span> can never be convinced. ?]
 on-arrival: {!
 Q.z_support_spd = 0;
 if (Q.z_relation >= 45 || (Q.z_relation > 35 && Q.z_ideology == "Left")) {
-    Q.z_support_spd = 1;
+    Q.spd_support_z = 1;
 } else if (Q.z_relation >= 30) {
-    Q.z_support_spd = 2;
+    Q.spd_support_z = 2;
 } else {
-    Q.z_support_spd = 0;
+    Q.spd_support_z = 0;
 }
 if (Q.z_relation >= 65) Q.bvp_support_spd = 1;
 !}
@@ -786,7 +786,7 @@ We remind the <span style="color: #000000;">Center Party</span> of our past frie
 @z_success_eckener
 go-to: round2_menu
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is convinced! They will be part of the Eckener coalition. [? if bvp_support_spd: The <span style="color: #A2D8E0;">**BVP**</span> has also, surprisingly, joined the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in endorsing Eckener. ?][? if not bvp_support_spd: However, the <span style="color: #A2D8E0;">**BVP**</span> has split from the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and refuses to back Eckener. ?]
+The <span style="color: #c00000;">**SPD**</span> is convinced! They will be part of the Eckener coalition.
 
 @z_failed_eckener
 go-to: round2_menu
@@ -795,7 +795,7 @@ Unfortunately, we are unable to convince the <span style="color: #000000;">Cente
 
 @z_partial_eckener
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced if we front the resources.
+The <span style="color: #c00000;">**SPD**</span> is not satisfied with our arguments, but they are open to being convinced if we front the resources.
 
 - @pay_z_eckener: Give them the resources they need.
 - @round2_menu: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
