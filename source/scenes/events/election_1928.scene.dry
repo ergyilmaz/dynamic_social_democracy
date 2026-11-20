@@ -3522,7 +3522,6 @@ go-to: grand_coalition
 # In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
 
 @grand_coalition_z_lead
-go-to: grand_coalition_z_lead_2 if ((dvp_relation >= 30 and not lvp_formed) or (lvp_relation >= 30 and lvp_formed)); grand_coalition_fail if ((dvp_relation < 30 and not lvp_formed) or (lvp_relation < 30 and lvp_formed))
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50 and dvp_exist
 on-arrival: spd_in_government = 1; spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Empty"; chancellor_party = " "; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "I"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; leverage += 5 if bourgeois_parliament; leverage += 5 if in_grand_coalition_prussia and in_grand_coalition and dvp_prussia_asked = 0; hindenburg_angry = 0
 
