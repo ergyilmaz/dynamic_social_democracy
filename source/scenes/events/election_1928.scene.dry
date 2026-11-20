@@ -3499,7 +3499,7 @@ view-if: grand_coalition >= 50 and grand_coalition_failed == 0 and dvp_exist and
 choose-if: ((black_thursday_seen == 0 or (black_thursday_seen == 1 and dvp_ideology != "Right")) or lvp_formed) and president_ideology != "Right" 
 unavailable-subtitle: [? if black_thursday_seen == 1 and dvp_ideology = "Right": The <span style="color: #C0A054;">**DVP**</span> refuses to work with us. ?][? if president_ideology == "Right": - President [+ president +] is fiercely opposed to <span style="color: #c00000;">socialist</span> governance. ?]
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] ([+ grand_coalition +]%)
-go-to: grand_coalition_spd_lead if ((n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30 and (z_r - bvp_r) < 15) or (largest_party == "SPD" and spd_r >= 35 and (z_r - bvp_r) >= 15) or president_ideology == "Left") and (not bourgeois_parliament or lvp_formed); grand_coalition_z_lead if president_ideology != "Left" and ((n_elections > 1 and spd_r < 30 and (z_r - bvp_r) < 15) or (n_elections > 1 and spd_r < 35 and (z_r - bvp_r) >= 15) or (n_elections <= 1 and largest_party != "SPD")) and (not bourgeois_parliament or lvp_formed); grand_coalition_bourgeois_parliament if bourgeois_parliament and not lvp_formed
+go-to: grand_coalition_z_lead
 
 @grand_coalition_bourgeois_parliament
 on-arrival: grand_coalition_failed = 1
@@ -3523,7 +3523,7 @@ go-to: grand_coalition
 
 @grand_coalition_z_lead
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50 and dvp_exist
-on-arrival: spd_in_government = 1; spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Empty"; chancellor_party = " "; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "I"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; leverage += 5 if bourgeois_parliament; leverage += 5 if in_grand_coalition_prussia and in_grand_coalition and dvp_prussia_asked = 0; hindenburg_angry = 0
+on-arrival: spd_in_government = 1; spd_toleration = 0; spd_toleration_right = 0; in_grand_coalition = 1; chancellor = "Empty"; chancellor_party = " "; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "I"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; leverage += 5 if bourgeois_parliament; leverage += 5 if in_grand_coalition_prussia and in_grand_coalition and dvp_prussia_asked = 0; hindenburg_angry = 30; z_in_goverment = 1
 
 There are enough votes to form a majority coalition consisting of the <span style="color: #c00000;">**SPD**</span>, [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] (<span style="color: #000000;">**[+ z_party_name +]**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] [? if not lvp_formed: (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>)?][? if lvp_formed: (<span style="color: #FFCC00;">**LVP**</span>)?][? if not lvp_formed: , and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>)?] parties. Given the <span style="color: #c00000;">**SPD**</span>'s rather weak electoral performance, [? if spd_no_confidence = 1 : and their previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against them, ?] President [+ president +] has asked the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to take the lead role in forming a government.
 
@@ -3715,22 +3715,6 @@ go-to: grand_coalition_z_lead
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. However, this will negatively impact our actions involving the Prussian police force due to the <span style="color: #C0A054;">**DVP**</span> has ties to right-wing organizations such as the <span style="color: #3E88B3;">Stahlhelm</span>.
 
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] also is against this change because of the <span style="color: #C0A054;">**DVP**</span>'s opposition to a Prussian concordat.
-
-@grand_coalition_spd_lead
-on-arrival: leverage -= 15 if (dvp_relation < 25 or dvp_ideology == "Right") and not lvp_formed; leverage -= 10 if (lvp_relation < 25 or lvp_ideology == "Right") and lvp_formed; hindenburg_angry = 60
-
-As expected, the <span style="color: #c00000;">**SPD**</span> is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the <span style="color: #c00000;">**SPD**</span>, [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] (<span style="color: #000000;">**[+ z_party_name +]**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] [? if not lvp_formed: (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>)?][? if lvp_formed: (<span style="color: #FFCC00;">**LVP**</span>)?][? if not lvp_formed: , and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>)?] parties.
-
-[? if dvp_relation < 25 or dvp_ideology == "Right" and not lvp_formed: As our relation with the <span style="color: #C0A054;">**DVP**</span> is poor, they are demanding more minister posts in order to remain part of the coalition. ?][? if lvp_relation < 25 or lvp_ideology == "Right" and lvp_formed: As our relation with the <span style="color: #FFCC00;">**LVP**</span> is poor, they are demanding more minister posts in order to remain part of the coalition. ?] [? if in_grand_coalition_prussia: The <span style="color: #C0A054;">**DVP**</span> are willing to grant us more cabinet posts as a result of including them in the Prussian cabinet. ?]
-
-Who should be the chancellor?
-
-- @spd_chancellor
-- @adenauer
-- @bruning
-- @wirth
-- @no_govt
-
 
 @spd_chancellor
 title: [? if muller_dead = 0 and prussia_leader == "Braun": Hermann Müller for Chancellor ?][? if muller_dead = 1 and prussia_leader == "Braun": Otto Wels for Chancellor ?][? if prussia_leader != "Braun": Otto Braun for Chancellor ?]
