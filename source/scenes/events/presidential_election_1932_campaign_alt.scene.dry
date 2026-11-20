@@ -136,41 +136,30 @@ go-to: candidate_selection
 - @campaigning_thalmann: Time to hit the campaign trail! 
 
 @campaigning_braun
-view-if: braun_campaign
+view-if: adenauer__camapaign or kaiser_campaign
 
 We have a plethora of campaign options at our disposal.
 
-- @iron_front
 - @media
-- @center_glaze
+- @socdem_glaze
 - @communist_glaze
 - @campaigning
 - @hope: Let's hope Germany will make the correct choice.
 
-@iron_front
-title: Rally the full strength of the <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> to support Braun.
-view-if: iron_front_formed
-on-arrival: radicalization = 3 if radicalization > 3; workers_spd += radicalization + 3; new_middle_spd += radicalization + 2; unemployed_spd += radicalization + 2; pro_republic += 3; nationalism -= 3; neorevisionist_dissent -= 10; neorevisionist_strength += 10; left_dissent -= 10; rb_strength += 100; workers_nsdap -= 3 if strife >= 5 and far_right_paramilitary; new_middle_nsdap -= 3 if strife >= 5 and far_right_paramilitary; unemployed_nsdap -= 3 if strife >= 5 and far_right_paramilitary
-max-visits: 1
-face-image: img/iron_front_poster.png
-go-to: campaigning_braun
-
-The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> immediately gets to work, rallying around its slogan of opposing <span style="color: #7A3C00;">Fascism</span>, <span style="color:rgb(90, 0, 0);">Stalinism</span>, and <span style="color: #808080;">Monarchism</span>, which is especially relevant in this election.
-
 @media
-title: Use our radio stations to broadcast in favor of Braun.
+title: Use our radio stations to broadcast in favor of Adenauer.
 subtitle: -1 resource
 choose-if: radio >= 2 and resources >= 1
 unavailable-subtitle: [? if radio < 2: We haven't sufficiently built up our radio infrastructure yet. ?] [? if resources < 1: Not enough resources. ?]
-on-arrival: resources -= 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += (campaign_media + radio - 2); unemployed_spd += (campaign_media + radio); new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= (campaign_media + radio - 2); unemployed_nsdap -= (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
+on-arrival: resources -= 1; new_middle_z += (radio + commercialized_media); old_middle_z += (radio + commercialized_media); workers_z += (campaign_media + radio - 2); unemployed_z += (campaign_media + radio); new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= (campaign_media + radio - 2); unemployed_nsdap -= (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
 face-image: img/poster_0.jpg
 max-visits: 1
 go-to: campaigning_braun
 
-We are able to broadcast radio addresses urging turnout for Braun, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span>.
+We are able to broadcast radio addresses urging turnout for Adenauer, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span>.
 
-@center_glaze
-title: We persuade the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to take a more active role in our campaign efforts.
+@socdem_glaze
+title: We persuade the <span style="color: #c00000;">**SPD**</span> to take a more active role in our campaign efforts.
 subtitle: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] isn't pulling their weight. -1 resource
 choose-if: z_support_spd == 1 and ((z_relation >= 60 and z_ideology == "Right") or (z_relation >= 45 and z_ideology == "Left")) and resources >= 1
 unavailable-subtitle: [? if z_support_spd != 1: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] doesn't support Braun. ?][? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 45 and z_ideology == "Left"): Our relations aren't good enough. ?] [? if resources < 1: Not enough resources. ?]
@@ -186,7 +175,7 @@ title: We persuade the <span style="color: #700000;">**Communists**</span> to ta
 subtitle: This will alienate bourgeois voters! -2 resources
 choose-if: kpd_support_spd == 1 and (kpd_relation >= 70 or (kpd_relation >= 55 and kpd_leader == "Conciliators")) and resources >= 2
 unavailable-subtitle: [? if kpd_support_spd != 1: The <span style="color: #700000;">KPD</span> doesn't support Braun. ?][? if (kpd_relation < 70 or (kpd_relation < 55 and kpd_leader == "Conciliators")): Our relations aren't good enough. ?] [? if resources < 2: Not enough resources. (need 2) ?]
-on-arrival: resources -= 2; kpd_glaze_spd = 1; workers_spd += 3; workers_kpd += 5; workers_nsdap -= 3; unemployed_kpd += 3; unemployed_nsdap -= 3; z_relation -= 10; ddp_relation -= 10; dvp_relation -= 10; lvp_relation -= 10; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 5; z_support_spd = 0 if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"); new_middle_spd -= 3 if new_middle_conscious == 0; old_middle_spd -= 3; catholics_spd -= 3
+on-arrival: resources -= 2; kpd_glaze_spd = 1; workers_z += 3; workers_kpd += 5; workers_nsdap -= 3; unemployed_kpd += 3; unemployed_nsdap -= 3; ddp_relation -= 10; dvp_relation -= 10; lvp_relation -= 10; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 5; z_support_spd = 0 if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"); new_middle_spd -= 3 if new_middle_conscious == 0; old_middle_spd -= 3; catholics_spd -= 3
 face-image: img/kpd_poster.jpg
 max-visits: 1
 go-to: campaigning_braun
@@ -220,19 +209,19 @@ Since it's election season, we are able to accelerate campaigning efforts. Buy o
 
 @workers
 view-if: campaigning_count < 2
-on-arrival: workers_spd += 3*(1 - dissent); campaigning_count += 1
+on-arrival: workers_z += 3*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
 @middle_class
 view-if: campaigning_count < 2
-on-arrival: new_middle_spd += 3*(1 - dissent); old_middle_spd += 3*(1 - dissent); new_middle_spd += 2*(1 - dissent) if peoples_party; old_middle_spd += 2*(1 - dissent) if peoples_party; campaigning_count += 1
+on-arrival: new_middle_z += 3*(1 - dissent); old_middle_z += 3*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
 @rural
 view-if: campaigning_count < 2
-on-arrival: rural_spd += 3*(1 - dissent); rural_spd += 3*(1 - dissent) if peoples_party; campaigning_count += 1
+on-arrival: rural_z += 3*(1 - dissent);campaigning_count += 1
 go-to: campaign_menu
 
 
@@ -243,8 +232,8 @@ go-to: campaign_menu
 
 
 @catholics
-view-if: campaigning_count < 2 and peoples_party
-on-arrival: catholics_spd += 3*(1 - dissent); campaigning_count += 1
+view-if: campaigning_count < 2
+on-arrival: catholics_z += 5*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
