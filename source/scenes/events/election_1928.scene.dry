@@ -1698,7 +1698,7 @@ if (window && d3) {
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
 }
-Q.weimar_coalition = (spd_r + ddp_r + z_minus_bvp_r);
+Q.weimar_coalition = (spd_r + ddp_r + z_r);
 !}
 go-to: achievement_check_e
 
