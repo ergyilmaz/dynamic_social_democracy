@@ -24,12 +24,14 @@ Leftists and the trade unions vehemently criticize the centrists for their polic
 
 Our policy course is currently that nothing can be done to alleviate the depression.
 
-@support_lautenbach
+@lautenbach
 subtitle: Intervention is needed if we want to end the crisis.
 unavailable-subtitle: The Labor faction is not strong enough.
 choose-if: labor_strength >= left_strength and labor_strength >= center_strength
+go-to: support_lautenbach if lautenbach_support < 4; adopt_lautenbach if lautenbach_support >= 4
+
+@support_lautenbach
 on-arrival: center_dissent += 10; labor_strength += 5; lautenbach_support += 1
-go-to: adopt_lautenbach if lautenbach_support >= 5
 
 Our support of the Lautenbach plan alienates the orthodox economists of the Centrist faction, and faces both opposition and support from a variety of sources across the spectrum.
 
