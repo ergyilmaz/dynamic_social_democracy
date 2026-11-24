@@ -45,7 +45,7 @@ go-to: candidate_selection
 
 [? if nsdap_candidate_1932: The <span style="color: #7A3C00;">**NSDAP**</span>, standing alone in the electoral fight to elect [+ nsdap_candidate_1932_disp +], has little chance of winning—at least according to our advisors. However, this does not mean the election is inconsequential. The extensive <span style="color: #7A3C00;">Nazi</span> propaganda campaign, orchestrated by the infamous Joseph Goebbels, combined with the upcoming local elections just a month after the first round, could significantly shift public opinion. This, in turn, may pressure President Hindenburg and his entourage to adopt a more antagonistic stance toward the current government and push for a reorganization of the national government to include the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. [? if nsdap_candidate_1932 == "Hitler": Furthermore, Adolf Hitler possesses a remarkable charismatic ability, and his strategy of flying across Germany to deliver speeches to hundreds of thousands of otherwise indifferent voters each day rivals even that of Hindenburg. ?][? if nsdap_candidate_1932 == "Göring": With Hitler ineligible, Hermann Göring has taken up the mantle as the <span style="color: #7A3C00;">**NSDAP**</span>'s candidate. As aw staunch figure of the party’s right wing and an opponent of Strasser’s more radical policies, Göring will find it easier to attract industrial support, securing crucial funding for their extensive propaganda network. ?] ?]
 
-[? if spd_support_reactionary: With our support for [+ spd_choice +], we are excluded from their campaign committees. Our support is unwelcome by [+ spd_choice +] himself, and he will attempt to distance themselves from us as much as possible to secure moderate right-wing and industrial backing. As a result, our role in the campaign will be to rally the German Left, who remain reluctant to vote for a conservative like him. ?][? if braun_campaign: We are running Otto Braun, one of our most renowned and respected statesmen. His reformist stance has given us a chance to attract some crossover support from the bourgeois parties. However, many outside our party would sooner die than support a <span style="color: #c00000;">socialist</span>. Our only viable path to expanding our vote share lies in winning back disaffected <span style="color: #700000;">**Communists**</span> and mobilizing worker enthusiasm. ?][? if spd_support_thalmann: Our controversial decision to support [+ communist_candidate_1932_disp +] as a leftist unity candidate has deeply polarized German politics, setting the stage for a final showdown between <span style="color: #9B0000;">Marxist</span> and Capitalism. A civil war is not even out of the question, regardless of which candidate emerges victorious. With the German Left united behind [+ communist_candidate_1932 +], our electoral base has little room to grow—we can only hope that the workers turn out in full force at the polls. ?][? if rosenfeld_campaign: We are running Kurt Rosenfeld, a lesser-known figure from our left wing. His leftist stances have given us a chance to attract the support of the <span style="color: #700000;">**Communists**</span>, but have completely closed the door to support from the bourgeois parties. Our only viable path to expanding our vote share lies in winning back disaffected workers, mobilizing their enthusiasm, and persuading our more reformist middle-class and rural elements to stick with the plan. ?][? if eckener_campaign: We are running Hugo Eckener, a famed non-partisan Zeppelin captain and personally conservative figure. His rightist stances have left the <span style="color: #c00000;">**SPD**</span> vulnerable to defections to the <span style="color: #700000;">**Communists**</span>, but have completely opened the door to unified support from the bourgeois parties. We can either shore up support for Eckener within the <span style="color: #c00000;">**SPD**</span> itself, or focus on maximizing crossover support and strengthening our cooperation with bourgeois allies. ?]
+[? if spd_support_reactionary: With our support for [+ spd_choice +], we are excluded from their campaign committees. Our support is unwelcome by [+ spd_choice +] himself, and he will attempt to distance themselves from us as much as possible to secure moderate right-wing and industrial backing. As a result, our role in the campaign will be to rally the German Left, who remain reluctant to vote for a conservative like him. ?][? if kaiser_campaign: We are running Jakob Kaiser, a lesser-known figure from our left wing. His leftist stances have given us a chance to attract the support of the <span style="color: #700000;">**Communists**</span>, but have completely closed the door to support from the bourgeois parties. Our only viable path to expanding our vote share lies in winning back disaffected workers and mobilizing their enthusiasm. ?][? if eckener_campaign: We are running Hugo Eckener, a famed non-partisan Zeppelin captain and personally conservative figure. His rightist stances have left the <span style="color: #c00000;">**SPD**</span> vulnerable to defections to the <span style="color: #700000;">**Communists**</span>, but have completely opened the door to unified support from the bourgeois parties. We can either shore up support for Eckener within the <span style="color: #c00000;">**SPD**</span> itself, or focus on maximizing crossover support and strengthening our cooperation with bourgeois allies. ?]
 
 @candidate_selection
 
@@ -129,14 +129,14 @@ go-to: candidate_selection
 
 [? if dnvp_candidate_1932 and dnvp_ideology == "Moderate": - <span style="color: #003755;">**DNF**</span> ?]
 
-- @campaigning_braun: Time to hit the campaign trail! 
-- @campaigning_rosenfeld: Time to hit the campaign trail! 
+- @campaigning_adenauer: Time to hit the campaign trail! 
+- @campaigning_kaiser: Time to hit the campaign trail! 
 - @campaigning_eckener: Time to hit the campaign trail! 
 - @campaigning_reactionary: Time to hit the campaign trail! 
 - @campaigning_thalmann: Time to hit the campaign trail! 
 
-@campaigning_braun
-view-if: adenauer__camapaign or kaiser_campaign
+@campaigning_adenauer
+view-if: adenauer_campaign
 
 We have a plethora of campaign options at our disposal.
 
@@ -154,7 +154,7 @@ unavailable-subtitle: [? if radio < 2: We haven't sufficiently built up our radi
 on-arrival: resources -= 1; new_middle_z += (radio + commercialized_media); old_middle_z += (radio + commercialized_media); workers_z += (campaign_media + radio - 2); unemployed_z += (campaign_media + radio); new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= (campaign_media + radio - 2); unemployed_nsdap -= (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
 face-image: img/poster_0.jpg
 max-visits: 1
-go-to: campaigning_braun
+go-to: campaigning_adenauer
 
 We are able to broadcast radio addresses urging turnout for Adenauer, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span>.
 
@@ -163,26 +163,12 @@ title: We persuade the <span style="color: #c00000;">**SPD**</span> to take a mo
 subtitle: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] isn't pulling their weight. -1 resource
 choose-if: z_support_spd == 1 and ((z_relation >= 60 and z_ideology == "Right") or (z_relation >= 45 and z_ideology == "Left")) and resources >= 1
 unavailable-subtitle: [? if z_support_spd != 1: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] doesn't support Braun. ?][? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 45 and z_ideology == "Left"): Our relations aren't good enough. ?] [? if resources < 1: Not enough resources. ?]
-on-arrival: resources -= 1; pro_republic += 3; z_glaze_spd = 1; catholics_nsdap -= 3; catholics_spd += 3; catholics_z += 2; rural_spd += 1; z_relation += 5; ddp_left += 2; dvp_left += 3; ddp_cohesion += 1; lvp_left += 2
+on-arrival: resources -= 1; pro_republic += 3; z_glaze_spd = 1; catholics_nsdap -= 3; catholics_spd += 3; catholics_z += 2; rural_spd += 1; spd_relation += 5; ddp_left += 2; dvp_left += 3; ddp_cohesion += 1; lvp_left += 2
 face-image: img/center_poster.jpg
 max-visits: 1
-go-to: campaigning_braun
+go-to: campaigning_adenauer
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has not been the most enthusiastic supporter of Braun. However, by leveraging our connections with their left wing and trade unions, we push them toward a more active role in the campaign. This should help Braun secure more votes from their base.
-
-@communist_glaze
-title: We persuade the <span style="color: #700000;">**Communists**</span> to take a more active role in our campaign efforts.
-subtitle: This will alienate bourgeois voters! -2 resources
-choose-if: kpd_support_spd == 1 and (kpd_relation >= 70 or (kpd_relation >= 55 and kpd_leader == "Conciliators")) and resources >= 2
-unavailable-subtitle: [? if kpd_support_spd != 1: The <span style="color: #700000;">KPD</span> doesn't support Braun. ?][? if (kpd_relation < 70 or (kpd_relation < 55 and kpd_leader == "Conciliators")): Our relations aren't good enough. ?] [? if resources < 2: Not enough resources. (need 2) ?]
-on-arrival: resources -= 2; kpd_glaze_spd = 1; workers_z += 3; workers_kpd += 5; workers_nsdap -= 3; unemployed_kpd += 3; unemployed_nsdap -= 3; ddp_relation -= 10; dvp_relation -= 10; lvp_relation -= 10; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 5; z_support_spd = 0 if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"); new_middle_spd -= 3 if new_middle_conscious == 0; old_middle_spd -= 3; catholics_spd -= 3
-face-image: img/kpd_poster.jpg
-max-visits: 1
-go-to: campaigning_braun
-
-Despite our earlier insistence on keeping the <span style="color: #700000;">**Communists**</span>' support low-key, we have now decided that their full backing in the upcoming election is worth the risk of alienating bourgeois <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>. As a result, we are now openly participating in joint rallies in support of Braun.
-
-[? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"): The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has withdrawn their endorsement of Braun. ?]
+The <span style="color: #c00000;">**SPD**</span> has not been the most enthusiastic supporter of a colonialist capitalist like Adenauer. However, by leveraging our connections with their reformist wing and trade unions, we push them toward a more active role in the campaign. This should help Adenauer secure more votes from their base.
 
 @campaigning
 title: Accelerate campaign efforts in general.
@@ -246,53 +232,53 @@ go-to: campaigning_braun if braun_campaign; campaigning_eckener if eckener_campa
 
 Where has hope got us the past few years?
 
-@campaigning_rosenfeld
+@campaigning_kaiser
 view-if: rosenfeld_campaign
 
 We have a plethora of campaign options at our disposal.
 
-- @iron_front_rosenfeld
-- @media_rosenfeld
-- @party_discipline_rosenfeld
-- @communist_glaze_rosenfeld
+- @iron_front_kaiser
+- @media_kaiser
+- @party_discipline_kaiser
+- @communist_glaze_kaiser
 - @campaigning
 - @hope: Let's hope Germany will make the correct choice.
 
-@iron_front_rosenfeld
+@iron_front_kaiser
 title: Rally the full strength of the <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> to support Rosenfeld.
 view-if: iron_front_formed
 on-arrival: radicalization = 3 if radicalization > 3; workers_spd += radicalization + 3; new_middle_spd += radicalization + 2; unemployed_spd += radicalization + 2; pro_republic += 3; nationalism -= 3; neorevisionist_dissent -= 10; neorevisionist_strength += 10; left_dissent -= 10; rb_strength += 100; workers_nsdap -= 3 if strife >= 5 and far_right_paramilitary; new_middle_nsdap -= 3 if strife >= 5 and far_right_paramilitary; unemployed_nsdap -= 3 if strife >= 5 and far_right_paramilitary
 max-visits: 1
 face-image: img/iron_front_poster.png
-go-to: campaigning_rosenfeld
+go-to: campaigning_kaiser
 
 The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> immediately gets to work, rallying around its slogan of opposing <span style="color: #7A3C00;">Fascism</span> and <span style="color: #808080;">Monarchism</span>, which is especially relevant in this election. This will help us shore up support among more reluctant workers.
 
-@media_rosenfeld
-title: Use our radio stations to broadcast in favor of Rosenfeld.
+@media_kaiser
+title: Use our radio stations to broadcast in favor of Kaiser.
 subtitle: -1 resource
 choose-if: radio >= 2 and resources >= 1
 unavailable-subtitle: [? if radio < 2: We haven't sufficiently built up our radio infrastructure yet. ?] [? if resources < 1: Not enough resources. ?]
 on-arrival: resources -= 1; media_rosenfeld_seen = 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += (campaign_media + radio - 2); unemployed_spd += (campaign_media + radio); new_middle_kpd += 3; socialism += 3; nationalism -= 3
 face-image: img/poster_0.jpg
 max-visits: 1
-go-to: campaigning_rosenfeld
+go-to: campaigning_kaiser
 
 We are able to broadcast radio addresses urging turnout for Rosenfeld, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span> and Rosenfeld especially.
 
-@party_discipline_rosenfeld
+@party_discipline_kaiser
 title: Impose party discipline.
-subtitle: Some reformist local organizations haven't been putting in the work.
+subtitle: Some right-wing local organizations haven't been putting in the work.
 choose-if: dissent < 0.15
 unavailable-subtitle: [? if dissent >= 0.15: Internal dissent is too high. ?]
 on-arrival: party_rosenfeld_seen = 1
 face-image: img/poster_2.jpg
 max-visits: 1
-go-to: campaigning_rosenfeld
+go-to: campaigning_kaiser
 
 We need a united front to win this election—internal factional politics must be set aside.
 
-@communist_glaze_rosenfeld
+@communist_glaze_kaiser
 title: We persuade the <span style="color: #700000;">**Communists**</span> to take a more active role in our campaign efforts.
 subtitle: This will alienate the bourgeois parties! -1 resource
 choose-if: kpd_support_spd == 1 and (kpd_relation >= 60 or (kpd_relation >= 40 and kpd_leader == "Conciliators")) and resources >= 1
@@ -300,7 +286,7 @@ unavailable-subtitle: [? if kpd_support_spd != 1: The <span style="color: #70000
 on-arrival: resources -= 1; kpd_glaze_spd = 1; workers_spd += 3; workers_kpd += 5; workers_nsdap -= 3; unemployed_kpd += 3; unemployed_nsdap -= 3; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; dvp_right += 3; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 3; new_middle_spd -= 3 if new_middle_conscious == 0; old_middle_spd -= 3; catholics_spd -= 3
 face-image: img/kpd_poster.jpg
 max-visits: 1
-go-to: campaigning_rosenfeld
+go-to: campaigning_kaiser
 
 As a result, we are now openly participating in joint rallies supporting Rosenfeld. This display of <span style="color: #9B0000;">Marxist</span> unity understandably alarms the bourgeois parties—and may, counterproductively, drive more voters to rally behind their candidate.
 
