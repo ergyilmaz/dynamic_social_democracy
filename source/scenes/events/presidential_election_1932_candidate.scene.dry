@@ -873,13 +873,13 @@ go-to: convince_dvp_success_eckener if (dvp_relation >= 70 and dvp_ideology == "
 
 The <span style="color: #C0A054;">**DVP**</span>, having supported <span style="color: #808080;">Hindenburg</span> instead of <span style="color: #000000;">Marx</span> in 1925, is likely to refuse to support us once again. 
 
-@convince_dvp_success_eckener
+@convince_dvp_success
 on-arrival: dvp_support_z = 1; dvp_left += 3; dvp_relation += 5
 go-to: endorsements_z
 
-Thanks to our friendly relations and Eckener's non-partisanship, the <span style="color: #C0A054;">**DVP**</span> is now campaigning for [+ z_candidate_1932 +] in the election.
+Thanks to our friendly relations, the <span style="color: #C0A054;">**DVP**</span> is now campaigning for [+ z_candidate_1932 +] in the election.
 
-@convince_dvp_fail_eckener
+@convince_dvp_fail
 on-arrival: dvp_support_z = 0; dvp_right += 1; dvp_relation -= 3
 go-to: endorsements_z
 
