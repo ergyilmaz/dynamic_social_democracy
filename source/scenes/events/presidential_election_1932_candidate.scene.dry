@@ -866,7 +866,7 @@ Hopefully, the <span style="color: #c00000;">**[+ z_candidate_1932 +]**</span> c
 
 [? if lib_drop_out and z_drop_out: However, the withdrawal of [+ liberal_reactionary_candidate_1932_name +] and [+ center_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?][? if z_drop_out and not liberal_reactionary_candidate_1932: However, the withdrawal of [+ center_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?][? if lib_drop_out and not center_reactionary_candidate_1932: However, the withdrawal of [+ liberal_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?]
 
-@convince_dvp_eckener
+@convince_dvp
 view-if: not lvp_formed and dvp_exist
 max-visits: 1
 go-to: convince_dvp_success_eckener if (dvp_relation >= 70 and dvp_ideology == "Right") or (dvp_relation >= 60 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Left"); convince_dvp_fail_eckener if not ((dvp_relation >= 70 and dvp_ideology == "Right") or (dvp_relation >= 60 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Left"))
