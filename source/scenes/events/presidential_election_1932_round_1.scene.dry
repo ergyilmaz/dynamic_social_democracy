@@ -97,57 +97,36 @@ Q.dvp_president_crossover = 0;
 Q.lvp_president_crossover = 0;
 Q.center_president_crossover = 0;
 
-if (Q.spd_campaign) {
-    Q.spd_president_votes += Q.spd_normalized;
-    if (Q.rosenfeld_campaign) {
-        if (!Q.media_rosenfeld_seen) {
-            Q.spd_president_votes -= (Q.new_middle_spd_normalized / 2000);
-            Q.spd_president_votes -= (Q.old_middle_spd_normalized / 1500);
-        } else if (Q.media_rosenfeld_seen) {
-            Q.spd_president_votes -= (Q.new_middle_spd_normalized / 2500);
-            Q.spd_president_votes -= (Q.old_middle_spd_normalized / 2500);
+if (Q.z_campaign) {
+    Q.z_president_votes += Q.z_normalized;
+    if (Q.kaiser_campaign) {
+        if (!Q.media_kaiser_seen) {
+            Q.z_president_votes -= (Q.new_middle_z_normalized / 2000);
+            Q.z_president_votes -= (Q.old_middle_z_normalized / 1500);
+        } else if (Q.media_kaiser_seen) {
+            Q.z_president_votes -= (Q.new_middle_z_normalized / 2500);
+            Q.z_president_votes -= (Q.old_middle_z_normalized / 2500);
         }
-        if (!Q.party_rosenfeld_seen) {
-            Q.spd_president_votes -= (Q.new_middle_spd_normalized / 1500);
-            Q.spd_president_votes -= (Q.old_middle_spd_normalized / 1500);
-            Q.spd_president_votes -= (Q.rural_spd_normalized / 1500);
-        } else if (Q.party_rosenfeld_seen) {
-            Q.spd_president_votes -= (Q.new_middle_spd_normalized / 2000);
-            Q.spd_president_votes -= (Q.old_middle_spd_normalized / 2000);
-            Q.spd_president_votes -= (Q.rural_spd_normalized / 2000);
+        if (!Q.party_kaiser_seen) {
+            Q.z_president_votes -= (Q.new_middle_z_normalized / 1500);
+            Q.z_president_votes -= (Q.old_middle_z_normalized / 1500);
+            Q.z_president_votes -= (Q.rural_z_normalized / 1500);
+        } else if (Q.party_kaiser_seen) {
+            Q.z_president_votes -= (Q.new_middle_z_normalized / 2000);
+            Q.z_president_votes -= (Q.old_middle_z_normalized / 2000);
+            Q.z_president_votes -= (Q.rural_z_normalized / 2000);
         }
     }
-    if (Q.ddp_support_spd) {
-        if (Q.ddp_ideology == "Left") {
-            Q.spd_president_votes += Q.ddp_normalized;
-        }
-        if (Q.ddp_ideology == "Moderate") {
-            Q.spd_president_votes += Q.ddp_normalized * 0.8;
-            Q.hindenburg_votes += Q.ddp_normalized * 0.2;
-            Q.ddp_president_crossover += Q.ddp_normalized * 0.2;
-            if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.ddp_normalized * 0.2;
-                Q.hindenburg_votes -= Q.ddp_normalized * 0.2;
-                Q.ddp_president_crossover -= Q.ddp_normalized * 0.2;
-            }
-        }
-        if (Q.ddp_ideology == "Right") {
-            Q.spd_president_votes += Q.ddp_normalized * 0.6;
-            Q.hindenburg_votes += Q.ddp_normalized * 0.4;
-            Q.ddp_president_crossover += Q.ddp_normalized * 0.4;
-            if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.ddp_normalized * 0.2;
-                Q.hindenburg_votes -= Q.ddp_normalized * 0.2;
-                Q.ddp_president_crossover -= Q.ddp_normalized * 0.2;
-            }
+    if (Q.ddp_support_z) {
+          Q.z_president_votes += ddp_normalized
         }
     } else {
         Q.hindenburg_votes += Q.ddp_normalized;
     }
 
-    if (Q.lvp_support_spd) {
+    if (Q.lvp_support_z) {
         if (Q.lvp_ideology == "Left") {
-            Q.spd_president_votes += Q.lvp_normalized * 0.8;
+            Q.z_president_votes += Q.lvp_normalized * 0.8;
             Q.hindenburg_votes += Q.lvp_normalized * 0.2;
             Q.lvp_president_crossover += Q.lvp_normalized * 0.2;
             if (Q.eckener_campaign) {
@@ -157,21 +136,21 @@ if (Q.spd_campaign) {
             }
         }
         if (Q.lvp_ideology == "Moderate") {
-            Q.spd_president_votes += Q.lvp_normalized * 0.6;
+            Q.z_president_votes += Q.lvp_normalized * 0.6;
             Q.hindenburg_votes += Q.lvp_normalized * 0.4;
             Q.lvp_president_crossover += Q.lvp_normalized * 0.4;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.lvp_normalized * 0.2;
+                Q.z_president_votes += Q.lvp_normalized * 0.2;
                 Q.hindenburg_votes -= Q.lvp_normalized * 0.2;
                 Q.lvp_president_crossover -= Q.lvp_normalized * 0.2;
             }
         }
         if (Q.lvp_ideology == "Right") {
-            Q.spd_president_votes += Q.lvp_normalized * 0.4;
+            Q.z_president_votes += Q.lvp_normalized * 0.4;
             Q.hindenburg_votes += Q.lvp_normalized * 0.6;
             Q.lvp_president_crossover += Q.lvp_normalized * 0.6;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.lvp_normalized * 0.2;
+                Q.z_president_votes += Q.lvp_normalized * 0.2;
                 Q.hindenburg_votes -= Q.lvp_normalized * 0.2;
                 Q.lvp_president_crossover -= Q.lvp_normalized * 0.2;
             }
@@ -180,33 +159,33 @@ if (Q.spd_campaign) {
         Q.hindenburg_votes += Q.lvp_normalized;
     }
 
-    if (Q.dvp_support_spd) {
+    if (Q.dvp_support_z) {
         if (Q.dvp_ideology == "Left") {
-            Q.spd_president_votes += Q.dvp_normalized * 0.6;
+            Q.z_president_votes += Q.dvp_normalized * 0.6;
             Q.hindenburg_votes += Q.dvp_normalized * 0.4;
             Q.dvp_president_crossover += Q.dvp_normalized * 0.4;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.dvp_normalized * 0.2;
+                Q.z_president_votes += Q.dvp_normalized * 0.2;
                 Q.hindenburg_votes -= Q.dvp_normalized * 0.2;
                 Q.dvp_president_crossover -= Q.dvp_normalized * 0.2;
             }
         }
         if (Q.dvp_ideology == "Moderate") {
-            Q.spd_president_votes += Q.dvp_normalized * 0.5;
+            Q.z_president_votes += Q.dvp_normalized * 0.5;
             Q.hindenburg_votes += Q.dvp_normalized * 0.5;
             Q.dvp_president_crossover += Q.dvp_normalized * 0.5;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.dvp_normalized * 0.3;
+                Q.z_president_votes += Q.dvp_normalized * 0.3;
                 Q.hindenburg_votes -= Q.dvp_normalized * 0.3;
                 Q.dvp_president_crossover -= Q.dvp_normalized * 0.3;
             }
         }
         if (Q.dvp_ideology == "Right") {
-            Q.spd_president_votes += Q.dvp_normalized * 0.4;
+            Q.z_president_votes += Q.dvp_normalized * 0.4;
             Q.hindenburg_votes += Q.dvp_normalized * 0.6;
             Q.dvp_president_crossover += Q.dvp_normalized * 0.6;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += Q.dvp_normalized * 0.3;
+                Q.z_president_votes += Q.dvp_normalized * 0.3;
                 Q.hindenburg_votes -= Q.dvp_normalized * 0.3;
                 Q.dvp_president_crossover -= Q.dvp_normalized * 0.3;
             }
@@ -215,37 +194,24 @@ if (Q.spd_campaign) {
         Q.hindenburg_votes += Q.dvp_normalized;
     }
 
-    if (Q.z_support_spd && Q.z_support_spd == 1) {
-        if (Q.z_ideology == "Left") {
-            Q.spd_president_votes += (Q.z_normalized - Q.bvp_votes);
-            Q.hindenburg_votes += Q.bvp_votes;
-            Q.center_president_crossover += Q.bvp_votes;
-        }
-        if (Q.z_ideology == "Right" && !Q.z_glaze_spd) {
-            Q.spd_president_votes += (Q.z_normalized - Q.bvp_votes) * 0.8;
-            Q.hindenburg_votes += (Q.z_normalized - Q.bvp_votes) * 0.2;
-            Q.center_president_crossover += (Q.z_normalized - Q.bvp_votes) * 0.2;
-            if (Q.eckener_campaign) {
-                Q.spd_president_votes += (Q.z_normalized - Q.bvp_votes) * 0.1;
-                Q.hindenburg_votes -= (Q.z_normalized - Q.bvp_votes) * 0.1;
-                Q.center_president_crossover -= (Q.z_normalized - Q.bvp_votes) * 0.1;
-            }
+    if (Q.spd_support_z) {
+            Q.z_president_votes += spd_normalized;
             Q.hindenburg_votes += Q.bvp_votes;
             Q.center_president_crossover += Q.bvp_votes;
         } else if (Q.z_ideology == "Right" && Q.z_glaze_spd) {
-            Q.spd_president_votes += (Q.z_normalized - Q.bvp_votes) * 0.9;
-            Q.hindenburg_votes += (Q.z_normalized - Q.bvp_votes) * 0.1;
-            Q.center_president_crossover += (Q.z_normalized - Q.bvp_votes) * 0.1;
+            Q.z_president_votes += (Q.spd_normalized) * 0.9;
+            Q.hindenburg_votes += (Q.spd_normalized) * 0.1;
+            Q.center_president_crossover += (Q.spd_normalized) * 0.1;
             if (Q.eckener_campaign) {
-                Q.spd_president_votes += (Q.z_normalized - Q.bvp_votes) * 0.1;
-                Q.hindenburg_votes -= (Q.z_normalized - Q.bvp_votes) * 0.1;
-                Q.center_president_crossover -= (Q.z_normalized - Q.bvp_votes) * 0.1;
+                Q.z_president_votes += (Q.spd_normalized) * 0.1;
+                Q.hindenburg_votes -= (Q.spd_normalized) * 0.1;
+                Q.center_president_crossover -= (Q.spd_normalized) * 0.1;
             }
             Q.hindenburg_votes += Q.bvp_votes;
             Q.center_president_crossover += Q.bvp_votes;
         }
-        if (Q.bvp_support_spd) {
-            Q.spd_president_votes += Q.bvp_votes;
+        if (Q.bvp_support_z) {
+            Q.z_president_votes += Q.bvp_votes;
             Q.hindenburg_votes -= Q.bvp_votes;
             Q.center_president_crossover -= Q.bvp_votes;
         } else if (!Q.bvp_support_spd && !Q.hindenburg_run) {
